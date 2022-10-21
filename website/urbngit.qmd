@@ -1,0 +1,21 @@
+---
+title: Git and Github at Urban
+---
+
+This guide is intended to help Urban Institute employees get started with Git and GitHub.
+
+We know that learning these tools can be a challenge, but we're here for you! Drop a message in the [#github Slack channel](https://theurbaninstitute.slack.com/archives/C6J9AALDR) if you run into issues, and we will be happy to help out.
+
+------------------------------------------------------------------------
+
+## Git vs. GitHub
+
+**Git** is a free, open source distributed version-control system for tracking changes in code. Because Git is installed and maintained locally on your computer, it can be used without an internet connection. It's like a turbo-charged version of Word's track changes for code.
+
+**GitHub** is a cloud-based, online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It's like a turbo-charged version of Box for sharing Git repositories (i.e. folders tracked by Git).
+
+Don't get bogged down in the details -- just remember that Git is a local version control system, while GitHub is a hosting site for backup and collaboration. Together, they pack a powerful punch.
+
+------------------------------------------------------------------------
+
+![](https://octodex.github.com/images/benevocats.png){fig-align="center" width="30%"}
