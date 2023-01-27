@@ -7,15 +7,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - href: urbngit.qmd
+      - href: git-installation/git-installation.qmd
+        text: Git Installation
+      - href: urbngit/urbngit.qmd
         text: Git and Github
 
 format:
   html:
-    #theme: cosmo
-    css: styles.scss
+    css: styles.css
     toc: true
-
-editor: visual
-
