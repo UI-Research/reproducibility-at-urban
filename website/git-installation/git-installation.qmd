@@ -1,0 +1,66 @@
+---
+title: "Git Installation"
+output:
+  pdf_document:
+    latex_engine: xelatex
+urlcolor: blue
+geometry: margin=1.5in
+editor:
+  mode: source
+editor_options:
+  chunk_output_type: console
+---
+
+## Background
+
+Git is a distributed version-control system for tracking changes in code. Git is free, open-source software and can be used locally without an internet connection. It's like a turbo-charged version of track changes for code.
+
+[GitHub](https://github.com/), which is owned by Microsoft, is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It's like a turbo-charged version of Box for sharing repositories created using Git.
+
+At first, it's easy to mix up Git and GitHub. Just try to remember that they are separate tools that complement each other well.
+
+The objective is to create local repositories that track code, and sometimes data, and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push the changes to a repo
+
+## Installation and registration
+
+### git installation for Windows
+
+Install [Git for Windows](https://git-scm.com/downloads). Keep all default selections and **be sure to install Git Bash**. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select `Git Bash Here`.
+
+### git installation for Mac OSX
+
+Install [Git for Mac OSX](https://git-scm.com/downloads). Mac already has the terminal. Open the terminal and type `git`. If everything is properly installed, a list of possible command will show up.
+
+## GitHub account
+
+Create a [GitHub account](https://github.com/). There is no need to associate you account with Georgetown or a Georgetown email address. Many people want to GitHub for personal projects too.
+
+### Configure Git and GitHub
+
+The following steps link your local Git to Github.
+
+In any directory on your computer, right click and select `Git Bash Here` on Windows or open Terminal on Mac.
+
+Submit the following with your GitHub username in quotes:
+
+`git config --global user.name "your github username"`
+
+Then, submit the following to ensure that your GitHub username is associated with you computer:
+
+`git config --global user.name`
+
+Submit the following with the email associated with your GitHub account in quotes:
+
+`git config --global user.email "email@example.com"`
+
+Then, submit the following to ensure that your GitHub email is associated with you computer:
+
+`git config --global user.email`
+
+## More resources
+
+-   [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+-   [Happy Git and GitHub for the UserR](https://happygitwithr.com/)
+-   [Git Pocket Guide](https://www.amazon.com/Git-Pocket-Guide-Working-Introduction/dp/1449325866)
+-   [Getting Git Right](https://www.atlassian.com/git)
+-   [Git Learning Lab](https://lab.github.com/)
