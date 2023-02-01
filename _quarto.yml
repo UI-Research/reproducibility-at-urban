@@ -12,6 +12,8 @@ website:
         text: Git Installation
       - href: urbngit/urbngit.qmd
         text: Git and Github
+      - href: virtual-envs/virtual-envs.qmd
+        text: Virtual Environments
 
 format:
   html:
