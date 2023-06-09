@@ -8,10 +8,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: git-installation/git-installation.qmd
-        text: Git Installation
-      - href: urbngit/urbngit.qmd
-        text: Git and Github
+      - text: "Git/Github"
+        menu:
+        - href: git-installation/git-installation.qmd
+          text: Git Installation
+        - href: urbngit/urbngit.qmd
+          text: Git and Github
+        - href: y-drive/y-drive.qmd
+          text: Git and Github on the Y Drive
       - href: virtual-envs/virtual-envs.qmd
         text: Virtual Environments
 

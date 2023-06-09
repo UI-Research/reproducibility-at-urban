@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-06-09">
 
-<title>Reproducibility at Urban – confidential-data-and-git</title>
+<title>Reproducibility at Urban - Using Git/Github with the Y Drive</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,6 +157,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="../urbngit/urbngit.html">
  <span class="dropdown-text">Git and Github</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../y-drive/y-drive.html">
+ <span class="dropdown-text">Git and Github on the Y Drive</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -176,31 +181,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#using-gitgithub-with-the-y-drive-aka-ares-drive" id="toc-using-gitgithub-with-the-y-drive-aka-ares-drive" class="nav-link active" data-scroll-target="#using-gitgithub-with-the-y-drive-aka-ares-drive">Using Git/Github with the Y drive (aka ares drive)</a></li>
-  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture">The big picture</a>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link active" data-scroll-target="#the-big-picture"><span class="toc-section-number">1</span>  The big picture</a>
   <ul class="collapse">
-  <li><a href="#set-up-the-y-drive-folder-for-data" id="toc-set-up-the-y-drive-folder-for-data" class="nav-link" data-scroll-target="#set-up-the-y-drive-folder-for-data">1) Set up the Y Drive folder (for data)</a></li>
-  <li><a href="#set-up-the-git-repo-for-scripts" id="toc-set-up-the-git-repo-for-scripts" class="nav-link" data-scroll-target="#set-up-the-git-repo-for-scripts">2) Set up the git repo (for scripts)</a></li>
-  <li><a href="#write-scripts-and-commit-to-gitgithub" id="toc-write-scripts-and-commit-to-gitgithub" class="nav-link" data-scroll-target="#write-scripts-and-commit-to-gitgithub">3) Write scripts and commit to Git/Github</a></li>
+  <li><a href="#set-up-the-y-drive-folder-for-data" id="toc-set-up-the-y-drive-folder-for-data" class="nav-link" data-scroll-target="#set-up-the-y-drive-folder-for-data"><span class="toc-section-number">1.1</span>  1) Set up the Y Drive folder (for data)</a></li>
+  <li><a href="#set-up-the-git-repo-for-scripts" id="toc-set-up-the-git-repo-for-scripts" class="nav-link" data-scroll-target="#set-up-the-git-repo-for-scripts"><span class="toc-section-number">1.2</span>  2) Set up the git repo (for scripts)</a></li>
+  <li><a href="#write-scripts-and-commit-to-gitgithub" id="toc-write-scripts-and-commit-to-gitgithub" class="nav-link" data-scroll-target="#write-scripts-and-commit-to-gitgithub"><span class="toc-section-number">1.3</span>  3) Write scripts and commit to Git/Github</a></li>
   </ul></li>
-  <li><a href="#faqsproblems" id="toc-faqsproblems" class="nav-link" data-scroll-target="#faqsproblems">FAQs/problems</a></li>
+  <li><a href="#faqsproblems" id="toc-faqsproblems" class="nav-link" data-scroll-target="#faqsproblems"><span class="toc-section-number">2</span>  FAQs/problems</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Using Git/Github with the Y Drive</h1>
+<p class="subtitle lead">Introduction to Working with Confidential Data on the Y Drive (Ares Drive) at the Urban Institute</p>
+</div>
 
 
-<p><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato"></p>
-<p><img src="www/images/urban-institute-logo.png" class="img-fluid"></p>
-<section id="using-gitgithub-with-the-y-drive-aka-ares-drive" class="level1">
-<h1>Using Git/Github with the Y drive (aka ares drive)</h1>
-<p>June 09, 2023 <br></p>
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 9, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
 <p>So you’ve learned about the power of Git/Github and now want to use it in your projects. That’s great news! But if your project data is stored on the Y Drive (aka <code>ares</code>) for confidentiality reasons, you’ll have to jump through a few extra hoops. Below are instructions on how to set up a Github repo to play nicely with the Y drive.</p>
-</section>
-<section id="the-big-picture" class="level1">
-<h1>The big picture</h1>
+<section id="the-big-picture" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> The big picture</h1>
 <ul>
 <li>Store all data directly on the Y Drive</li>
 <li>Store all scripts in a Git repo</li>
@@ -209,10 +228,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Within your scripts, always read in data using the direct Y Drive filepaths and write out intermediate/final data files using direct Y Drive filepaths.</li>
 </ul>
 <p>This means your scripts will live in a separate place (usually the Documents folder of the virtual desktop) from your data (somewhere in the Y Drive) and only your scripts will be on Git/Github. So while changes to your scripts will be tracked with all the power of Github, your data will not.</p>
-<p>If your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can’t put your data in Git/Github for security reasons (and therefore won’t get the power of Git and file tracking for the data)</p>
+<p>If your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can’t put your data in Git/Github for security reasons (and therefore won’t get the power of Git and file tracking for the data).</p>
 <p>Now that’s out of the way, how do you setup Git/Github with your confidential data?</p>
-<section id="set-up-the-y-drive-folder-for-data" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-the-y-drive-folder-for-data">1) Set up the Y Drive folder (for data)</h2>
+<section id="set-up-the-y-drive-folder-for-data" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="set-up-the-y-drive-folder-for-data"><span class="header-section-number">1.1</span> 1) Set up the Y Drive folder (for data)</h2>
 <ol type="1">
 <li><p>Reach out to Hadi Jeddy in TECH to get a Y drive folder created for your project and give the appropriate project staff access.</p></li>
 <li><p>Securely move the project data files into the assigned Y drive folder. Inside the Y Drive folder we recommend the following folder structure:</p>
@@ -223,10 +242,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         - final-data/</code></pre></li>
 </ol>
 <p>The data you move in to the Y drive should go into the <code>data/raw-data</code> folder and manipulated data can go into the other folders.</p>
-<p>Note that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script and there is no way to restore changes. For this reason, we suggest a) keeping the data files inside <code>raw-data</code> untouched and never programmatically write to that folder and b) keeping a clear script copy of how you transform the files inside <code>raw-data</code> so that if needed you can easily regenerate intermediate and final data files.</p>
+<p>Note that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script and there is no way to restore changes.</p>
+<p>For this reason, we suggest a) keeping the data files inside <code>raw-data</code> untouched and never programmatically write to that folder and b) keeping a clear script copy of how you transform the files inside <code>raw-data</code> so that if needed you can easily regenerate intermediate and final data files.</p>
 </section>
-<section id="set-up-the-git-repo-for-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-the-git-repo-for-scripts">2) Set up the git repo (for scripts)</h2>
+<section id="set-up-the-git-repo-for-scripts" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="set-up-the-git-repo-for-scripts"><span class="header-section-number">1.2</span> 2) Set up the git repo (for scripts)</h2>
 <ol type="1">
 <li><p>Use Virtual Desktop to open either Win10 Secure or PGP. Note Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code.</p></li>
 <li><p>If you’re on PGP, install Github desktop from this link: <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a>. Win 10 Secure should already have this</p></li>
@@ -247,8 +267,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Each member of your project team will need to now <code>clone</code> the repo into a local path on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the git repo into the mapped Y drive.</p></li>
 </ol>
 </section>
-<section id="write-scripts-and-commit-to-gitgithub" class="level2">
-<h2 class="anchored" data-anchor-id="write-scripts-and-commit-to-gitgithub">3) Write scripts and commit to Git/Github</h2>
+<section id="write-scripts-and-commit-to-gitgithub" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="write-scripts-and-commit-to-gitgithub"><span class="header-section-number">1.3</span> 3) Write scripts and commit to Git/Github</h2>
 <p>Now you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data readin/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has urban network access to the Y Drive (ie the 2 virtual machines specified above).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -271,8 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="faqsproblems" class="level1">
-<h1>FAQs/problems</h1>
+<section id="faqsproblems" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> FAQs/problems</h1>
 <p><strong>Q: Help! I’m getting the following error when trying to <code>library(tidyverse)</code> within my R scripts on a virtual machine: <code>package 'rvest' was installed before R 4.0.0. please re-install it</code></strong>.</p>
 <p>A: Install the rvest package again by running <code>install.packages("rvest")</code> once in the console. This should fix it and <code>library(tidyverse)</code> will run normally.</p>
 

@@ -24,22 +24,22 @@
     "objectID": "git-installation/git-installation.html#installation-and-registration",
     "href": "git-installation/git-installation.html#installation-and-registration",
     "title": "Git Installation",
-    "section": "Installation and registration",
-    "text": "Installation and registration\n\ngit installation for Windows\nInstall Git for Windows. Keep all default selections and be sure to install Git Bash. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select Git Bash Here.\n\n\ngit installation for Mac OSX\nInstall Git for Mac OSX. Mac already has the terminal. Open the terminal and type git. If everything is properly installed, a list of possible command will show up."
+    "section": "2 Installation and registration",
+    "text": "2 Installation and registration\n\n2.1 git installation for Windows\nInstall Git for Windows. Keep all default selections and be sure to install Git Bash. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select Git Bash Here.\n\n\n2.2 git installation for Mac OSX\nInstall Git for Mac OSX. Mac already has the terminal. Open the terminal and type git. If everything is properly installed, a list of possible command will show up."
   },
   {
     "objectID": "git-installation/git-installation.html#github-account",
     "href": "git-installation/git-installation.html#github-account",
     "title": "Git Installation",
-    "section": "GitHub account",
-    "text": "GitHub account\nCreate a GitHub account. There is no need to associate you account with Georgetown or a Georgetown email address. Many people want to GitHub for personal projects too.\n\nConfigure Git and GitHub\nThe following steps link your local Git to Github.\nIn any directory on your computer, right click and select Git Bash Here on Windows or open Terminal on Mac.\nSubmit the following with your GitHub username in quotes:\ngit config --global user.name \"your github username\"\nThen, submit the following to ensure that your GitHub username is associated with you computer:\ngit config --global user.name\nSubmit the following with the email associated with your GitHub account in quotes:\ngit config --global user.email \"email@example.com\"\nThen, submit the following to ensure that your GitHub email is associated with you computer:\ngit config --global user.email"
+    "section": "3 GitHub account",
+    "text": "3 GitHub account\nCreate a GitHub account. There is no need to associate you account with Georgetown or a Georgetown email address. Many people want to GitHub for personal projects too.\n\n3.1 Configure Git and GitHub\nThe following steps link your local Git to Github.\nIn any directory on your computer, right click and select Git Bash Here on Windows or open Terminal on Mac.\nSubmit the following with your GitHub username in quotes:\ngit config --global user.name \"your github username\"\nThen, submit the following to ensure that your GitHub username is associated with you computer:\ngit config --global user.name\nSubmit the following with the email associated with your GitHub account in quotes:\ngit config --global user.email \"email@example.com\"\nThen, submit the following to ensure that your GitHub email is associated with you computer:\ngit config --global user.email"
   },
   {
     "objectID": "git-installation/git-installation.html#more-resources",
     "href": "git-installation/git-installation.html#more-resources",
     "title": "Git Installation",
-    "section": "More resources",
-    "text": "More resources\n\nGit Cheat Sheet\nHappy Git and GitHub for the UserR\nGit Pocket Guide\nGetting Git Right\nGit Learning Lab"
+    "section": "4 More resources",
+    "text": "4 More resources\n\nGit Cheat Sheet\nHappy Git and GitHub for the UserR\nGit Pocket Guide\nGetting Git Right\nGit Learning Lab"
   },
   {
     "objectID": "urbngit/confidential-data-and-git.html#set-up-the-y-drive-folder-for-data",
@@ -200,7 +200,7 @@
     "href": "virtual-envs/virtual-envs.html#additional-resources",
     "title": "Virtual Environments",
     "section": "5 Additional resources",
-    "text": "5 Additional resources\n\nRPython\n\n\nThe 10-minute talk from rstudio::conf(2022) called You should be using renv from E. David Aja is a great overview of the motivation for using the tool. We also recommend the official Introduction to renv and Collaborating with renv vignettes.\n\n\nWe recommend keeping the official conda cheat sheet handy. In addition to the commands included above, a few other commonly used conda commands include:\n\nconda deactivate deactivates the current environment\n\nconda list lists all packages in the current environment\n\nconda env list lists all environments (with the current active environment asterisked)\n\nconda env remove -n my_env deletes the my_env environment\n\nThe official documentation and this guide from the Carpentries are also helpful resources."
+    "text": "5 Additional resources\n\nRPython\n\n\nThe 10-minute talk from rstudio::conf(2022) called You should be using renv from E. David Aja is a great overview of the motivation for using the tool. We also recommend the official Introduction to renv and Collaborating with renv vignettes.\n\n\nWe recommend keeping the official conda cheat sheet handy.\nIn addition to the commands included above, a few other commonly used conda commands include:\n\nconda deactivate deactivates the current environment\nconda list lists all packages in the current environment\nconda env list lists all environments (with the current active environment asterisked)\nconda env remove -n my_env deletes the my_env environment\n\nThe official documentation and this guide from the Carpentries are also helpful resources."
   },
   {
     "objectID": "virtual-envs/virtual-envs.html#getting-help",
@@ -215,5 +215,33 @@
     "title": "Virtual Environments",
     "section": "7 Obligatory xkcd comic",
     "text": "7 Obligatory xkcd comic\nI couldn’t pick just one, so here’s three:\n\nDependencyPython EnvironmentWorkflow"
+  },
+  {
+    "objectID": "y-drive/y-drive.html",
+    "href": "y-drive/y-drive.html",
+    "title": "Using Git/Github with the Y Drive",
+    "section": "",
+    "text": "So you’ve learned about the power of Git/Github and now want to use it in your projects. That’s great news! But if your project data is stored on the Y Drive (aka ares) for confidentiality reasons, you’ll have to jump through a few extra hoops. Below are instructions on how to set up a Github repo to play nicely with the Y drive."
+  },
+  {
+    "objectID": "y-drive/y-drive.html#set-up-the-y-drive-folder-for-data",
+    "href": "y-drive/y-drive.html#set-up-the-y-drive-folder-for-data",
+    "title": "Using Git/Github with the Y Drive",
+    "section": "1.1 1) Set up the Y Drive folder (for data)",
+    "text": "1.1 1) Set up the Y Drive folder (for data)\n\nReach out to Hadi Jeddy in TECH to get a Y drive folder created for your project and give the appropriate project staff access.\nSecurely move the project data files into the assigned Y drive folder. Inside the Y Drive folder we recommend the following folder structure:\n- projectfolder/\n    - data/\n        - raw-data/\n        - intermediate-data/\n        - final-data/\n\nThe data you move in to the Y drive should go into the data/raw-data folder and manipulated data can go into the other folders.\nNote that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script and there is no way to restore changes.\nFor this reason, we suggest a) keeping the data files inside raw-data untouched and never programmatically write to that folder and b) keeping a clear script copy of how you transform the files inside raw-data so that if needed you can easily regenerate intermediate and final data files."
+  },
+  {
+    "objectID": "y-drive/y-drive.html#set-up-the-git-repo-for-scripts",
+    "href": "y-drive/y-drive.html#set-up-the-git-repo-for-scripts",
+    "title": "Using Git/Github with the Y Drive",
+    "section": "1.2 2) Set up the git repo (for scripts)",
+    "text": "1.2 2) Set up the git repo (for scripts)\n\nUse Virtual Desktop to open either Win10 Secure or PGP. Note Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code.\nIf you’re on PGP, install Github desktop from this link: https://desktop.github.com/. Win 10 Secure should already have this\nOpen up Github desktop and login to your Github account. If you don’t have one, you will need to signup here and them fill out this smartsheet form to be added to the Urban Institute organizations. Once someone adds you to the 2 Urban organizations, you will receive 2 emails asking if you want to join. You will have to click join in each of those emails to be succesfully added to our Github organizations.\nClick Add > Create new repository. In the popup screen, enter in an informative name for your repo, and project description. Use the example screenshot below for guidance.\nWe recommend initializing the repo with a README (with background information/instructions for running your code) and selecting a gitignore (to ignore certain R/Sas/Stata temporary files). Very importantly, when selecting a local path to create your repository, make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped Y: drive. By default, Github Desktop should try to create the repo in \\\\Ares\\CTX_RedirectedFolders$\\username\\My Documents\\GitHub. While that may look weird, that is an acceptable filepath and will put the repo in the My Documents\\Github folder of the virtual desktop. Also make sure to create the repostiory in the private UI-Research organization. The Urban Institute organization only contains public facing code. Once you’re ready, select Create Repository.\nThis should create the repository (ie folder) in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to Github Desktop, select Repository in the top left and then Show in File Explorer.\nClick Publish Repo in the top right of Github Desktop to send the repo to Github.com\nInside the Git repo (ie folder) we suggest the following folder structure:\n\n README.md\n scripts/\n    somescript.R\n    someotherscript.R\nWhere the scripts folder contains all code for the project (feel free to create subfolders as you see fit).\n\nMake some changes to your project, like updating the README, or adding scripts. Then commit the changes on Github Desktop and push the changes.\nEach member of your project team will need to now clone the repo into a local path on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the git repo into the mapped Y drive."
+  },
+  {
+    "objectID": "y-drive/y-drive.html#write-scripts-and-commit-to-gitgithub",
+    "href": "y-drive/y-drive.html#write-scripts-and-commit-to-gitgithub",
+    "title": "Using Git/Github with the Y Drive",
+    "section": "1.3 3) Write scripts and commit to Git/Github",
+    "text": "1.3 3) Write scripts and commit to Git/Github\nNow you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data readin/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has urban network access to the Y Drive (ie the 2 virtual machines specified above).\n\nlibrary(tidyverse)\n\n# --- Read in Data ---\n\n## We recommend using the full filepath which starts with\n## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to\n## replace CENTER and projectfolder with your respective values\nraw_data <- read_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n## Also acceptable filepath which uses \"Y:\" drive mapping built into virtual\n## desktops. This could change in the future though\nraw_data <- read_csv(\"Y:/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n\n# --- Write out Data ---\nraw_data %>%\n  write_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv\")"
   }
 ]

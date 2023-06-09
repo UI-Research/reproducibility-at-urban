@@ -1,14 +1,16 @@
 ---
 title: "Git Installation"
-output:
-  pdf_document:
-    latex_engine: xelatex
-urlcolor: blue
-geometry: margin=1.5in
-editor:
-  mode: source
-editor_options:
-  chunk_output_type: console
+subtitle: Instructions to install and access Git and Github
+
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+format:
+  html:
+    toc: true
+    number-sections: true
+editor: visual
+execute:
+  echo: true
+  eval: false
 ---
 
 ## Background

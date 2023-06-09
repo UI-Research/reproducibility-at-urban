@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-06-09">
 
 <title>Reproducibility at Urban - Git Installation</title>
 <style>
@@ -82,11 +83,25 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../index.html">Home</a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../git-installation/git-installation.html" aria-current="page">Git Installation</a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gitgithub" role="button" data-bs-toggle="dropdown" aria-expanded="false">Git/Github</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-gitgithub">    
+        <li>
+    <a class="dropdown-item" href="../git-installation/git-installation.html">
+ <span class="dropdown-text">Git Installation</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../urbngit/urbngit.html">
+ <span class="dropdown-text">Git and Github</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../y-drive/y-drive.html">
+ <span class="dropdown-text">Git and Github on the Y Drive</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../urbngit/urbngit.html">Git and Github</a>
+    <a class="nav-link" href="../virtual-envs/virtual-envs.html">Virtual Environments</a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -103,17 +118,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
-  <li><a href="#installation-and-registration" id="toc-installation-and-registration" class="nav-link" data-scroll-target="#installation-and-registration">Installation and registration</a>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="toc-section-number">1</span>  Background</a></li>
+  <li><a href="#installation-and-registration" id="toc-installation-and-registration" class="nav-link" data-scroll-target="#installation-and-registration"><span class="toc-section-number">2</span>  Installation and registration</a>
   <ul class="collapse">
-  <li><a href="#git-installation-for-windows" id="toc-git-installation-for-windows" class="nav-link" data-scroll-target="#git-installation-for-windows">git installation for Windows</a></li>
-  <li><a href="#git-installation-for-mac-osx" id="toc-git-installation-for-mac-osx" class="nav-link" data-scroll-target="#git-installation-for-mac-osx">git installation for Mac OSX</a></li>
+  <li><a href="#git-installation-for-windows" id="toc-git-installation-for-windows" class="nav-link" data-scroll-target="#git-installation-for-windows"><span class="toc-section-number">2.1</span>  git installation for Windows</a></li>
+  <li><a href="#git-installation-for-mac-osx" id="toc-git-installation-for-mac-osx" class="nav-link" data-scroll-target="#git-installation-for-mac-osx"><span class="toc-section-number">2.2</span>  git installation for Mac OSX</a></li>
   </ul></li>
-  <li><a href="#github-account" id="toc-github-account" class="nav-link" data-scroll-target="#github-account">GitHub account</a>
+  <li><a href="#github-account" id="toc-github-account" class="nav-link" data-scroll-target="#github-account"><span class="toc-section-number">3</span>  GitHub account</a>
   <ul class="collapse">
-  <li><a href="#configure-git-and-github" id="toc-configure-git-and-github" class="nav-link" data-scroll-target="#configure-git-and-github">Configure Git and GitHub</a></li>
+  <li><a href="#configure-git-and-github" id="toc-configure-git-and-github" class="nav-link" data-scroll-target="#configure-git-and-github"><span class="toc-section-number">3.1</span>  Configure Git and GitHub</a></li>
   </ul></li>
-  <li><a href="#more-resources" id="toc-more-resources" class="nav-link" data-scroll-target="#more-resources">More resources</a></li>
+  <li><a href="#more-resources" id="toc-more-resources" class="nav-link" data-scroll-target="#more-resources"><span class="toc-section-number">4</span>  More resources</a></li>
   </ul>
 </nav>
     </div>
@@ -123,6 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Git Installation</h1>
+<p class="subtitle lead">Instructions to install and access Git and Github</p>
 </div>
 
 
@@ -130,35 +146,41 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 9, 2023</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
+<section id="background" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="background"><span class="header-section-number">1</span> Background</h2>
 <p>Git is a distributed version-control system for tracking changes in code. Git is free, open-source software and can be used locally without an internet connection. It’s like a turbo-charged version of track changes for code.</p>
 <p><a href="https://github.com/">GitHub</a>, which is owned by Microsoft, is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It’s like a turbo-charged version of Box for sharing repositories created using Git.</p>
 <p>At first, it’s easy to mix up Git and GitHub. Just try to remember that they are separate tools that complement each other well.</p>
 <p>The objective is to create local repositories that track code, and sometimes data, and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push the changes to a repo</p>
 </section>
-<section id="installation-and-registration" class="level2">
-<h2 class="anchored" data-anchor-id="installation-and-registration">Installation and registration</h2>
-<section id="git-installation-for-windows" class="level3">
-<h3 class="anchored" data-anchor-id="git-installation-for-windows">git installation for Windows</h3>
+<section id="installation-and-registration" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="installation-and-registration"><span class="header-section-number">2</span> Installation and registration</h2>
+<section id="git-installation-for-windows" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="git-installation-for-windows"><span class="header-section-number">2.1</span> git installation for Windows</h3>
 <p>Install <a href="https://git-scm.com/downloads">Git for Windows</a>. Keep all default selections and <strong>be sure to install Git Bash</strong>. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select <code>Git Bash Here</code>.</p>
 </section>
-<section id="git-installation-for-mac-osx" class="level3">
-<h3 class="anchored" data-anchor-id="git-installation-for-mac-osx">git installation for Mac OSX</h3>
+<section id="git-installation-for-mac-osx" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="git-installation-for-mac-osx"><span class="header-section-number">2.2</span> git installation for Mac OSX</h3>
 <p>Install <a href="https://git-scm.com/downloads">Git for Mac OSX</a>. Mac already has the terminal. Open the terminal and type <code>git</code>. If everything is properly installed, a list of possible command will show up.</p>
 </section>
 </section>
-<section id="github-account" class="level2">
-<h2 class="anchored" data-anchor-id="github-account">GitHub account</h2>
+<section id="github-account" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="github-account"><span class="header-section-number">3</span> GitHub account</h2>
 <p>Create a <a href="https://github.com/">GitHub account</a>. There is no need to associate you account with Georgetown or a Georgetown email address. Many people want to GitHub for personal projects too.</p>
-<section id="configure-git-and-github" class="level3">
-<h3 class="anchored" data-anchor-id="configure-git-and-github">Configure Git and GitHub</h3>
+<section id="configure-git-and-github" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="configure-git-and-github"><span class="header-section-number">3.1</span> Configure Git and GitHub</h3>
 <p>The following steps link your local Git to Github.</p>
 <p>In any directory on your computer, right click and select <code>Git Bash Here</code> on Windows or open Terminal on Mac.</p>
 <p>Submit the following with your GitHub username in quotes:</p>
@@ -171,8 +193,8 @@ ul.task-list li input[type="checkbox"] {
 <p><code>git config --global user.email</code></p>
 </section>
 </section>
-<section id="more-resources" class="level2">
-<h2 class="anchored" data-anchor-id="more-resources">More resources</h2>
+<section id="more-resources" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="more-resources"><span class="header-section-number">4</span> More resources</h2>
 <ul>
 <li><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git Cheat Sheet</a></li>
 <li><a href="https://happygitwithr.com/">Happy Git and GitHub for the UserR</a></li>
