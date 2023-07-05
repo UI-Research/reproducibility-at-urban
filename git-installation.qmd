@@ -1,0 +1,73 @@
+---
+title: Git and GitHub Access and Installation 
+subtitle: How to Install and Access Git and GitHub at the Urban Institute
+date: today
+---
+
+This guide is intended to help Urban Institute employees get started accessing and installing Git and GitHub. You should generally only have to complete the steps in this guide once during your time at Urban. 
+
+We know that learning these tools can be a challenge, but we're here for you! Drop a message in the [#github Slack channel](https://theurbaninstitute.slack.com/archives/C6J9AALDR) if you run into issues, and we will be happy to help out.
+
+## Background
+
+Version control is a system for managing and recording changes to files over time. Version control can:
+
+* Limit the chance of making a mistake 
+* Maximize the chance of catching a mistake when it happens
+* Create a permanent record of changes to code
+* Easily undo mistakes by switching between iterations of code
+* Allow multiple paths of development while protecting working versions of code
+* Encourage communication between collaborators
+* Be used for external communication
+
+**Git** is a distributed version-control system for tracking changes in code. Git is free, open-source software and can be used locally without an internet connection. It's like a turbo-charged version of track changes for code.
+
+**GitHub** is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It's like a turbo-charged version of Box for sharing repositories created using Git.
+
+The objective of using Git and GitHub is to create local repositories that track code, and sometimes data, and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push their changes to that repository.
+
+## Installation and registration
+
+### git installation for Windows
+
+Install [Git for Windows](https://git-scm.com/downloads). Keep all default selections and **be sure to install Git Bash**. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select `Git Bash Here`.
+
+### git installation for Mac OS
+
+Install [Git for Mac OS](https://git-scm.com/downloads). Mac already has the terminal. Open the terminal and type `git`. If everything is properly installed, a list of possible command will show up.
+
+## GitHub account
+
+Create a [GitHub account](https://github.com/). There is no need to associate your account with the Urban Institute or an Urban Institute email address. Many people want to use GitHub for personal projects too. 
+
+After creating an account, fill out Urban's [GitHub intake form](https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5) to join Urban's primary GitHub organization, [UI-Research](https://github.com/UI-Research). Note that Urban has another GitHub organization, [UrbanInstitute](https://github.com/UrbanInstitute), that is primarily used for public-facing repositories. 
+
+## Configure Git and GitHub
+
+Link your local Git to GitHub by submitting the following with your GitHub username in quotes:
+```{.bash}
+git config --global user.name "<your_github_username>"
+```
+
+You should also submit the email address linked to your GitHub account: 
+```{.bash}
+git config --global user.email "<your_email_address>"
+```
+
+## Authentication and tokens
+
+You will need to create a personal access token (PAT) to replace your password and provide enhanced security. [Since 2021](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/), GitHub has required PATs to perform Git operations. To create a PAT: 
+
+1. Log into your [GitHub account](https://github.com/). Navigate to the drop-down menu in the top right corner with your profile picture. Select **Settings** near the bottom of this drop-down.
+
+2. From your account settings, navigate to **Developer Settings**, at the bottom of the menu on the left.
+
+3. From the developer settings, navigate to **Personal Access Tokens** in the menu on the left.
+
+4. Click **Generate new token (classic)**. You may be prompted to re-enter your GitHub password.
+
+5. Add a note to label the token. This is useful if you intend to generate multiple tokens for different uses. Then, set a time limit for the token – you can set this to never expire. Finally, select the scope of permissions you would like to give the token - you can select all all options. Then click **Generate token**.
+
+6. The generated token will appear. **Make sure to copy and safely store the token when it appears, as you will not be able to view it again**. Note that if you lose your token, you can always generate a new one. Use this in place of your GitHub password when prompted by Git (or when using the GitHub API). 
+
+The first time you attempt to clone (copy to your computer) a repository that is private on GitHub, Git will prompt you for your credentials. Your username is just your GitHub username. Your password should be the PAT that you created. 

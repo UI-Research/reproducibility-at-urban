@@ -1,5 +1,9 @@
 ---
 title: "Reproducibility at Urban"
+format:
+  html:
+    toc: false
+    number-sections: false
 ---
 
 This website contains resources for embracing reproducible research at the Urban Institute. Click the links above to get started learning about reproducible research!

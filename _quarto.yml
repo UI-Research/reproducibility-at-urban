@@ -6,20 +6,21 @@ website:
   title: "Reproducibility at Urban"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - text: "Git/Github"
+      - text: "Git & GitHub"
         menu:
-        - href: git-installation/git-installation.qmd
-          text: Git Installation
-        - href: urbngit/urbngit.qmd
-          text: Git and Github
-        - href: y-drive/y-drive.qmd
-          text: Git and Github on the Y Drive
-      - href: virtual-envs/virtual-envs.qmd
+        - href: git-installation.qmd
+          text: Access & Installation
+        - href: git-workflow.qmd
+          text: General Workflow
+        - href: git-y-drive.qmd
+          text: Confidential Data Workflow 
+        - href: git-faqs.qmd
+          text: FAQs & Other Resources 
+      - href: virtual-environments.qmd
         text: Virtual Environments
 
 format:
   html:
     css: styles.css
     toc: true
+    number-sections: true

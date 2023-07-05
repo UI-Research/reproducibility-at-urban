@@ -1,107 +1,38 @@
-.container-fluid {
+/* Site fonts */ 
+body {
 	font-family: Lato;
+  }
+
+h1 {
+	color: #1696d2  
 }
 
-/* increase space between paragraphs */
-p {
-    margin: 15px 0 15px 0;
-}
-
-/* make titles blue */
-	h1 {
-		color: #1696d2;
-	}
-
+/* Site navigation bar */  
 .navbar {
   background-color: #1696d2;
   color: #ffffff;
   font-weight: bold;
 }
 
-.navbar-default .navbar-brand {
-    color: #FFFFFF;
+/* Links */ 
+a {
+	color: #1696d2 
 }
 
-.container {
-  color: #ff0000;
+/* Page table of contents */ 
+.sidebar nav[role=doc-toc] ul > li > a.active, .sidebar nav[role=doc-toc] ul > li > ul > li > a.active {
+	color: #1696d2 !important; 
+} 
+
+.sidebar nav[role=doc-toc] ul>li>a:hover, .sidebar nav[role=doc-toc] ul>li>ul>li>a:hover {
+	color: #1696d2 !important; 
 }
 
-.navbar-default .navbar-nav>li>a {
-    color: #FFFFFF;
+.sidebar nav[role=doc-toc] ul > li > a.active {
+	border-left: 1px solid #1696d2 !important
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #1696d2;
-    background-color: #FFFFFF;
-}
-
-/* Global Formats */
-.main-container {
-  font-family: Lato;
-}
-
-/* Hyper-links */
-.a {
-	color: #1696d2;
-}
-
-/* Header image formatting */
-#header {
-	padding-top: 12px;
-}
-
-/* Legend Formatting */
-.list-group-item.active {
-	background-color: #1696d2;
-  border-color: #1696d2;
-}
-
-.list-group-item.active:hover {
-	background-color: #000000;
-  border-color: #000000;
-}
-
-.tocify {
-	border-radius: 0;
-}
-
-/* Button Formatting */
-.btn {
-	border-radius: 0;	
-}
-
-/* tabs formatting */
-.nav-tabs>li>a {
-	border-radius: 0;
-}
-
-
-/*pills formatting */
-.nav-pills>li.active>a {
-	background-color: #e88e2d;
-}
-
-.nav-pills>li.active>a:focus {
-	background-color: #e88e2d;
-}
-
-
-.nav>li>a:focus {
-	background-color: #fff2cf;
-}
-
-.nav>li>a:hover {
-	background-color: #fff2cf;
-}
-
-a:focus {
-	color: #e88e2d;
-}
-
-a:hover {
-	color: #e88e2d;
-}
-
-a[role=tab] {
-	color: #ca5800;
+/* Tabsets */ 
+.nav-tabs .nav-link {
+	color: #1696d2 
 }
