@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Reproducibility at Urban"
+  navbar:
+    left:
+      - text: "Git & GitHub"
+        menu:
+        - href: git-installation.qmd
+          text: Access & Installation
+        - href: git-workflow.qmd
+          text: General Workflow
+        - href: git-y-drive.qmd
+          text: Confidential Data Workflow 
+        - href: git-faqs.qmd
+          text: FAQs & Other Resources 
+      - href: virtual-environments.qmd
+        text: Virtual Environments
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    number-sections: true

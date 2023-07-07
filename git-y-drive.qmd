@@ -1,0 +1,91 @@
+---
+title: Git and Github with Confidential Data 
+subtitle: How to Use Git and GitHub with Confidential Data on the Y Drive (Ares Drive) 
+date: today
+---
+
+So you've learned about the power of Git/Github and now want to use it in your projects. That's great news! But if your project data is stored on the Y Drive (aka `ares`) for confidentiality reasons, you'll have to jump through a few extra hoops. Below are instructions on how to set up a Github repo to play nicely with the Y drive.
+
+## The big picture
+-   Store all data directly on the Y Drive
+-   Store all scripts in a Git repo
+-   Create/clone the Git repo on either the `Urban Users PGP` or `Win 10 Secure` Virtual Machines local drive. 
+-   Keep that git repo with the scripts completely separate from the Y Drive folder with the data
+-   Within your scripts, always read in data using the direct Y Drive
+    filepaths and write out intermediate/final data files using direct Y
+    Drive filepaths.
+
+This means your scripts will live in a separate place (usually the Documents folder of the virtual desktop) from your data (somewhere in the Y Drive) and only your scripts will be on Git/Github. So while changes to your scripts will be tracked with all the power of Github, your data will not. 
+
+If your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can't put your data in Git/Github for security reasons (and therefore won't get the power of Git and file tracking for the data).
+
+Now that's out of the way, how do you setup Git/Github with your confidential data?
+
+## Set up the Y Drive folder (for data)
+
+1)  Reach out to Hadi Jeddy in TECH to get a Y drive folder created for
+    your project and give the appropriate project staff access.
+
+2)  Securely move the project data files into the assigned Y drive
+    folder. Inside the Y Drive folder we recommend the following folder
+    structure:
+
+    ```
+    - projectfolder/
+        - data/
+            - raw-data/
+            - intermediate-data/
+            - final-data/
+    ```
+
+The data you move in to the Y drive should go into the `data/raw-data` folder and manipulated data can go into the other folders.
+
+Note that because the data files aren't in the Git repo,  it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script and there is no way to restore changes. 
+
+For this reason, we suggest a) keeping the data files inside `raw-data` untouched and never programmatically write to that folder and b) keeping a clear script copy of how you transform the files inside `raw-data` so that if needed you can easily regenerate intermediate and final data files.
+
+
+## Set up the git repo (for scripts)
+
+1. Use Virtual Desktop to open either Win10 Secure or PGP. Note Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code.
+2. If you're on PGP, install Github desktop from this link: <https://desktop.github.com/>. Win 10 Secure should already have this. 
+3. Open up Github desktop and login to your Github account. If you don't have one, you will need to signup [here](https://github.com/join) and them fill out [this smartsheet form](https://github.com/join) to be added to the Urban Institute organizations. Once someone adds you to the 2 Urban organizations, you will receive 2 emails asking if you want to join. You will have to click join in **each** of those emails to be succesfully added to our Github organizations.
+4. Click `Add` \> `Create new repository`. In the popup screen, enter in an informative name for your repo, and project description. Use the example screenshot below for guidance. We recommend initializing the repo with a README (with background information/instructions for running your code) and selecting a gitignore (to ignore certain R/Sas/Stata temporary files). Very importantly, when selecting a `local path` to create your repository, **make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped `Y:` drive**. By default, Github Desktop should try to create the repo in `\\Ares\CTX_RedirectedFolders$\username\My Documents\GitHub`. While that may look weird, that is an acceptable filepath and will put the repo in the `My Documents\Github` folder of the virtual desktop. Also make sure to create the repostiory in the private `UI-Research` organization. The  `Urban Institute` organization only contains public facing code. Once you're ready, select `Create Repository`.
+5. This should create the repository (ie folder) in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to Github Desktop, select `Repository` in the top left and then `Show in File Explorer`.
+6. Click `Publish Repo` in the top right of Github Desktop to send the repo to Github.com
+7. Inside the Git repo (ie folder) we suggest the following folder structure:
+
+    ```
+    README.md
+    scripts/
+        somescript.R
+        someotherscript.R
+    ```
+
+Where the `scripts` folder contains all code for the project (feel free to create subfolders as you see fit).
+8. Make some changes to your project, like updating the README, or adding scripts. Then `commit` the changes on Github Desktop and `push` the changes.
+9. Each member of your project team will need to now `clone` the repo into a local path on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the git repo into the mapped Y drive.
+
+## Write scripts and commit to Git/Github 
+
+Now you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data readin/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has urban network access to the Y Drive (ie the 2 virtual machines specified above).
+
+```{r, eval = F}
+library(tidyverse)
+
+# --- Read in Data ---
+
+## We recommend using the full filepath which starts with
+## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to
+## replace CENTER and projectfolder with your respective values
+raw_data <- read_csv("//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv")
+
+## Also acceptable filepath which uses "Y:" drive mapping built into virtual
+## desktops. This could change in the future though
+raw_data <- read_csv("Y:/CENTER/projectfolder/data/raw-data/ex.csv")
+
+
+# --- Write out Data ---
+raw_data %>%
+  write_csv("//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv")
+```
