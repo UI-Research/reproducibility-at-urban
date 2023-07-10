@@ -46,8 +46,8 @@ knitr::include_graphics("images/git-workflow-v2.png")
 #### Option 1
 Use this option if you do not already have a project folder on your computer and are starting from scratch. 
 
-1. Under [UI-Research](https://github.com/orgs/UI-Research/repositories) on GitHub, click the green button titled **New Repository** (top, right corner). Give the repository a name, and click **Create Repository**. 
-2. On GitHub, navigate to the repo that you just created and click the green button titled **Code** (top, right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
+1. Under [UI-Research](https://github.com/orgs/UI-Research/repositories) on GitHub, click the green button titled **New Repository** (top right corner). Give the repository a name, and click **Create Repository**. 
+2. On GitHub, navigate to the repo that you just created and click the green button titled **Code** (top right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
 3. Navigate to the directory where you want to keep the repo on your computer. Using the URL that you copied in the last step, clone the repository:   
 ```{.bash}
 git clone <remote_url_for_your_repo>
@@ -56,8 +56,8 @@ git clone <remote_url_for_your_repo>
 #### Option 2
 Use this option if you already have a project folder on your computer and want to turn that folder into a GitHub repository. 
 
-1. Under [UI-Research](https://github.com/orgs/UI-Research/repositories) on GitHub, click the green button titled **New Repository** (top, right corner). Give the repository the same name as your directory, and click **Create Repository**. 
-2. On GitHub, navigate to the repo that you just created and click the green button titled **Code** (top, right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
+1. Under [UI-Research](https://github.com/orgs/UI-Research/repositories) on GitHub, click the green button titled **New Repository** (top right corner). Give the repository the same name as your directory, and click **Create Repository**. 
+2. On GitHub, navigate to the repo that you just created and click the green button titled **Code** (top right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
 3. Navigate to the root of your project folder and initialize a local repository:   
 ```{.bash}
 git init
@@ -75,7 +75,7 @@ git remote add origin <remote_url_for_your_repo>
 
 If you want to clone a repository that already exists on GitHub to your computer: 
 
-1. On GitHub, navigate to the repo, and click the green button titled **Code** (top, right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
+1. On GitHub, navigate to the repo, and click the green button titled **Code** (top right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
 2. Navigate to the directory where you want to keep the repo on your computer. Using the URL that you copied in the last step, clone the repository:   
 ```{.bash}
 git clone <remote_url_for_your_repo>
@@ -96,12 +96,12 @@ Teams are useful if you have a set of users who will all need access to multiple
 
 The most common Git commands you will use include `git add`, `git commit`, and `git push`. These tell Git which files to track, when to take snapshots of those files, and when to send those snapshots to GitHub for others to see. 
 
-`git add` adds a file to Git's staging area. It tells Git, "hey, look at this file." 
+`git add` adds a file to Git's staging area. It tells Git, "Hey, look at this file." 
 ```{.bash}
 git add <file_name>
 ``` 
 
-`git commit` commits changes made to added files to the repository. It says, "hey, take a snapshot of the files I've added."
+`git commit` commits changes made to added files to the repository. It says, "Hey, take a snapshot of the files I've added."
 ```{.bash}
 git commit -m "<message>" 
 ```
@@ -126,7 +126,7 @@ knitr::include_graphics("images/git-github-workflow-v2.png")
 
 The main benefit of version control is making sure you and your collaborators are all using the latest and greatest version of your code. When working individually, this will just be your local version. When working with others, you should pull down the latest changes that anyone has pushed remotely before making further updates. 
 
-`git pull` copies the latest changes that anyone has pushed remotely to your local repository. It says, "hey, replace my local version with the current version on GitHub." The command below will pull the latest version on the `main` branch. 
+`git pull` copies the latest changes that anyone has pushed remotely to your local repository. It says, "Hey, replace my local version with the current version on GitHub." The command below will pull the latest version on the `main` branch. 
 
 ```{.bash}
 git pull origin main
@@ -138,7 +138,7 @@ knitr::include_graphics("images/git-workflow-collab.png")
 
 ### Branches  
 
-So far in this guide, we've been working off a single `main` branch. By using multiple branches, you and your collaborators can update existing code or add new code without the fear of overwriting each others' files. Branches let you say "hey, I'm going to leave the main version of the code alone while I try some things out over here." 
+So far in this guide, we've been working off a single `main` branch. By using multiple branches, you and your collaborators can update existing code or add new code without the fear of overwriting each others' files. Branches let you say "Hey, I'm going to leave the main version of the code alone while I try some things out over here." 
 
 ```{r echo = FALSE}
 knitr::include_graphics("images/git-branches.png")
@@ -161,7 +161,7 @@ git push origin <name_of_new_branch>
 
 ### Pull requests 
 
-When you're ready to share the updates on your branch with others, open a pull request. This says, "hey, I'd like to merge the work on my branch into the `main` (or some other) branch." Pull requests makes it easy for others to see the changes you've made and provide feedback. They also help organize multiple related commits into a single update. 
+When you're ready to share the updates on your branch with others, open a pull request. This says, "Hey, I'd like to merge the work on my branch into the `main` (or some other) branch." Pull requests makes it easy for others to see the changes you've made and provide feedback. They also help organize multiple related commits into a single update. 
 
 The most common way to open, review, and merge a pull request is through GitHub, rather than from the command line. Different teams develop their own standards for branching and pull requests, but here's a common workflow:  
 
