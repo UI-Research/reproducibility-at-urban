@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.324">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-05">
+<meta name="dcterms.date" content="2023-07-10">
 
 <title>Reproducibility at Urban - Git and Github Workflow</title>
 <style>
@@ -90,7 +90,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -194,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 5, 2023</p>
+      <p class="date">July 10, 2023</p>
     </div>
   </div>
   
@@ -240,8 +241,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Use this option if you do not already have a project folder on your computer and are starting from scratch.</p>
 <ol type="1">
-<li>Under <a href="https://github.com/orgs/UI-Research/repositories">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top, right corner). Give the repository a name, and click <strong>Create Repository</strong>.</li>
-<li>On GitHub, navigate to the repo that you just created and click the green button titled <strong>Code</strong> (top, right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
+<li>Under <a href="https://github.com/orgs/UI-Research/repositories">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top right corner). Give the repository a name, and click <strong>Create Repository</strong>.</li>
+<li>On GitHub, navigate to the repo that you just created and click the green button titled <strong>Code</strong> (top right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
 <li>Navigate to the directory where you want to keep the repo on your computer. Using the URL that you copied in the last step, clone the repository:<br>
 </li>
 </ol>
@@ -250,8 +251,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Use this option if you already have a project folder on your computer and want to turn that folder into a GitHub repository.</p>
 <ol type="1">
-<li>Under <a href="https://github.com/orgs/UI-Research/repositories">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top, right corner). Give the repository the same name as your directory, and click <strong>Create Repository</strong>.</li>
-<li>On GitHub, navigate to the repo that you just created and click the green button titled <strong>Code</strong> (top, right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
+<li>Under <a href="https://github.com/orgs/UI-Research/repositories">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top right corner). Give the repository the same name as your directory, and click <strong>Create Repository</strong>.</li>
+<li>On GitHub, navigate to the repo that you just created and click the green button titled <strong>Code</strong> (top right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
 <li>Navigate to the root of your project folder and initialize a local repository:<br>
 </li>
 </ol>
@@ -270,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>This only needs to happen once per repository per computer!</em></p>
 <p>If you want to clone a repository that already exists on GitHub to your computer:</p>
 <ol type="1">
-<li>On GitHub, navigate to the repo, and click the green button titled <strong>Code</strong> (top, right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
+<li>On GitHub, navigate to the repo, and click the green button titled <strong>Code</strong> (top right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
 <li>Navigate to the directory where you want to keep the repo on your computer. Using the URL that you copied in the last step, clone the repository:<br>
 </li>
 </ol>
@@ -289,9 +290,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-commands-and-workflow" class="level3" data-number="2.5">
 <h3 data-number="2.5" class="anchored" data-anchor-id="basic-commands-and-workflow"><span class="header-section-number">2.5</span> Basic commands and workflow</h3>
 <p>The most common Git commands you will use include <code>git add</code>, <code>git commit</code>, and <code>git push</code>. These tell Git which files to track, when to take snapshots of those files, and when to send those snapshots to GitHub for others to see.</p>
-<p><code>git add</code> adds a file to Git’s staging area. It tells Git, “hey, look at this file.”</p>
+<p><code>git add</code> adds a file to Git’s staging area. It tells Git, “Hey, look at this file.”</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>file_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>git commit</code> commits changes made to added files to the repository. It says, “hey, take a snapshot of the files I’ve added.”</p>
+<p><code>git commit</code> commits changes made to added files to the repository. It says, “Hey, take a snapshot of the files I’ve added.”</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"&lt;message&gt;"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>git status</code> prints out important information about your repo. Use it before and after most commands to understand how files have changed in your repo.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -308,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="collaborative-workflow" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="collaborative-workflow"><span class="header-section-number">3</span> Collaborative workflow</h2>
 <p>The main benefit of version control is making sure you and your collaborators are all using the latest and greatest version of your code. When working individually, this will just be your local version. When working with others, you should pull down the latest changes that anyone has pushed remotely before making further updates.</p>
-<p><code>git pull</code> copies the latest changes that anyone has pushed remotely to your local repository. It says, “hey, replace my local version with the current version on GitHub.” The command below will pull the latest version on the <code>main</code> branch.</p>
+<p><code>git pull</code> copies the latest changes that anyone has pushed remotely to your local repository. It says, “Hey, replace my local version with the current version on GitHub.” The command below will pull the latest version on the <code>main</code> branch.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
@@ -317,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="branches" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="branches"><span class="header-section-number">3.1</span> Branches</h3>
-<p>So far in this guide, we’ve been working off a single <code>main</code> branch. By using multiple branches, you and your collaborators can update existing code or add new code without the fear of overwriting each others’ files. Branches let you say “hey, I’m going to leave the main version of the code alone while I try some things out over here.”</p>
+<p>So far in this guide, we’ve been working off a single <code>main</code> branch. By using multiple branches, you and your collaborators can update existing code or add new code without the fear of overwriting each others’ files. Branches let you say “Hey, I’m going to leave the main version of the code alone while I try some things out over here.”</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/git-branches.png" class="img-fluid" width="1089"></p>
@@ -332,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pull-requests" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="pull-requests"><span class="header-section-number">3.2</span> Pull requests</h3>
-<p>When you’re ready to share the updates on your branch with others, open a pull request. This says, “hey, I’d like to merge the work on my branch into the <code>main</code> (or some other) branch.” Pull requests makes it easy for others to see the changes you’ve made and provide feedback. They also help organize multiple related commits into a single update.</p>
+<p>When you’re ready to share the updates on your branch with others, open a pull request. This says, “Hey, I’d like to merge the work on my branch into the <code>main</code> (or some other) branch.” Pull requests makes it easy for others to see the changes you’ve made and provide feedback. They also help organize multiple related commits into a single update.</p>
 <p>The most common way to open, review, and merge a pull request is through GitHub, rather than from the command line. Different teams develop their own standards for branching and pull requests, but here’s a common workflow:</p>
 <ol type="1">
 <li><p>From your repo, click <strong>Pull requests</strong> (along the top) and then click the green <strong>New pull request</strong> button.</p></li>

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.324">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-05">
+<meta name="dcterms.date" content="2023-07-10">
 
 <title>Reproducibility at Urban - Git and Github FAQs</title>
 <style>
@@ -56,7 +56,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -146,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 5, 2023</p>
+      <p class="date">July 10, 2023</p>
     </div>
   </div>
   
@@ -162,17 +163,17 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Git and GitHub seem a little scary. How do I get started?</strong><br>
 Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.</p></li>
 <li><p><strong>Where can I go for help if I get stuck?</strong><br>
-Running into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR">#github Slack channel</a> when you have issues, or email Aaron Williams (awilliams@urban.org) or Erika Tyagi (etyagi@urban.org).</p></li>
+Running into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR">#github Slack channel</a> when you have issues, or email Aaron Williams (<a href="mailto:awilliams@urban.org">awilliams@urban.org</a>) or Erika Tyagi (<a href="mailto:etyagi@urban.org">etyagi@urban.org</a>).</p></li>
 <li><p><strong>Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?</strong><br>
 Yes! Read <a href="confidential-data-and-git.html">this guide</a> for tips on how to do so.</p></li>
 <li><p><strong>Should I use Git inside of Box? (i.e.&nbsp;turn a Box folder into a Git repository)</strong><br>
 No – we strongly recommend keeping Box folders and GitHub repositories separate.</p></li>
 <li><p><strong>What kinds of files should I track with Git?</strong><br>
-Generally, you should only track code (i.e.&nbsp;scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e.&nbsp;Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should <strong>never</strong> store confidential data on GitHub (even in a private repository). We recommend getting familiar with <code>.gitignore</code> <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template <code>.gitignore</code> files for specific programming languages (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/R.gitignore">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore">Python</a>) or operating systems (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore">MacOS</a>) that can be useful as a starting point.</p></li>
+Generally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should <strong>never</strong> store confidential data on GitHub (even in a private repository). We recommend getting familiar with <code>.gitignore</code> <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template <code>.gitignore</code> files for specific programming languages (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/R.gitignore">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore">Python</a>) or operating systems (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore">MacOS</a>) that can be useful as a starting point.</p></li>
 <li><p><strong>How do I add documentation to my repositories?</strong><br>
 Use <code>README</code> <a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/">files</a> to add context and documentation to your repos. These are <a href="https://www.markdownguide.org/getting-started/">Markdown</a> files in the root of your directory named <code>README.md</code> that can help folks understand the structure and contents of your repo. <a href="https://markdownlivepreview.com/">Markdown Live Preview</a> can be a useful tool to help with formatting.</p></li>
 <li><p><strong>What permissions should I give my collaborators?</strong><br>
-In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the <strong>Write</strong> role, but you should refer to GitHub’s <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the #github Slack channel.</p></li>
+In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the <strong>Write</strong> role, but you should refer to GitHub’s <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR">#github Slack channel</a>.</p></li>
 <li><p><strong>Are there other commands that can be helpful when using Git from the command line?</strong><br>
 Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include <code>pwd</code> (to print your current directory), <code>cd</code> (to change directories), and <code>ls</code> (to list the files in a directory). For an introduction to these, and other, commands, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html">this guide</a> from Happy Git with R.</p></li>
 <li><p><strong>Where did the cute images in this guide come from?</strong><br>
