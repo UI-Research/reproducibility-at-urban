@@ -72,12 +72,12 @@ If you're using R and Python, `conda` or `renv` are good options given their emp
 ::: panel-tabset
 ### R
 
-To set up a virtual environment for an R project, we recommend using `renv`. To install `renv`, use the standard syntax to install R packages from CRAN: `install.packages("renv")`.
+To set up a virtual environment for an [R project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects), we recommend using `renv`. To install `renv`, use the standard syntax to install R packages from CRAN: `install.packages("renv")`.
 
 ::: callout-note
 ## Where do I run these commands?
 
-All commands below should be run from RStudio within your project's directory.
+All commands below should be run in the RStudio console within your project's directory.
 :::
 
 1.  **Initialize** a new project-specific environment:
@@ -86,7 +86,7 @@ All commands below should be run from RStudio within your project's directory.
     renv::init()
     ```
 
-2.  **Install packages** using your usual workflow:
+2.  **Install packages** using your usual workflow or `renv::install()`, which works with other repositories like GitHub in addition to CRAN:
 
     ``` r
     install.packages("ggplot2")      # install from CRAN
