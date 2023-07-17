@@ -137,7 +137,7 @@
     "href": "git-installation.html#github-account",
     "title": "Git and GitHub Access and Installation",
     "section": "3 GitHub account",
-    "text": "3 GitHub account\nCreate a GitHub account. There is no need to associate your account with the Urban Institute or an Urban Institute email address. Many people want to use GitHub for personal projects too.\nAfter creating an account, fill out Urban’s GitHub intake form to join Urban’s primary GitHub organization, UI-Research. Note that Urban has another GitHub organization, UrbanInstitute, that is primarily used for public-facing repositories."
+    "text": "3 GitHub account\nCreate a GitHub account. There is no need to associate your account with the Urban Institute or an Urban Institute email address. Many people want to use GitHub for personal projects, too.\nAfter creating an account, fill out Urban’s GitHub intake form to join Urban’s primary GitHub organization, UI_Research. Note that Urban has another GitHub organization, UrbanInstitute, that is primarily used for public-facing repositories."
   },
   {
     "objectID": "git-installation.html#configure-git-and-github",
