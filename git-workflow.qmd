@@ -4,15 +4,15 @@ subtitle: How to Use Git and GitHub at the Urban Institute
 date: today
 ---
 
-This guide is intended to help Urban Institute employees get started with Git and GitHub. This guide assumes that you have already gone through the steps in the [Access and Installation Guide](https://ui-research.github.io/reproducibility-at-urban/git-installation.html). 
+This guide is intended to help Urban Institute employees get started with Git and GitHub. This guide assumes that you have already gone through the steps in the <a href="https://ui-research.github.io/reproducibility-at-urban/git-installation.html" target="_blank">Access and Installation Guide</a>. 
 
-We know that learning these tools can be a challenge, but we're here for you! Drop a message in the [#github Slack channel](https://theurbaninstitute.slack.com/archives/C6J9AALDR) if you run into issues, and we will be happy to help out.
+We know that learning these tools can be a challenge, but we're here for you! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues, and we will be happy to help out.
 
 ## Using the command line 
 
-This guide shows how to use Git from the [command line](https://happygitwithr.com/shell.html), which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like [Github Desktop](https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html), or RStudio's built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.
+This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html" target="_blank">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html" target="_blank">Github Desktop</a>, or RStudio's built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.
 
-To run Git commands from the command line on a Windows computer, right click within any directory (i.e. folder) on your computer, and select **Git Bash Here**. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this [tutorial](https://happygitwithr.com/shell.html).
+To run Git commands from the command line on a Windows computer, right click within any directory (i.e. folder) on your computer, and select **Git Bash Here**. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this <a href="https://happygitwithr.com/shell.html" target="_blank">tutorial</a>.
 
 
 ```{.bash}
@@ -46,7 +46,7 @@ knitr::include_graphics("images/git-workflow-v2.png")
 #### Option 1
 Use this option if you do not already have a project folder on your computer and are starting from scratch. 
 
-1. Under [UI-Research](https://github.com/orgs/UI-Research/repositories) on GitHub, click the green button titled **New Repository** (top right corner). Give the repository a name, and click **Create Repository**. 
+1. Under <a href="https://github.com/orgs/UI-Research/repositories" target="_blank">UI-Research</a> on GitHub, click the green button titled **New Repository** (top right corner). Give the repository a name, and click **Create Repository**. 
 2. On GitHub, navigate to the repo that you just created and click the green button titled **Code** (top right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
 3. Navigate to the directory where you want to keep the repo on your computer. Using the URL that you copied in the last step, clone the repository:   
 ```{.bash}
@@ -56,7 +56,7 @@ git clone <remote_url_for_your_repo>
 #### Option 2
 Use this option if you already have a project folder on your computer and want to turn that folder into a GitHub repository. 
 
-1. Under [UI-Research](https://github.com/orgs/UI-Research/repositories) on GitHub, click the green button titled **New Repository** (top right corner). Give the repository the same name as your directory, and click **Create Repository**. 
+1. Under <a href="https://github.com/orgs/UI-Research/repositories" target="_blank">UI-Research</a> on GitHub, click the green button titled **New Repository** (top right corner). Give the repository the same name as your directory, and click **Create Repository**. 
 2. On GitHub, navigate to the repo that you just created and click the green button titled **Code** (top right corner). Copy the HTTPS remote URL. It will look like `https://github.com/UI-Research/<name_of_your_repo>.git`. 
 3. Navigate to the root of your project folder and initialize a local repository:   
 ```{.bash}
@@ -197,7 +197,7 @@ git pull
 
 ## Summary of commands 
 
-The table below summarizes the commands that we've discussed in this guide. There are also tons of Git cheat sheets available online (e.g. from [GitHub Education](https://education.github.com/git-cheat-sheet-education.pdf), from [GitLab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf), or from [Atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)). 
+The table below summarizes the commands that we've discussed in this guide. There are also tons of Git cheat sheets available online (e.g. from <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">GitHub Education</a>, <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf" target="_blank">GitLab</a>, or from <a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_blank">Atlassian</a>. 
 
 | Command                                  | What you're telling Git                                 | 
 | ---------------------------------------- | ------------------------------------------------------- | 
@@ -217,9 +217,9 @@ Phew, that was a lot! If you're new to Git and GitHub, don't get bogged down in 
 
 This guide is meant to be an introduction. Git and GitHub have hundreds of useful commands and features not discussed here. Different folks and teams also have different opinions on workflows and best practices for using these tools. Once you have a grasp of the basics, we encourage you to start exploring to find a workflow that works for you. 
 
-You will inevitably run into errors along the way, but learning how to resolve those will make you a better researcher, programmer, and problem solver. Don't be afraid to ask for help – the [#github Slack channel](https://theurbaninstitute.slack.com/archives/C6J9AALDR) is a great place to start! 
+You will inevitably run into errors along the way, but learning how to resolve those will make you a better researcher, programmer, and problem solver. Don't be afraid to ask for help – the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> is a great place to start! 
 
-Lastly, remember that if things ever go horribly wrong, you can use the inelegant (but effective) ["burn it all down" technique](https://happygitwithr.com/burn.html) to return to a happy state: save your work elsewhere, delete the project folder, and clone a fresh copy of the repository. 
+Lastly, remember that if things ever go horribly wrong, you can use the inelegant (but effective) <a href="https://happygitwithr.com/burn.html" target="_blank">"burn it all down" technique</a> to return to a happy state: save your work elsewhere, delete the project folder, and clone a fresh copy of the repository. 
 
 ```{r echo = FALSE, fig.align="center", out.width="35%"}
 knitr::include_graphics("https://imgs.xkcd.com/comics/git_2x.png")

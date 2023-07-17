@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-10">
+<meta name="dcterms.date" content="2023-07-17">
 
 <title>Reproducibility at Urban - Git and Github Workflow</title>
 <style>
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 10, 2023</p>
+      <p class="date">July 17, 2023</p>
     </div>
   </div>
   
@@ -205,12 +205,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This guide is intended to help Urban Institute employees get started with Git and GitHub. This guide assumes that you have already gone through the steps in the <a href="https://ui-research.github.io/reproducibility-at-urban/git-installation.html">Access and Installation Guide</a>.</p>
-<p>We know that learning these tools can be a challenge, but we’re here for you! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR">#github Slack channel</a> if you run into issues, and we will be happy to help out.</p>
+<p>This guide is intended to help Urban Institute employees get started with Git and GitHub. This guide assumes that you have already gone through the steps in the <a href="https://ui-research.github.io/reproducibility-at-urban/git-installation.html" target="_blank">Access and Installation Guide</a>.</p>
+<p>We know that learning these tools can be a challenge, but we’re here for you! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues, and we will be happy to help out.</p>
 <section id="using-the-command-line" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="using-the-command-line"><span class="header-section-number">1</span> Using the command line</h2>
-<p>This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html">Github Desktop</a>, or RStudio’s built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.</p>
-<p>To run Git commands from the command line on a Windows computer, right click within any directory (i.e.&nbsp;folder) on your computer, and select <strong>Git Bash Here</strong>. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this <a href="https://happygitwithr.com/shell.html">tutorial</a>.</p>
+<p>This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html" target="_blank">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html" target="_blank">Github Desktop</a>, or RStudio’s built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.</p>
+<p>To run Git commands from the command line on a Windows computer, right click within any directory (i.e.&nbsp;folder) on your computer, and select <strong>Git Bash Here</strong>. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this <a href="https://happygitwithr.com/shell.html" target="_blank">tutorial</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>run_this_command<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>&lt;&gt;</code> are used to indicate blanks that need to be filled in. Don’t actually submit <code>&lt;&gt;</code>. Instead, replace them with the desired text.</p>
 </section>
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Use this option if you do not already have a project folder on your computer and are starting from scratch.</p>
 <ol type="1">
-<li>Under <a href="https://github.com/orgs/UI-Research/repositories">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top right corner). Give the repository a name, and click <strong>Create Repository</strong>.</li>
+<li>Under <a href="https://github.com/orgs/UI-Research/repositories" target="_blank">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top right corner). Give the repository a name, and click <strong>Create Repository</strong>.</li>
 <li>On GitHub, navigate to the repo that you just created and click the green button titled <strong>Code</strong> (top right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
 <li>Navigate to the directory where you want to keep the repo on your computer. Using the URL that you copied in the last step, clone the repository:<br>
 </li>
@@ -251,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Use this option if you already have a project folder on your computer and want to turn that folder into a GitHub repository.</p>
 <ol type="1">
-<li>Under <a href="https://github.com/orgs/UI-Research/repositories">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top right corner). Give the repository the same name as your directory, and click <strong>Create Repository</strong>.</li>
+<li>Under <a href="https://github.com/orgs/UI-Research/repositories" target="_blank">UI-Research</a> on GitHub, click the green button titled <strong>New Repository</strong> (top right corner). Give the repository the same name as your directory, and click <strong>Create Repository</strong>.</li>
 <li>On GitHub, navigate to the repo that you just created and click the green button titled <strong>Code</strong> (top right corner). Copy the HTTPS remote URL. It will look like <code>https://github.com/UI-Research/&lt;name_of_your_repo&gt;.git</code>.</li>
 <li>Navigate to the root of your project folder and initialize a local repository:<br>
 </li>
@@ -358,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="summary-of-commands" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="summary-of-commands"><span class="header-section-number">4</span> Summary of commands</h2>
-<p>The table below summarizes the commands that we’ve discussed in this guide. There are also tons of Git cheat sheets available online (e.g.&nbsp;from <a href="https://education.github.com/git-cheat-sheet-education.pdf">GitHub Education</a>, from <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf">GitLab</a>, or from <a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Atlassian</a>).</p>
+<p>The table below summarizes the commands that we’ve discussed in this guide. There are also tons of Git cheat sheets available online (e.g.&nbsp;from <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">GitHub Education</a>, <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf" target="_blank">GitLab</a>, or from <a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_blank">Atlassian</a>.</p>
 <table class="table">
 <colgroup>
 <col style="width: 42%">
@@ -414,8 +414,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="5" class="anchored" data-anchor-id="parting-advice"><span class="header-section-number">5</span> Parting advice</h2>
 <p>Phew, that was a lot! If you’re new to Git and GitHub, don’t get bogged down in the details. Start by adding, committing, and pushing files to GitHub on the <code>main</code> branch. Once you’re comfortable with those steps, find a colleague to work with you on the <code>main</code> branch and start pulling their updates. Before long, you’ll have that workflow down and will be ready to start using multiple branches and opening pull requests.</p>
 <p>This guide is meant to be an introduction. Git and GitHub have hundreds of useful commands and features not discussed here. Different folks and teams also have different opinions on workflows and best practices for using these tools. Once you have a grasp of the basics, we encourage you to start exploring to find a workflow that works for you.</p>
-<p>You will inevitably run into errors along the way, but learning how to resolve those will make you a better researcher, programmer, and problem solver. Don’t be afraid to ask for help – the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR">#github Slack channel</a> is a great place to start!</p>
-<p>Lastly, remember that if things ever go horribly wrong, you can use the inelegant (but effective) <a href="https://happygitwithr.com/burn.html">“burn it all down” technique</a> to return to a happy state: save your work elsewhere, delete the project folder, and clone a fresh copy of the repository.</p>
+<p>You will inevitably run into errors along the way, but learning how to resolve those will make you a better researcher, programmer, and problem solver. Don’t be afraid to ask for help – the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> is a great place to start!</p>
+<p>Lastly, remember that if things ever go horribly wrong, you can use the inelegant (but effective) <a href="https://happygitwithr.com/burn.html" target="_blank">“burn it all down” technique</a> to return to a happy state: save your work elsewhere, delete the project folder, and clone a fresh copy of the repository.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
