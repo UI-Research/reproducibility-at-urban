@@ -87,6 +87,10 @@ All commands below should be run in the RStudio console within your project's di
     renv::init()
     ```
 
+    Note that `renv::init()` creates a `.gitignore` file for your project, so there is no need to create a `.gitignore` when you first create your project. 
+    
+    If you are using <a href="https://github.com/UrbanInstitute/urbntemplates/blob/main/README.md" target="_blank">urbntemplates</a>, first run `urbntemplates::start_project()` with `gitignore = FALSE` to create the project, then run `renv::init()` to initialize a project-specific environment.
+
 2.  **Install packages** using your usual workflow or `renv::install()`, which works with other repositories like GitHub in addition to CRAN:
 
     ``` r

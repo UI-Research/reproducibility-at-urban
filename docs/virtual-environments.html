@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-19">
+<meta name="dcterms.date" content="2023-07-20">
 
 <title>Reproducibility at Urban - Virtual Environments</title>
 <style>
@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 19, 2023</p>
+      <p class="date">July 20, 2023</p>
     </div>
   </div>
   
@@ -302,7 +302,9 @@ Where do I run these commands?
 </div>
 <ol type="1">
 <li><p><strong>Initialize</strong> a new project-specific environment:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that <code>renv::init()</code> creates a <code>.gitignore</code> file for your project, so there is no need to create a <code>.gitignore</code> when you first create your project.</p>
+<p>If you are using <a href="https://github.com/UrbanInstitute/urbntemplates/blob/main/README.md" target="_blank">urbntemplates</a>, first run <code>urbntemplates::start_project()</code> with <code>gitignore = FALSE</code> to create the project, then run <code>renv::init()</code> to initialize a project-specific environment.</p></li>
 <li><p><strong>Install packages</strong> using your usual workflow or <code>renv::install()</code>, which works with other repositories like GitHub in addition to CRAN:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)      <span class="co"># install from CRAN</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"tidyverse/dplyr"</span>) <span class="co"># install from GitHub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
