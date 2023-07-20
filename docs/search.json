@@ -100,14 +100,14 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Reproducibility at Urban",
+    "title": "Why Reproducibility?",
     "section": "",
-    "text": "This website contains resources for embracing reproducible research at the Urban Institute. Click the links above to get started learning about reproducible research!"
+    "text": "The work we do at Urban matters – it needs to be accurate. When someone else can take our materials (code, data, documentation) and produce the same results, we and the people who rely on our work can all be more confident in it. Click the links above for an introduction to the key tools of reproducible research!"
   },
   {
     "objectID": "index.html#contact",
     "href": "index.html#contact",
-    "title": "Reproducibility at Urban",
+    "title": "Why Reproducibility?",
     "section": "Contact",
     "text": "Contact\nPlease don’t hesitate to contact Maddie Pickens, Erika Tyagi, or Aaron R. Williams with any thoughts or questions about reproducible research at the Urban Institute."
   },
@@ -208,5 +208,12 @@
     "title": "Git and Github with Confidential Data",
     "section": "4 Write scripts and commit to Git/Github",
     "text": "4 Write scripts and commit to Git/Github\nNow you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (i.e., the 2 virtual machines specified above).\n\nlibrary(tidyverse)\n\n# --- Read in Data ---\n\n## We recommend using the full filepath which starts with\n## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to\n## replace CENTER and projectfolder with your respective values.\nraw_data &lt;- read_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n## Another acceptable filepath uses the \"Y:\" drive mapping built into \n## virtual desktops. This could change in the future.\nraw_data &lt;- read_csv(\"Y:/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n\n# --- Write out Data ---\nraw_data %&gt;%\n  write_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv\")"
+  },
+  {
+    "objectID": "index.html#join-the-conversation",
+    "href": "index.html#join-the-conversation",
+    "title": "Why Reproducibility?",
+    "section": "Join the Conversation",
+    "text": "Join the Conversation\nAsk questions, share tips and tricks, and connect with fellow reproducible research enthusiasts in the #reproducible-research and #github Slack channels."
   }
 ]

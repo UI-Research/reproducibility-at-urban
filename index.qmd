@@ -1,13 +1,18 @@
 ---
-title: "Reproducibility at Urban"
+title: "Why Reproducibility?"
 format:
   html:
     toc: false
     number-sections: false
 ---
 
-This website contains resources for embracing reproducible research at the Urban Institute. Click the links above to get started learning about reproducible research!
 
-## Contact
 
-Please don't hesitate to contact Maddie Pickens, Erika Tyagi, or Aaron R. Williams with any thoughts or questions about reproducible research at the Urban Institute.
+The work we do at Urban **matters** – it needs to be **accurate**. When someone else can take our materials (code, data, documentation) and produce the same results, we and the people who rely on our work can all be **more confident** in it. Click the links above for an introduction to the **key tools** of reproducible research!
+
+## Join the Conversation
+
+Ask questions, share tips and tricks, and connect with fellow reproducible research enthusiasts in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> and <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR
+" target="_blank">#github</a> Slack channels.
+
+
