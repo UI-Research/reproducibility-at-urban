@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-11">
+<meta name="dcterms.date" content="2023-07-19">
 
 <title>Reproducibility at Urban - Virtual Environments</title>
 <style>
@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 11, 2023</p>
+      <p class="date">July 19, 2023</p>
     </div>
   </div>
   
@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/reproducibility-at-urban/urbngit/urbngit.html">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.</p>
+<p>This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/urbngit/" target="_blank">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.</p>
 <section id="why-should-i-use-a-virtual-environment" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="why-should-i-use-a-virtual-environment"><span class="header-section-number">1</span> Why should I use a virtual environment?</h2>
 <p>Virtual environments promote reproducibility by letting you let you specify project-specific versions of packages. They accomplish this by making it easy to take a snapshot of the version of packages used in a project and restore that snapshot on other computers. They also make it easy to switch between snapshots on a single computer as you switch between projects.</p>
@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You need to use Python 2.7 for a legacy project, while using Python 3.7 for all other projects.</li>
 <li>You want to use a new library that has known compatibility issues with Python 3.8 on Windows computers, so you want to use Python 3.7 for just one specific project.</li>
 <li>You got a new computer and don’t want to spend hours remembering which R packages to install through endless <code>Error in library(&lt;&gt;): there is no package called '&lt;&gt;'</code> errors.</li>
-<li>Your code takes a long time to run locally, so you want to leverage powerful <a href="http://tech-tools.urban.org/ec2-submission/">virtual computers in the cloud</a> - or scale to use tens, hundreds, or thousands of computers simultaneously - but you first need to install the relevant packages on the virtual machine(s).</li>
+<li>Your code takes a long time to run locally, so you want to leverage powerful <a href="http://tech-tools.urban.org/ec2-submission/" target="_blank">virtual computers in the cloud</a> - or scale to use tens, hundreds, or thousands of computers simultaneously - but you first need to install the relevant packages on the virtual machine(s).</li>
 </ul>
 <p>Importantly, virtual environments are just one piece of reproducible research workflows - they are NOT replacements for other important components of reproducibility like version control, directory management, or data provenance.</p>
 </section>
@@ -235,9 +235,9 @@ Alternatives for R
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Within the R community, <code>renv</code>, developed and <a href="https://github.com/rstudio/renv/">maintained by RStudio</a>, is the de facto virtual environment manager. Older resources might reference <code>packrat</code>, which has been <a href="https://github.com/rstudio/packrat#note">soft-deprecated</a> and is now superseded by <code>renv</code>. <a href="https://cran.r-project.org/web/packages/renv/vignettes/renv.html">According to the developers</a> of <code>renv</code>,</p>
+<p>Within the R community, <code>renv</code>, developed and <a href="https://github.com/rstudio/renv/" target="_blank">maintained by RStudio</a>, is the de facto virtual environment manager. Older resources might reference <code>packrat</code>, which has been <a href="https://github.com/rstudio/packrat#note" target="_blank">soft-deprecated</a> and is now superseded by <code>renv</code>. <a href="https://cran.r-project.org/web/packages/renv/vignettes/renv.html" target="_blank"> According to the developers</a> of <code>renv</code>,</p>
 <blockquote class="blockquote">
-<p>The goal is for <code>renv</code> to be a robust, stable replacement for the Packrat package, with fewer surprises and better default behaviors. If you’re using R alongside Python, it may make sense to use <code>conda</code> as your environment manager. Documentation for using R with the Anaconda distribution and <code>conda</code> environment manager is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/">here</a>. Alternatively, you can use Python with <code>renv</code>, as documented <a href="https://rstudio.github.io/renv/articles/python.html">here</a>.</p>
+<p>The goal is for <code>renv</code> to be a robust, stable replacement for the Packrat package, with fewer surprises and better default behaviors. If you’re using R alongside Python, it may make sense to use <code>conda</code> as your environment manager. Documentation for using R with the Anaconda distribution and <code>conda</code> environment manager is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/" target="_blank">here</a>. Alternatively, you can use Python with <code>renv</code>, as documented <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.</p>
 </blockquote>
 </div>
 </div>
@@ -255,8 +255,8 @@ Alternatives for Python
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There is a plethora of virtual environment managers in Python, with a few of the most common being <code>virtualenv</code>, <code>pipenv</code>, <code>poetry</code>, and <code>conda</code>.</p>
-<p>For data science and research use cases, <code>conda</code> is a popular option for several reasons. First, <code>conda</code> is both an environment manager and a package manager. As a result, <code>conda</code> helps install packages and manage dependencies, whereas other tools rely on <code>pip</code> for package management. Unlike other managers, <code>conda</code> also has native support for programming languages beyond Python (including R). Lastly, <code>conda</code> is extensible, letting you install packages from <code>pip</code>, for example, and offering <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> as a lighter-weight alternative or <a href="https://mamba.readthedocs.io/en/latest/index.html">Mambda</a> as an even faster “drop-in replacement” for <code>conda</code>.</p>
-<p>If you’re using R and Python, <code>conda</code> or <code>renv</code> are good options given their emphasis on interoperability. Documentation for using R with <code>conda</code> is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/">here</a>, and documentation for using Python with <code>renv</code> is available <a href="https://rstudio.github.io/renv/articles/python.html">here</a>.</p>
+<p>For data science and research use cases, <code>conda</code> is a popular option for several reasons. First, <code>conda</code> is both an environment manager and a package manager. As a result, <code>conda</code> helps install packages and manage dependencies, whereas other tools rely on <code>pip</code> for package management. Unlike other managers, <code>conda</code> also has native support for programming languages beyond Python (including R). Lastly, <code>conda</code> is extensible, letting you install packages from <code>pip</code>, for example, and offering <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a> as a lighter-weight alternative or <a href="https://mamba.readthedocs.io/en/latest/index.html" target="_blank">Mamba</a> as an even faster “drop-in replacement” for <code>conda</code>.</p>
+<p>If you’re using R and Python, <code>conda</code> or <code>renv</code> are good options given their emphasis on interoperability. Documentation for using R with <code>conda</code> is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/" target="_blank">here</a>, and documentation for using Python with <code>renv</code> is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.</p>
 </div>
 </div>
 </div>
@@ -286,7 +286,7 @@ Alternatives for Python
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>To set up a virtual environment for an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">R project</a>, we recommend using <code>renv</code>. To install <code>renv</code>, use the standard syntax to install R packages from CRAN: <code>install.packages("renv")</code>.</p>
+<p>To set up a virtual environment for an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects" target="_blank">R project</a>, we recommend using <code>renv</code>. To install <code>renv</code>, use the standard syntax to install R packages from CRAN: <code>install.packages("renv")</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -306,7 +306,7 @@ Where do I run these commands?
 <li><p><strong>Install packages</strong> using your usual workflow or <code>renv::install()</code>, which works with other repositories like GitHub in addition to CRAN:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)      <span class="co"># install from CRAN</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"tidyverse/dplyr"</span>) <span class="co"># install from GitHub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that <code>renv</code> can install packages from a <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources">variety of sources</a> including CRAN, GitHub, and Bioconductor.</p></li>
+<p>Note that <code>renv</code> can install packages from a <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources" target="_blank">variety of sources</a>.</p></li>
 <li><p><strong>Save</strong> a snapshot of the environment to a file called <code>renv.lock</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Share</strong> the snapshot of the environment by sending three files to GitHub: <code>renv.lock</code>, <code>.Rprofile</code>, and <code>renv/activate.R</code>.</p>
@@ -317,7 +317,7 @@ Where do I run these commands?
 </ol>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>To set up a virtual environment for a Python project, we recommend using <code>conda</code>, which is built into the <a href="https://www.anaconda.com/products/distribution">Anaconda distribution</a> through Anaconda or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. If you haven’t already installed Anaconda, see <a href="https://github.com/UI-Research/python-resources/blob/main/notebooks/anaconda-installation.ipynb">this guide</a> from a previous Python Users Group session. You can verify that <code>conda</code> is installed and running on your computer with <code>conda --version</code>. If you get an error, see the Anaconda <a href="https://conda.io/projects/conda/en/latest/user-guide/troubleshooting.html">troubleshooting guide</a>.</p>
+<p>To set up a virtual environment for a Python project, we recommend using <code>conda</code>, which is built into the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda distribution</a> through Anaconda or <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a>. If you haven’t already installed Anaconda, see <a href="https://github.com/UI-Research/python-resources/blob/main/notebooks/anaconda-installation.ipynb" target="_blank">this guide</a> from a previous Python Users Group session. You can verify that <code>conda</code> is installed and running on your computer with <code>conda --version</code>. If you get an error, see the Anaconda <a href="https://conda.io/projects/conda/en/latest/user-guide/troubleshooting.html" target="_blank">troubleshooting guide</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -381,10 +381,10 @@ Where do I run these commands?
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>The 10-minute talk from rstudio::conf(2022) called <a href="https://www.rstudio.com/conference/2022/talks/you-should-use-renv/">You should be using renv</a> from E. David Aja is a great overview of the motivation for using the tool. We also recommend the official <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources">Introduction to renv</a> and <a href="https://rstudio.github.io/renv/articles/collaborating.html">Collaborating with renv</a> vignettes.</p>
+<p>The 10-minute talk from rstudio::conf(2022) called <a href="https://www.rstudio.com/conference/2022/talks/you-should-use-renv/" target="_blank">You should be using renv</a> from E. David Aja is a great overview of the motivation for using the tool. We also recommend the official <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources" target="_blank">Introduction to renv</a> and <a href="https://rstudio.github.io/renv/articles/collaborating.html" target="_blank">Collaborating with renv</a> vignettes.</p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>We recommend keeping the official <code>conda</code> <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf">cheat sheet</a> handy.</p>
+<p>We recommend keeping the official <code>conda</code> <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf" target="_blank">cheat sheet</a> handy.</p>
 <p>In addition to the commands included above, a few other commonly used <code>conda</code> commands include:</p>
 <ul>
 <li><code>conda deactivate</code> deactivates the current environment</li>
@@ -392,14 +392,14 @@ Where do I run these commands?
 <li><code>conda env list</code> lists all environments (with the current active environment asterisked)</li>
 <li><code>conda env remove -n my_env</code> deletes the <code>my_env</code> environment</li>
 </ul>
-<p>The official <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">documentation</a> and <a href="https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html">this guide</a> from the Carpentries are also helpful resources.</p>
+<p>The <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html" target="_blank">official documentation</a> and <a href="https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html" target="_blank">this guide</a> from the Carpentries are also helpful resources.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="getting-help" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">6</span> Getting help</h2>
-<p>Adding a new tool to your workflow can be hard, but we’re here to help! Feel free to email Erika Tyagi (etyagi@urban.org) or drop a message in the <strong>#reproducible-research</strong> Slack channel with any questions or if you run into issues.</p>
+<p>Adding a new tool to your workflow can be hard, but we’re here to help! Feel free to email Erika Tyagi (<a href="mailto:etyagi@urban.org">etyagi@urban.org</a>) or drop a message in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> Slack channel with any questions or if you run into issues.</p>
 </section>
 <section id="obligatory-xkcd-comic" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="obligatory-xkcd-comic"><span class="header-section-number">7</span> Obligatory xkcd comic</h2>
