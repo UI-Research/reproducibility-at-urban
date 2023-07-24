@@ -102,7 +102,7 @@
     "href": "index.html",
     "title": "Why Reproducibility?",
     "section": "",
-    "text": "The work we do at Urban matters – it needs to be accurate. When someone else can take our materials (code, data, documentation) and produce the same results, we and the people who rely on our work can all be more confident in it. Click the links above for an introduction to the key tools of reproducible research!"
+    "text": "The work we do at Urban matters – it needs to be accurate. When someone else can take our materials (code, data, documentation) and produce the same results, we and the people who rely on our work can all be more confident in it. Explore this website for an introduction to some key tools of reproducible research:"
   },
   {
     "objectID": "index.html#contact",
@@ -213,7 +213,7 @@
     "objectID": "index.html#join-the-conversation",
     "href": "index.html#join-the-conversation",
     "title": "Why Reproducibility?",
-    "section": "Join the Conversation",
-    "text": "Join the Conversation\nAsk questions, share tips and tricks, and connect with fellow reproducible research enthusiasts in the #reproducible-research and #github Slack channels."
+    "section": "Join the Conversation!",
+    "text": "Join the Conversation!\nAsk questions, share tips and tricks, and connect with fellow reproducible research enthusiasts in the #reproducible-research and #github Slack channels."
   }
 ]

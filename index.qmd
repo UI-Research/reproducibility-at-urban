@@ -8,9 +8,17 @@ format:
 
 
 
-The work we do at Urban **matters** – it needs to be **accurate**. When someone else can take our materials (code, data, documentation) and produce the same results, we and the people who rely on our work can all be **more confident** in it. Click the links above for an introduction to the **key tools** of reproducible research!
+The work we do at Urban **matters** – it needs to be **accurate**. When someone else can take our materials (code, data, documentation) and produce the same results, we and the people who rely on our work can all be **more confident** in it. Explore this website for an introduction to some **key tools** of reproducible research:
 
-## Join the Conversation
+* **<a href="https://ui-research.github.io/reproducibility-at-urban/git-installation.html" target="_blank">Git & GitHub</a>** are tools for tracking changes in code and sharing code with others. Think of Git like a turbo-charged version of track changes for code and Github as shared drive (like Box) for hosting files tracked with Git. 
+
+* **<a href="ttps://ui-research.github.io/reproducibility-at-urban/virtual-environments.html" target="_blank">Virtual Environments</a>**
+are a way to bundle the packages your code relies on (its dependencies). Someone else can activate your virtual environment on their computer to run your code without having to worry about what packages (and versions of those packages) they have installed locally. You can also use virtual environments on your own computer to work on multiple projects with different dependencies at the same time.
+
+* **<a href="ttps://ui-research.github.io/reproducibility-at-urban/virtual-environments.html" target="_blank">Quarto</a>** is a great publishing system for reproducible research. It weaves together text and code like R Markdown, but it works with more languages (R, Python, Julia, and Observable). It also plays nicely with the citation manager <a href="https://quarto.org/docs/visual-editor/technical.html#citations-from-zotero" target="_blank">Zotero</a>, which is handy when you're working on a publication.
+
+
+## Join the Conversation!
 
 Ask questions, share tips and tricks, and connect with fellow reproducible research enthusiasts in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> and <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR
 " target="_blank">#github</a> Slack channels.
