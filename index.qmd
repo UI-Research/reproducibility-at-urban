@@ -23,4 +23,4 @@ are a way to bundle the packages your code relies on (its dependencies). Someone
 Ask questions, share tips and tricks, and connect with fellow reproducible research enthusiasts in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> and <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR
 " target="_blank">#github</a> Slack channels.
 
-
+Website developed by Erika Tyagi and Maddie Pickens with additional contributions by Aaron Williams, Judah Axelrod, and Francesca Vescia. Have ideas about how it could be better? Suggest updates by making a <a href="https://github.com/UI-Research/reproducibility-at-urban" target="_blank">pull request</a> to our <a href="https://github.com/UI-Research/reproducibility-at-urban" target="_blank">GitHub repo</a>!
