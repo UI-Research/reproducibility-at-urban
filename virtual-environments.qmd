@@ -4,7 +4,7 @@ subtitle: Introduction to Virtual Environments with R and Python at the Urban In
 date: today 
 ---
 
-This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/urbngit/" target="_blank">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.
+This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/reproducibility-at-urban/git-workflow.html" target="_blank">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.
 
 ## Why should I use a virtual environment?
 
