@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.324">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-27">
+<meta name="dcterms.date" content="2023-09-12">
 
 <title>Reproducibility at Urban - Git and Github with Confidential Data</title>
 <style>
@@ -90,8 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -161,8 +160,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link active" data-scroll-target="#the-big-picture"><span class="header-section-number">1</span> The big picture</a></li>
   <li><a href="#set-up-the-y-drive-folder-for-data" id="toc-set-up-the-y-drive-folder-for-data" class="nav-link" data-scroll-target="#set-up-the-y-drive-folder-for-data"><span class="header-section-number">2</span> Set up the Y Drive folder (for data)</a></li>
-  <li><a href="#set-up-the-git-repo-for-scripts" id="toc-set-up-the-git-repo-for-scripts" class="nav-link" data-scroll-target="#set-up-the-git-repo-for-scripts"><span class="header-section-number">3</span> Set up the git repo (for scripts)</a></li>
-  <li><a href="#write-scripts-and-commit-to-gitgithub" id="toc-write-scripts-and-commit-to-gitgithub" class="nav-link" data-scroll-target="#write-scripts-and-commit-to-gitgithub"><span class="header-section-number">4</span> Write scripts and commit to Git/Github</a></li>
+  <li><a href="#set-up-the-git-repo-for-scripts" id="toc-set-up-the-git-repo-for-scripts" class="nav-link" data-scroll-target="#set-up-the-git-repo-for-scripts"><span class="header-section-number">3</span> Set up the Git repo (for scripts)</a></li>
+  <li><a href="#write-scripts-and-commit-to-gitgithub" id="toc-write-scripts-and-commit-to-gitgithub" class="nav-link" data-scroll-target="#write-scripts-and-commit-to-gitgithub"><span class="header-section-number">4</span> Write scripts and commit to Git/GitHub</a></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 27, 2023</p>
+      <p class="date">September 12, 2023</p>
     </div>
   </div>
   
@@ -193,77 +192,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>So you’ve learned about the power of Git/Github and now want to use it in your projects. That’s great news! But if your project data is stored on the Y Drive (aka <code>ares</code>) for confidentiality reasons, you’ll have to jump through a few extra hoops. Below are instructions on how to set up a Github repo to play nicely with the Y drive.</p>
+<p>So you’ve learned about the power of Git and GitHub and now want to use it in your projects. That’s great news! But if your project data is stored on the Y Drive (aka <code>ares</code>) for confidentiality reasons, you’ll have to jump through a few extra hoops. Below are instructions on one way to set up a GitHub repo to play nicely with the Y Drive.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In some cases, using Git and GitHub with confidential data is <strong>altogether not allowed</strong> due to strict data use agreements or other contractual requirements. If you aren’t sure if you can use Git and GitHub with your data, please reach out to Urban’s security team and/or ask in the #github Slack channel.</p>
+</div>
+</div>
 <section id="the-big-picture" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="the-big-picture"><span class="header-section-number">1</span> The big picture</h2>
 <ul>
 <li>Store all data directly on the Y Drive</li>
 <li>Store all scripts in a Git repo</li>
-<li>Create/clone the Git repo on either the <code>Urban Users PGP</code> or <code>Win 10 Secure</code> Virtual Machines local drive.</li>
-<li>Keep that git repo with the scripts completely separate from the Y Drive folder with the data</li>
-<li>Within your scripts, always read in data using the direct Y Drive filepaths and write out intermediate/final data files using direct Y Drive filepaths.</li>
+<li>Create and clone the repo on the virtual machine (e.g.&nbsp;Urban Users PGP or Win 10 Secure) local drive</li>
+<li>Keep that repo with the scripts completely separate from the Y Drive folder with the data</li>
+<li>Within your scripts, always read in data using the direct Y Drive filepaths and write out intermediate/final data files using direct Y Drive filepaths</li>
 </ul>
-<p>This means your scripts will live in a separate place (usually the Documents folder of the virtual desktop) from your data (somewhere in the Y Drive) and only your scripts will be on Git/Github. So while changes to your scripts will be tracked with all the power of Github, your data will not.</p>
-<p>If your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can’t put your data in Git/Github for security reasons (and therefore won’t get the power of Git and file tracking for the data).</p>
-<p>Now that’s out of the way, how do you setup Git/Github with your confidential data?</p>
+<p>This means your scripts will live in a separate place (usually the Documents folder of the virtual desktop) from your data (somewhere in the Y Drive) and only your scripts will be on Git/GitHub. So while changes to your scripts will be tracked with all the power of GitHub, your data will not.</p>
+<p>If your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same Git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can’t put your data in Git/GitHub for security reasons (and therefore won’t get the power of Git and file tracking for the data).</p>
+<p>Now that’s out of the way, how do you setup Git/GitHub with your confidential data?</p>
 </section>
 <section id="set-up-the-y-drive-folder-for-data" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="set-up-the-y-drive-folder-for-data"><span class="header-section-number">2</span> Set up the Y Drive folder (for data)</h2>
 <ol type="1">
-<li><p>Reach out to Hadi Jeddy in TECH to get a Y drive folder created for your project and give the appropriate project staff access.</p></li>
-<li><p>Securely move the project data files into the assigned Y drive folder. Inside the Y Drive folder we recommend the following folder structure:</p>
+<li><p>Use the <a href="https://explorer.urban.org/page/2959">intake form</a> to request a new folder for your project and give the appropriate staff access.</p></li>
+<li><p>Securely move the project data files into the assigned Y Drive folder. Inside the folder, we recommend the following folder structure:</p>
 <pre><code>- projectfolder/
     - data/
         - raw-data/
         - intermediate-data/
         - final-data/</code></pre></li>
 </ol>
-<p>The data you move in to the Y drive should go into the <code>data/raw-data</code> folder and manipulated data can go into the other folders.</p>
-<p>Note that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script and there is no way to restore changes.</p>
-<p>For this reason, we suggest a) keeping the data files inside <code>raw-data</code> untouched and never programmatically writing to that folder and b) keeping a clear script copy of how you transform the files inside <code>raw-data</code> so that if needed you can easily regenerate intermediate and final data files.</p>
+<p>The data you move to the Y Drive should go into the <code>data/raw-data</code> folder and manipulated data can go into the other folders.</p>
+<p>Note that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script. For this reason, we suggest a) keeping the data files inside <code>raw-data</code> untouched and never programmatically writing to that folder and b) keeping a clear script copy of how you transform the files inside <code>raw-data</code> so that you can easily regenerate intermediate and final data files.</p>
 </section>
 <section id="set-up-the-git-repo-for-scripts" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="set-up-the-git-repo-for-scripts"><span class="header-section-number">3</span> Set up the git repo (for scripts)</h2>
+<h2 data-number="3" class="anchored" data-anchor-id="set-up-the-git-repo-for-scripts"><span class="header-section-number">3</span> Set up the Git repo (for scripts)</h2>
 <ol type="1">
-<li><p>Use Virtual Desktop to open either Win10 Secure or PGP. Note Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code.</p></li>
-<li><p>If you’re on PGP, install Github desktop from this link: <a href="https://desktop.github.com/" target="_blank">https://desktop.github.com/</a>. Win 10 Secure should already have this.</p></li>
-<li><p>Open up Github desktop and login to your Github account. If you don’t have one, you will need to sign up <a href="https://github.com/join" target="_blank">here</a> and them fill out <a href="https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5" target="_blank">this Smartsheet form</a> to be added to the Urban Institute organizations. Once someone adds you to the 2 Urban organizations, you will receive 2 emails asking if you want to join. You will have to click join in <strong>each</strong> of those emails to be succesfully added to our Github organizations.</p></li>
-<li><p>Click <code>Add</code> &gt; <code>Create new repository</code>. In the popup screen, enter an informative name for your repo and a project description. Use the example screenshot below for guidance. We recommend initializing the repo with a README (with background information/instructions for running your code) and selecting a gitignore (to ignore certain R/Sas/Stata temporary files). Very importantly, when selecting a <code>local path</code> to create your repository, <strong>make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped <code>Y:</code> drive</strong>. By default, Github Desktop should try to create the repo in <code>\\Ares\CTX_RedirectedFolders$\username\My Documents\GitHub</code>. While that may look weird, that is an acceptable filepath and will put the repo in the <code>My Documents\Github</code> folder of the virtual desktop. Also make sure to create the repostiory in the private <code>UI-Research</code> organization. The <code>Urban Institute</code> organization only contains public facing code. Once you’re ready, select <code>Create Repository</code>.</p></li>
-<li><p>This should create the repository (i.e., folder) in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to Github Desktop, select <code>Repository</code> in the top left and then <code>Show in File Explorer</code>.</p></li>
-<li><p>Click <code>Publish Repo</code> in the top right of Github Desktop to send the repo to Github.com</p></li>
+<li><p>Use a virtual desktop to open Win10 Secure or PGP. Note that Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code. For additional information, see <a href="https://explorer.urban.org/page/2729">Urban’s Overview of Computing Resources</a>.</p></li>
+<li><p>If necessary, install GitHub Desktop from this link: <a href="https://desktop.github.com/" target="_blank">https://desktop.github.com/</a>.</p></li>
+<li><p>Open up GitHub Desktop and login to your GitHub account.</p></li>
+<li><p>Click <strong>Add</strong> &gt; <strong>Create new repository</strong>.</p></li>
+<li><p>We recommend initializing the repo with a <code>README</code> (with background information/instructions for running your code) and a <code>.gitignore</code> file to tell Git not to track certain files. Here is an example of a strict <code>.gitignore</code> file that ignores all files (e.g.&nbsp;data files) except for R, SAS, and Stata scripts.</p>
+<pre><code># Ignore everything
+*.*
+
+# Include .gitignore and README.md
+!.gitignore
+!README.md
+
+# Include R scripts 
+!*.R
+!*.Rproj
+
+# Include SAS scripts 
+!*.sas
+
+# Include Stata scripts 
+!*.do
+</code></pre></li>
+<li><p>Very importantly, when selecting a local path, <strong>make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped <code>Y:</code> drive</strong>. By default, GitHub Desktop should try to create the repo in <code>\\Ares\CTX_RedirectedFolders$\username\My Documents\GitHub</code>. While that may look weird, that is an acceptable filepath and will put the repo in the <code>My Documents\GitHub</code> folder of the virtual desktop. Once you’re ready, select <strong>Create Repository</strong>.</p></li>
+<li><p>This should create the repository in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to GitHub Desktop, select <strong>Repository</strong> in the top left and then <strong>Show in File Explorer</strong>.</p></li>
+<li><p>Click <strong>Publish Repo</strong> in the top right of GitHub Desktop to send the repo to GitHub.com</p></li>
 <li><p>Inside the Git repo (i.e., folder) we suggest the following folder structure:</p>
 <pre><code>README.md
 scripts/
     somescript.R
-    someotherscript.R</code></pre></li>
-</ol>
-<p>Where the <code>scripts</code> folder contains all code for the project (feel free to create subfolders as you see fit).</p>
-<ol start="8" type="1">
-<li>Make some changes to your project, like updating the README, or adding scripts. Then <code>commit</code> the changes on Github Desktop and <code>push</code> the changes.</li>
-<li>Each member of your project team will need to now <code>clone</code> the repo into a local path on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the git repo into the mapped Y drive.</li>
+    someotherscript.R</code></pre>
+<p>Where the <code>scripts</code> folder contains all code for the project. Feel free to create subfolders as you see fit.</p></li>
+<li><p>Make changes to your project, like updating the README, or adding scripts. Then <code>commit</code> the changes on GitHub Desktop and <code>push</code> the changes.</p></li>
+<li><p>Each member of your project team will need to <code>clone</code> the repo into on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the repo into the mapped Y Drive.</p></li>
 </ol>
 </section>
 <section id="write-scripts-and-commit-to-gitgithub" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="write-scripts-and-commit-to-gitgithub"><span class="header-section-number">4</span> Write scripts and commit to Git/Github</h2>
-<p>Now you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (i.e., the 2 virtual machines specified above).</p>
+<h2 data-number="4" class="anchored" data-anchor-id="write-scripts-and-commit-to-gitgithub"><span class="header-section-number">4</span> Write scripts and commit to Git/GitHub</h2>
+<p>Now you can write scripts as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (i.e., the two virtual machines specified above).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Read in Data ---</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## We recommend using the full filepath which starts with</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="do">## replace CENTER and projectfolder with your respective values.</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Another acceptable filepath uses the "Y:" drive mapping built into </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## virtual desktops. This could change in the future.</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Y:/CENTER/projectfolder/data/raw-data/ex.csv"</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Write out Data ---</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">%&gt;%</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">"//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Read in Data ---</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## We recommend using the full filepath which starts with</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## replace CENTER and projectfolder with your respective values.</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Another acceptable filepath uses the "Y:" drive mapping built into </span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="do">## virtual desktops. This could change in the future.</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Y:/CENTER/projectfolder/data/raw-data/ex.csv"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Write out Data ---</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">"//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

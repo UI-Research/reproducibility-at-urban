@@ -29,14 +29,10 @@ In general, you should follow the <a href="https://en.wikipedia.org/wiki/Princip
 * **Are there other commands that can be helpful when using Git from the command line?**  
 Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include `pwd` (to print your current directory), `cd` (to change directories), and `ls` (to list the files in a directory). For an introduction to these commands and others, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html" target="_blank">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html" target="_blank">this guide</a> from Happy Git with R.
 
-* **Where did the cute images in this guide come from?**  
-Those are GitHub's mascot, the Octocat. You can read more about the history of Octocats <a href="https://cameronmcefee.com/work/the-octocat/" target="_blank">here</a> and check out the full set of Octocats that GitHub has created <a href="https://octodex.github.com/" target="_blank">here</a>. 
-
 ## Additional Resources 
 
 - <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git Cheat Sheet</a>
 - <a href="https://happygitwithr.com/" target="_blank">Happy Git and GitHub for the UserR</a>
 - <a href="https://www.amazon.com/Git-Pocket-Guide-Working-Introduction/dp/1449325866" target="_blank">Git Pocket Guide</a>
 - <a href="https://www.atlassian.com/git" target="_blank">Getting Git Right</a>
-- <a href="https://skills.github.com/" target="_blank">GitHub Skills</a>
 - <a href="https://speakerdeck.com/alicebartlett/git-for-humans" target="_blank">Git for Humans</a>

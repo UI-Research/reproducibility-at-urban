@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.324">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-27">
+<meta name="dcterms.date" content="2023-09-12">
 
 <title>Reproducibility at Urban - Git and Github Workflow</title>
 <style>
@@ -90,8 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -195,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 27, 2023</p>
+      <p class="date">September 12, 2023</p>
     </div>
   </div>
   
@@ -229,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/git-workflow-v2.png" class="img-fluid" width="1350"></p>
+<p><img src="images/git-workflow-v2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -279,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>remote_url_for_your_repo<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/git-workflow-commands-v2.png" class="img-fluid" width="925"></p>
+<p><img src="images/git-workflow-commands-v2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -302,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Before running the <code>git push</code> command, your code and commits could only be accessed on your local computer.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/git-github-workflow-v2.png" class="img-fluid" width="924"></p>
+<p><img src="images/git-github-workflow-v2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -314,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/git-workflow-collab.png" class="img-fluid" width="925"></p>
+<p><img src="images/git-workflow-collab.png" class="img-fluid"></p>
 </div>
 </div>
 <section id="branches" class="level3" data-number="3.1">
@@ -322,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>So far in this guide, we’ve been working off a single <code>main</code> branch. By using multiple branches, you and your collaborators can update existing code or add new code without the fear of overwriting each others’ files. Branches let you say “Hey, I’m going to leave the main version of the code alone while I try some things out over here.”</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/git-branches.png" class="img-fluid" width="1089"></p>
+<p><img src="images/git-branches.png" class="img-fluid"></p>
 </div>
 </div>
 <p><code>git checkout</code> switches your local version to different branch. The <code>-b</code> flag in the command below tells Git to first create a new branch and then switch to it. When you first create a new branch, it will be identical to the local version of the branch that you switched from (typically the <code>main</code> branch).</p>
@@ -347,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/git-workflow-branches.png" class="img-fluid" width="1555"></p>
+<p><img src="images/git-workflow-branches.png" class="img-fluid"></p>
 </div>
 </div>
 <p>After merging the pull request, you should return to the <code>main</code> branch and sync your local directory with the merged changes:</p>
