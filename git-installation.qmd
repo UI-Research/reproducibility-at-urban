@@ -6,7 +6,7 @@ date: today
 
 This guide is intended to help Urban Institute employees get started accessing and installing Git and GitHub. You should generally only have to complete the steps in this guide once during your time at Urban. 
 
-We know that learning these tools can be a challenge, but we're here for you! Drop a message in the [#github Slack channel](https://theurbaninstitute.slack.com/archives/C6J9AALDR) if you run into issues, and we will be happy to help out.
+We know that learning these tools can be a challenge, but we're here for you! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="blank">#github Slack channel</a> if you run into issues, and we will be happy to help out.
 
 ## Background
 
@@ -30,17 +30,17 @@ The objective of using Git and GitHub is to create local repositories that track
 
 ### git installation for Windows
 
-Install [Git for Windows](https://git-scm.com/downloads). Keep all default selections and **be sure to install Git Bash**. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select `Git Bash Here`.
+Install <a href="https://git-scm.com/downloads" target="_blank">Git for Windows</a>. Keep all default selections and **be sure to install Git Bash**. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select `Git Bash Here`.
 
 ### git installation for Mac OS
 
-Install [Git for Mac OS](https://git-scm.com/downloads). Mac already has the terminal. Open the terminal and type `git`. If everything is properly installed, a list of possible command will show up.
+Install <a href="https://git-scm.com/downloads" target="_blank">Git for Mac OS</a>. Mac already has the terminal. Open the terminal and type `git`. If everything is properly installed, a list of possible command will show up.
 
 ## GitHub account
 
-Create a [GitHub account](https://github.com/). There is no need to associate your account with the Urban Institute or an Urban Institute email address. Many people want to use GitHub for personal projects too. 
+Create a <a href="https://github.com/" target="_blank">GitHub account</a>. There is no need to associate your account with the Urban Institute or an Urban Institute email address. Many people want to use GitHub for personal projects, too. 
 
-After creating an account, fill out Urban's [GitHub intake form](https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5) to join Urban's primary GitHub organization, [UI-Research](https://github.com/UI-Research). Note that Urban has another GitHub organization, [UrbanInstitute](https://github.com/UrbanInstitute), that is primarily used for public-facing repositories. 
+After creating an account, fill out Urban's <a href="https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5" target="_blank">GitHub intake form</a> to join Urban's primary GitHub organization, <a href="https://github.com/UI-Research" target="_blank">UI_Research</a>. Note that Urban has another GitHub organization, <a href="https://github.com/UrbanInstitute" target="_blank">UrbanInstitute</a>, that is primarily used for public-facing repositories. 
 
 ## Configure Git and GitHub
 
@@ -56,9 +56,9 @@ git config --global user.email "<your_email_address>"
 
 ## Authentication and tokens
 
-You will need to create a personal access token (PAT) to replace your password and provide enhanced security. [Since 2021](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/), GitHub has required PATs to perform Git operations. To create a PAT: 
+You will need to create a personal access token (PAT) to replace your password and provide enhanced security. <a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/" target="_blank">Since 2021</a>, GitHub has required PATs to perform Git operations. To create a PAT: 
 
-1. Log into your [GitHub account](https://github.com/). Navigate to the drop-down menu in the top right corner with your profile picture. Select **Settings** near the bottom of this drop-down.
+1. Log into your <a href="https://github.com/" target="_blank">GitHub account</a>. Navigate to the drop-down menu in the top right corner with your profile picture. Select **Settings** near the bottom of this drop-down.
 
 2. From your account settings, navigate to **Developer Settings**, at the bottom of the menu on the left.
 

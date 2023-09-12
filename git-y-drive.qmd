@@ -48,12 +48,12 @@ For this reason, we suggest a) keeping the data files inside `raw-data` untouche
 ## Set up the git repo (for scripts)
 
 1. Use Virtual Desktop to open either Win10 Secure or PGP. Note Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code.
-2. If you're on PGP, install Github desktop from this link: <https://desktop.github.com/>. Win 10 Secure should already have this. 
-3. Open up Github desktop and login to your Github account. If you don't have one, you will need to signup [here](https://github.com/join) and them fill out [this smartsheet form](https://github.com/join) to be added to the Urban Institute organizations. Once someone adds you to the 2 Urban organizations, you will receive 2 emails asking if you want to join. You will have to click join in **each** of those emails to be succesfully added to our Github organizations.
+2. If you're on PGP, install Github desktop from this link: <a href="https://desktop.github.com/" target="_blank">https://desktop.github.com/</a>. Win 10 Secure should already have this. 
+3. Open up Github desktop and login to your Github account. If you don't have one, you will need to sign up <a href="https://github.com/join" target="_blank">here</a> and them fill out <a href="https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5" target="_blank">this Smartsheet form</a> to be added to the Urban Institute organizations. Once someone adds you to the 2 Urban organizations, you will receive 2 emails asking if you want to join. You will have to click join in **each** of those emails to be succesfully added to our Github organizations.
 4. Click `Add` \> `Create new repository`. In the popup screen, enter an informative name for your repo and a project description. Use the example screenshot below for guidance. We recommend initializing the repo with a README (with background information/instructions for running your code) and selecting a gitignore (to ignore certain R/Sas/Stata temporary files). Very importantly, when selecting a `local path` to create your repository, **make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped `Y:` drive**. By default, Github Desktop should try to create the repo in `\\Ares\CTX_RedirectedFolders$\username\My Documents\GitHub`. While that may look weird, that is an acceptable filepath and will put the repo in the `My Documents\Github` folder of the virtual desktop. Also make sure to create the repostiory in the private `UI-Research` organization. The  `Urban Institute` organization only contains public facing code. Once you're ready, select `Create Repository`.
-5. This should create the repository (ie folder) in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to Github Desktop, select `Repository` in the top left and then `Show in File Explorer`.
+5. This should create the repository (i.e., folder) in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to Github Desktop, select `Repository` in the top left and then `Show in File Explorer`.
 6. Click `Publish Repo` in the top right of Github Desktop to send the repo to Github.com
-7. Inside the Git repo (ie folder) we suggest the following folder structure:
+7. Inside the Git repo (i.e., folder) we suggest the following folder structure:
 
     ```
     README.md
@@ -69,7 +69,7 @@ Where the `scripts` folder contains all code for the project (feel free to creat
 
 ## Write scripts and commit to Git/Github 
 
-Now you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (ie the 2 virtual machines specified above).
+Now you can write scripts to do cleaning/analysis as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (i.e., the 2 virtual machines specified above).
 
 ```{r, eval = F}
 library(tidyverse)

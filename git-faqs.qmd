@@ -9,34 +9,34 @@ date: today
 Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.
 
 * **Where can I go for help if I get stuck?**  
-Running into errors is an inevitable part of working with Git and GitHub, but we're here to help! Drop a message in the [#github Slack channel](https://theurbaninstitute.slack.com/archives/C6J9AALDR) when you have issues, or email Aaron Williams (awilliams@urban.org) or Erika Tyagi (etyagi@urban.org).  
+Running into errors is an inevitable part of working with Git and GitHub, but we're here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> when you have issues, or email Aaron Williams ([awilliams@urban.org](mailto:awilliams@urban.org)) or Erika Tyagi ([etyagi@urban.org](mailto:etyagi@urban.org)).  
 
 * **Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?**  
-Yes! Read [this guide](confidential-data-and-git.html) for tips on how to do so. 
+Yes! Read <a href="https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html" target="_blank">this guide</a> for tips on how to do so. 
 
 * **Should I use Git inside of Box? (i.e. turn a Box folder into a Git repository)**  
 No – we strongly recommend keeping Box folders and GitHub repositories separate. 
 
 * **What kinds of files should I track with Git?**  
-Generally, you should only track code (i.e. scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e. Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should **never** store confidential data on GitHub (even in a private repository). We recommend getting familiar with `.gitignore` [files](https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/), which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template `.gitignore` files for specific programming languages (e.g. [R](https://github.com/github/gitignore/blob/main/R.gitignore), [Stata](https://github.com/github/gitignore/blob/main/Global/Stata.gitignore), or [Python](https://github.com/github/gitignore/blob/main/Python.gitignore)) or operating systems (e.g. [Windows](https://github.com/github/gitignore/blob/main/Global/Windows.gitignore) or [MacOS](https://github.com/github/gitignore/blob/main/Global/macOS.gitignore)) that can be useful as a starting point. 
+Generally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should **never** store confidential data on GitHub (even in a private repository). We recommend getting familiar with `.gitignore` <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/" target="_blank">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template `.gitignore` files for specific programming languages (e.g. <a href="https://github.com/github/gitignore/blob/main/R.gitignore" target="_blank">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore" target="_blank">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore" target="_blank">Python</a>) or operating systems (e.g. <a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore" target="_blank">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore" target="_blank">MacOS</a>) that can be useful as a starting point. 
 
 * **How do I add documentation to my repositories?**  
-Use `README` [files](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/) to add context and documentation to your repos. These are [Markdown](https://www.markdownguide.org/getting-started/) files in the root of your directory named `README.md` that can help folks understand the structure and contents of your repo. [Markdown Live Preview](https://markdownlivepreview.com/) can be a useful tool to help with formatting. 
+Use `README` <a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/" target="_blank">files</a> to add context and documentation to your repos. These are <a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> files in the root of your directory named `README.md` that can help folks understand the structure and contents of your repo. <a href="https://markdownlivepreview.com/" target="_blank">Markdown Live Preview</a> can be a useful tool to help with formatting. 
 
 * **What permissions should I give my collaborators?**  
-In general, you should follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the **Write** role, but you should refer to GitHub's [guide](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization) describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the #github Slack channel.  
+In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the **Write** role, but you should refer to GitHub's <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" target="_blank">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a>.  
 
 * **Are there other commands that can be helpful when using Git from the command line?**  
-Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include `pwd` (to print your current directory), `cd` (to change directories), and `ls` (to list the files in a directory). For an introduction to these, and other, commands, we recommend [this guide](https://friendly-101.readthedocs.io/en/latest/commandline.html) from Friendly Django or [this guide](https://happygitwithr.com/shell.html) from Happy Git with R.
+Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include `pwd` (to print your current directory), `cd` (to change directories), and `ls` (to list the files in a directory). For an introduction to these commands and others, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html" target="_blank">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html" target="_blank">this guide</a> from Happy Git with R.
 
 * **Where did the cute images in this guide come from?**  
-Those are GitHub's mascot, the Octocat. You can read more about the history of Octocats [here](https://cameronmcefee.com/work/the-octocat/) and check out the full set of Octocats that GitHub has created [here](https://octodex.github.com/). 
+Those are GitHub's mascot, the Octocat. You can read more about the history of Octocats <a href="https://cameronmcefee.com/work/the-octocat/" target="_blank">here</a> and check out the full set of Octocats that GitHub has created <a href="https://octodex.github.com/" target="_blank">here</a>. 
 
 ## Additional Resources 
 
-- [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
-- [Happy Git and GitHub for the UserR](https://happygitwithr.com/)
-- [Git Pocket Guide](https://www.amazon.com/Git-Pocket-Guide-Working-Introduction/dp/1449325866)
-- [Getting Git Right](https://www.atlassian.com/git)
-- [Git Learning Lab](https://lab.github.com/)
-- [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans)
+- <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git Cheat Sheet</a>
+- <a href="https://happygitwithr.com/" target="_blank">Happy Git and GitHub for the UserR</a>
+- <a href="https://www.amazon.com/Git-Pocket-Guide-Working-Introduction/dp/1449325866" target="_blank">Git Pocket Guide</a>
+- <a href="https://www.atlassian.com/git" target="_blank">Getting Git Right</a>
+- <a href="https://skills.github.com/" target="_blank">GitHub Skills</a>
+- <a href="https://speakerdeck.com/alicebartlett/git-for-humans" target="_blank">Git for Humans</a>
