@@ -15,11 +15,12 @@ This guide shows how to use Git from the <a href="https://happygitwithr.com/shel
 To run Git commands from the command line on a Windows computer, right click within any directory (i.e. folder) on your computer, and select **Git Bash Here**. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this <a href="https://happygitwithr.com/shell.html" target="_blank">tutorial</a>.
 
 
-```{.bash}
-<run_this_command> 
-```
+Throughout this guide, `<>` indicate blanks that need to be filled in. Replace the `<>` with the desired text before you run the code:
 
-`<>` are used to indicate blanks that need to be filled in. Don't actually submit `<>`. Instead, replace them with the desired text. 
+```{.bash}
+print("Hello <name>!") # if the guide says this
+print("Hello world!") # run this
+```
 
 ## Basic workflow 
 
@@ -197,7 +198,7 @@ git pull
 
 ## Summary of commands 
 
-The table below summarizes the commands that we've discussed in this guide. There are also tons of Git cheat sheets available online (e.g. from <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">GitHub Education</a>, <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf" target="_blank">GitLab</a>, or from <a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_blank">Atlassian</a>. 
+The table below summarizes the commands that we've discussed in this guide. There are also tons of Git cheat sheets available online (e.g. from <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">GitHub Education</a>, <a href="https://about.gitlab.com/images/press/git-cheat-sheet.pdf" target="_blank">GitLab</a>, or <a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_blank">Atlassian</a>). 
 
 | Command                                  | What you're telling Git                                 | 
 | ---------------------------------------- | ------------------------------------------------------- | 
