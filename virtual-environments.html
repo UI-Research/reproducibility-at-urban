@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.324">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Reproducibility at Urban - Virtual Environments</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Reproducibility at Urban</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-git--github" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Git &amp; GitHub</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-git--github">    
+        <li>
+    <a class="dropdown-item" href="./git-overview.html" rel="" target="">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./git-installation.html" rel="" target="">
+ <span class="dropdown-text">Access &amp; Installation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./git-workflow.html" rel="" target="">
+ <span class="dropdown-text">General Workflow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./git-y-drive.html" rel="" target="">
+ <span class="dropdown-text">Confidential Data Workflow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./git-faqs.html" rel="" target="">
+ <span class="dropdown-text">FAQs &amp; Other Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./virtual-environments.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Virtual Environments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto.html" rel="" target="">
+ <span class="menu-text">Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Additional Resources</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-should-i-use-a-virtual-environment" id="toc-why-should-i-use-a-virtual-environment" class="nav-link active" data-scroll-target="#why-should-i-use-a-virtual-environment"><span class="header-section-number">1</span> Why should I use a virtual environment?</a></li>
+  <li><a href="#when-should-i-use-a-virtual-environment" id="toc-when-should-i-use-a-virtual-environment" class="nav-link" data-scroll-target="#when-should-i-use-a-virtual-environment"><span class="header-section-number">2</span> When should I use a virtual environment?</a></li>
+  <li><a href="#which-environment-manager-should-i-use" id="toc-which-environment-manager-should-i-use" class="nav-link" data-scroll-target="#which-environment-manager-should-i-use"><span class="header-section-number">3</span> Which environment manager should I use?</a></li>
+  <li><a href="#how-do-i-set-up-a-virtual-environment" id="toc-how-do-i-set-up-a-virtual-environment" class="nav-link" data-scroll-target="#how-do-i-set-up-a-virtual-environment"><span class="header-section-number">4</span> How do I set up a virtual environment?</a>
+  <ul class="collapse">
+  <li><a href="#the-big-idea" id="toc-the-big-idea" class="nav-link" data-scroll-target="#the-big-idea"><span class="header-section-number">4.1</span> The big idea</a></li>
+  <li><a href="#workflow-and-commands" id="toc-workflow-and-commands" class="nav-link" data-scroll-target="#workflow-and-commands"><span class="header-section-number">4.2</span> Workflow and commands</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">5</span> Additional resources</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help"><span class="header-section-number">6</span> Getting help</a></li>
+  <li><a href="#obligatory-xkcd-comic" id="toc-obligatory-xkcd-comic" class="nav-link" data-scroll-target="#obligatory-xkcd-comic"><span class="header-section-number">7</span> Obligatory xkcd comic</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Virtual Environments</h1>
+<p class="subtitle lead">Introduction to Virtual Environments with R and Python at the Urban Institute</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Introduction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We highly recommend checking out the <a href="renv:%20How%20to%20save%20your%20collaboRators%20(and%20future%20you)%20grief">slides</a> from an R Users Group talk in October 2023 from Erika Tyagi and Will Curran-Groome called <strong>renv: How to save your collaboRators (and future you) grief</strong>.</p>
+</div>
+</div>
+<p>This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/reproducibility-at-urban/git-workflow.html" target="_blank">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.</p>
+<section id="why-should-i-use-a-virtual-environment" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-should-i-use-a-virtual-environment"><span class="header-section-number">1</span> Why should I use a virtual environment?</h2>
+<p>Virtual environments promote reproducibility by letting you let you specify project-specific versions of packages. They accomplish this by making it easy to take a snapshot of the version of packages used in a project and restore that snapshot on other computers. They also make it easy to switch between snapshots on a single computer as you switch between projects.</p>
+<p>To make this more concrete, here’s a few situations when setting up a virtual environment can save you several hours (or even days!) of frustration:</p>
+<ul>
+<li>You published an analysis based on 2021 data. A year later, you want to update the analysis with 2022 data, but your code no longer works because a function in a package was updated.</li>
+<li>Your coworker is running into errors running your code because of differences in package versions between your computers.</li>
+<li>You need to use Python 2.7 for a legacy project, while using Python 3.7 for all other projects.</li>
+<li>You want to use a new library that has known compatibility issues with Python 3.8 on Windows computers, so you want to use Python 3.7 for just one specific project.</li>
+<li>You got a new computer and don’t want to spend hours remembering which R packages to install through endless <code>Error in library(&lt;&gt;): there is no package called '&lt;&gt;'</code> errors.</li>
+<li>Your code takes a long time to run locally, so you want to leverage powerful <a href="http://tech-tools.urban.org/ec2-submission/" target="_blank">virtual computers in the cloud</a> - or scale to use tens, hundreds, or thousands of computers simultaneously - but you first need to install the relevant packages on the virtual machine(s).</li>
+</ul>
+<p>Importantly, virtual environments are just one piece of reproducible research workflows - they are NOT replacements for other important components of reproducibility like version control, directory management, or data provenance.</p>
+</section>
+<section id="when-should-i-use-a-virtual-environment" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="when-should-i-use-a-virtual-environment"><span class="header-section-number">2</span> When should I use a virtual environment?</h2>
+<p>Ideally, always. You’ll be more likely to regret NOT setting up a virtual environment for a project down the line than to regret spending a few minutes doing so for a project that didn’t necessarily require one. Getting into the habit of using virtual environments for smaller projects will also help you develop confidence when using them for larger projects with more collaborators and complex dependencies.</p>
+<p>While the best time to set up a virtual environment for a project is at the very beginning (right after initializing your GitHub repository), the second best time is right now - whether you’re halfway through writing your code, ready to publish your results, or have already published your analysis.</p>
+</section>
+<section id="which-environment-manager-should-i-use" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="which-environment-manager-should-i-use"><span class="header-section-number">3</span> Which environment manager should I use?</h2>
+<p>For R projects, we recommend using <code>renv</code>. For Python projects, we recommend using <code>conda</code>. These are by no means the only environment managers for R and Python, but we’ve found these to be the most reliable and user-friendly for the majority of use cases at Urban.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Alternatives for R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Within the R community, <code>renv</code>, developed and <a href="https://github.com/rstudio/renv/" target="_blank">maintained by RStudio</a>, is the de facto virtual environment manager. Older resources might reference <code>packrat</code>, which has been <a href="https://github.com/rstudio/packrat#note" target="_blank">soft-deprecated</a> and is now superseded by <code>renv</code>. <a href="https://cran.r-project.org/web/packages/renv/vignettes/renv.html" target="_blank"> According to the developers</a> of <code>renv</code>,</p>
+<blockquote class="blockquote">
+<p>The goal is for <code>renv</code> to be a robust, stable replacement for the Packrat package, with fewer surprises and better default behaviors. If you’re using R alongside Python, it may make sense to use <code>conda</code> as your environment manager. Documentation for using R with the Anaconda distribution and <code>conda</code> environment manager is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/" target="_blank">here</a>. Alternatively, you can use Python with <code>renv</code>, as documented <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Alternatives for Python
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>There is a plethora of virtual environment managers in Python, with a few of the most common being <code>virtualenv</code>, <code>pipenv</code>, <code>poetry</code>, and <code>conda</code>.</p>
+<p>For data science and research use cases, <code>conda</code> is a popular option for several reasons. First, <code>conda</code> is both an environment manager and a package manager. As a result, <code>conda</code> helps install packages and manage dependencies, whereas other tools rely on <code>pip</code> for package management. Unlike other managers, <code>conda</code> also has native support for programming languages beyond Python (including R). Lastly, <code>conda</code> is extensible, letting you install packages from <code>pip</code>, for example, and offering <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a> as a lighter-weight alternative or <a href="https://mamba.readthedocs.io/en/latest/index.html" target="_blank">Mamba</a> as an even faster “drop-in replacement” for <code>conda</code>.</p>
+<p>If you’re using R and Python, <code>conda</code> or <code>renv</code> are good options given their emphasis on interoperability. Documentation for using R with <code>conda</code> is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/" target="_blank">here</a>, and documentation for using Python with <code>renv</code> is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="how-do-i-set-up-a-virtual-environment" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="how-do-i-set-up-a-virtual-environment"><span class="header-section-number">4</span> How do I set up a virtual environment?</h2>
+<section id="the-big-idea" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="the-big-idea"><span class="header-section-number">4.1</span> The big idea</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Overall</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="images/overall-workflow.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="images/renv-workflow.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="images/conda-workflow.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="workflow-and-commands" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="workflow-and-commands"><span class="header-section-number">4.2</span> Workflow and commands</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>To set up a virtual environment for an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects" target="_blank">R project</a>, we recommend using <code>renv</code>. To install <code>renv</code>, use the standard syntax to install R packages from CRAN: <code>install.packages("renv")</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where do I run these commands?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All commands below should be run in the RStudio console within your project’s directory.</p>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>Initialize</strong> a new project-specific environment:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that <code>renv::init()</code> creates a <code>.gitignore</code> file for your project, so there is no need to create a <code>.gitignore</code> when you first create your project.</p>
+<p>If you are using <a href="https://github.com/UrbanInstitute/urbntemplates/blob/main/README.md" target="_blank">urbntemplates</a>, first run <code>urbntemplates::start_project()</code> with <code>gitignore = FALSE</code> to create the project, then run <code>renv::init()</code> to initialize a project-specific environment.</p></li>
+<li><p><strong>Install packages</strong> using your usual workflow or <code>renv::install()</code>, which works with other repositories like GitHub in addition to CRAN:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)      <span class="co"># install from CRAN</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"tidyverse/dplyr"</span>) <span class="co"># install from GitHub</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that <code>renv</code> can install packages from a <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources" target="_blank">variety of sources</a>.</p></li>
+<li><p><strong>Save</strong> a snapshot of the environment to a file called <code>renv.lock</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Share</strong> the snapshot of the environment by sending three files to GitHub: <code>renv.lock</code>, <code>.Rprofile</code>, and <code>renv/activate.R</code>.</p>
+<p>Note that running the <code>renv::init()</code> command in the first step automatically updates your <code>.gitignore</code> file (if relevant) to tell Git which <code>renv</code> files to track.</p></li>
+<li><p><strong>Restore</strong> the snapshot of the environment on another computer:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Repeat</strong> the process. As you and your collaborators install, update, and remove packages, repeat steps 3-5 to save and load the state of your project to the <code>renv.lock</code> file across computers.</p></li>
+</ol>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>To set up a virtual environment for a Python project, we recommend using <code>conda</code>, which is built into the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda distribution</a> through Anaconda or <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a>. If you haven’t already installed Anaconda, see <a href="https://github.com/UI-Research/python-resources/blob/main/notebooks/anaconda-installation.ipynb" target="_blank">this guide</a> from a previous Python Users Group session. You can verify that <code>conda</code> is installed and running on your computer with <code>conda --version</code>. If you get an error, see the Anaconda <a href="https://conda.io/projects/conda/en/latest/user-guide/troubleshooting.html" target="_blank">troubleshooting guide</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where do I run these commands?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All commands below should be run from the Anaconda Prompt or a terminal window (e.g.&nbsp;within RStudio or VS Code) from the root of your project’s directory.</p>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>Initialize</strong> a new environment (optionally specifying a version of Python and/or a list of packages) using one of the options below. You should replace <code>my_env</code> with a descriptive name specific to your project.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name my_env                           <span class="co"># create empty environment  </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name my_env python<span class="op">==</span><span class="fl">3.7</span>               <span class="co"># create environment with specific Python version </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name my_env python<span class="op">==</span><span class="fl">3.7</span> pandas numpy  <span class="co"># create environment with packages installed </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It’s best practice to specify packages when initializing the environment to let <code>conda</code> help manage dependencies most effectively.</p></li>
+<li><p><strong>Activate</strong> the environment, again replacing <code>my_env</code> with the name of your environment:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>conda activate my_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Install packages</strong> using your usual workflow (optionally specifying the package version) for any packages that you did not include when initializing the environment in the first step:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>conda install pandas         <span class="co"># install default version of pandas </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conda install pandas<span class="op">=</span><span class="fl">0.24.1</span>  <span class="co"># install specific version of pandas </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It’s best practice to specify the version number associated with a package to ensure that changes in packages over time don’t affect the reproducibility of your code.</p></li>
+<li><p><strong>Save</strong> a snapshot of the environment to a file called <code>environment.yml</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conda env export <span class="op">--</span><span class="im">from</span><span class="op">-</span>history <span class="op">&gt;</span> environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>from-history</code> flag is necessary to make your environment file work across platforms.</p>
+<p>Alternatively, you can manually create the <code>environment.yml</code> file in the root of your project directory, where it would follow this structure:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>name: my_env</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dependencies:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> python<span class="op">=</span><span class="fl">3.7</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pandas<span class="op">=</span><span class="fl">0.24</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> numpy<span class="op">=</span><span class="fl">1.21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you installed packages using <code>pip</code>, the <code>environment.yml</code> file would follow this structure:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>name: my_env</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dependencies:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> python<span class="op">=</span><span class="fl">3.7</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pandas<span class="op">=</span><span class="fl">0.24</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> numpy<span class="op">=</span><span class="fl">1.21</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pip<span class="op">=</span><span class="fl">19.1</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pip:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> awscli<span class="op">==</span><span class="fl">1.16</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> kaggle<span class="op">==</span><span class="fl">1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that packages installed using <code>pip</code> use <code>==</code> to specify the version number, while packages installed from <code>conda</code> use <code>=</code>.</p></li>
+<li><p><strong>Share</strong> the snapshot by sending the <code>environment.yml</code> file to GitHub.</p></li>
+<li><p><strong>Restore</strong> and activate the snapshot of the environment on another computer:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>conda env create      </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>conda activate my_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>conda env create</code> syntax assumes you have a file called <code>environment.yml</code> in your working directory. While you could give this file a different name, we recommend sticking with the convention of naming the file <code>environment.yml</code> and placing it in the root of your project’s directory.</p></li>
+<li><p><strong>Repeat</strong> the process. As you and your collaborators install, update, and remove packages, repeat steps 4-6 to save and load the state of your project to the <code>environment.yml</code> file across computers.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">5</span> Additional resources</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>The 10-minute talk from rstudio::conf(2022) called <a href="https://www.rstudio.com/conference/2022/talks/you-should-use-renv/" target="_blank">You should be using renv</a> from E. David Aja is a great overview of the motivation for using the tool. We also recommend the official <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources" target="_blank">Introduction to renv</a> and <a href="https://rstudio.github.io/renv/articles/collaborating.html" target="_blank">Collaborating with renv</a> vignettes.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>We recommend keeping the official <code>conda</code> <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf" target="_blank">cheat sheet</a> handy.</p>
+<p>In addition to the commands included above, a few other commonly used <code>conda</code> commands include:</p>
+<ul>
+<li><code>conda deactivate</code> deactivates the current environment</li>
+<li><code>conda list</code> lists all packages in the current environment</li>
+<li><code>conda env list</code> lists all environments (with the current active environment asterisked)</li>
+<li><code>conda env remove -n my_env</code> deletes the <code>my_env</code> environment</li>
+</ul>
+<p>The <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html" target="_blank">official documentation</a> and <a href="https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html" target="_blank">this guide</a> from the Carpentries are also helpful resources.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="getting-help" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">6</span> Getting help</h2>
+<p>Adding a new tool to your workflow can be hard, but we’re here to help! Feel free to email Erika Tyagi (<a href="mailto:etyagi@urban.org">etyagi@urban.org</a>) or Will Curran-Groome (<a href="mailto:wcurrangroome@urban.org">wcurrangroome@urban.org</a>) or drop a message in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> Slack channel with any questions or if you run into issues.</p>
+</section>
+<section id="obligatory-xkcd-comic" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="obligatory-xkcd-comic"><span class="header-section-number">7</span> Obligatory xkcd comic</h2>
+<p>I couldn’t pick just one, so here’s three:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Dependency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Python Environment</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Workflow</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://xkcd.com/2347/"><img src="https://imgs.xkcd.com/comics/dependency.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://xkcd.com/1987/"><img src="https://imgs.xkcd.com/comics/python_environment.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://xkcd.com/1172/"><img src="https://imgs.xkcd.com/comics/workflow.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
