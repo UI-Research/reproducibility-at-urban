@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-24">
 
 <title>Reproducibility at Urban - Virtual Environments</title>
 <style>
@@ -121,6 +120,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-git--github">    
         <li>
+    <a class="dropdown-item" href="./git-overview.html" rel="" target="">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./git-installation.html" rel="" target="">
  <span class="dropdown-text">Access &amp; Installation</span></a>
   </li>  
@@ -141,6 +144,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link active" href="./virtual-environments.html" rel="" target="" aria-current="page">
  <span class="menu-text">Virtual Environments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto.html" rel="" target="">
+ <span class="menu-text">Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Additional Resources</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -186,12 +197,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -199,6 +204,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Introduction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We highly recommend checking out the <a href="renv:%20How%20to%20save%20your%20collaboRators%20(and%20future%20you)%20grief">slides</a> from an R Users Group talk in October 2023 from Erika Tyagi and Will Curran-Groome called <strong>renv: How to save your collaboRators (and future you) grief</strong>.</p>
+</div>
+</div>
 <p>This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/reproducibility-at-urban/git-workflow.html" target="_blank">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.</p>
 <section id="why-should-i-use-a-virtual-environment" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="why-should-i-use-a-virtual-environment"><span class="header-section-number">1</span> Why should I use a virtual environment?</h2>
@@ -223,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3" class="anchored" data-anchor-id="which-environment-manager-should-i-use"><span class="header-section-number">3</span> Which environment manager should I use?</h2>
 <p>For R projects, we recommend using <code>renv</code>. For Python projects, we recommend using <code>conda</code>. These are by no means the only environment managers for R and Python, but we’ve found these to be the most reliable and user-friendly for the majority of use cases at Urban.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -232,7 +250,7 @@ Alternatives for R
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Within the R community, <code>renv</code>, developed and <a href="https://github.com/rstudio/renv/" target="_blank">maintained by RStudio</a>, is the de facto virtual environment manager. Older resources might reference <code>packrat</code>, which has been <a href="https://github.com/rstudio/packrat#note" target="_blank">soft-deprecated</a> and is now superseded by <code>renv</code>. <a href="https://cran.r-project.org/web/packages/renv/vignettes/renv.html" target="_blank"> According to the developers</a> of <code>renv</code>,</p>
 <blockquote class="blockquote">
@@ -242,7 +260,7 @@ Alternatives for R
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -251,7 +269,7 @@ Alternatives for Python
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There is a plethora of virtual environment managers in Python, with a few of the most common being <code>virtualenv</code>, <code>pipenv</code>, <code>poetry</code>, and <code>conda</code>.</p>
 <p>For data science and research use cases, <code>conda</code> is a popular option for several reasons. First, <code>conda</code> is both an environment manager and a package manager. As a result, <code>conda</code> helps install packages and manage dependencies, whereas other tools rely on <code>pip</code> for package management. Unlike other managers, <code>conda</code> also has native support for programming languages beyond Python (including R). Lastly, <code>conda</code> is extensible, letting you install packages from <code>pip</code>, for example, and offering <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a> as a lighter-weight alternative or <a href="https://mamba.readthedocs.io/en/latest/index.html" target="_blank">Mamba</a> as an even faster “drop-in replacement” for <code>conda</code>.</p>
@@ -400,7 +418,7 @@ Where do I run these commands?
 </section>
 <section id="getting-help" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">6</span> Getting help</h2>
-<p>Adding a new tool to your workflow can be hard, but we’re here to help! Feel free to email Erika Tyagi (<a href="mailto:etyagi@urban.org">etyagi@urban.org</a>) or drop a message in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> Slack channel with any questions or if you run into issues.</p>
+<p>Adding a new tool to your workflow can be hard, but we’re here to help! Feel free to email Erika Tyagi (<a href="mailto:etyagi@urban.org">etyagi@urban.org</a>) or Will Curran-Groome (<a href="mailto:wcurrangroome@urban.org">wcurrangroome@urban.org</a>) or drop a message in the <a href="https://theurbaninstitute.slack.com/archives/CMLR2HY2Z" target="_blank">#reproducible-research</a> Slack channel with any questions or if you run into issues.</p>
 </section>
 <section id="obligatory-xkcd-comic" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="obligatory-xkcd-comic"><span class="header-section-number">7</span> Obligatory xkcd comic</h2>

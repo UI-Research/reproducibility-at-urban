@@ -1,7 +1,6 @@
 ---
-title: Git and Github Workflow 
+title: Git and GitHub Workflow 
 subtitle: How to Use Git and GitHub at the Urban Institute
-date: today
 ---
 
 This guide is intended to help Urban Institute employees get started with Git and GitHub. This guide assumes that you have already gone through the steps in the <a href="https://ui-research.github.io/reproducibility-at-urban/git-installation.html" target="_blank">Access and Installation Guide</a>. 
@@ -10,7 +9,7 @@ We know that learning these tools can be a challenge, but we're here for you! Dr
 
 ## Using the command line 
 
-This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html" target="_blank">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html" target="_blank">Github Desktop</a>, or RStudio's built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.
+This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html" target="_blank">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html" target="_blank">GitHub Desktop</a>, or RStudio's built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.
 
 To run Git commands from the command line on a Windows computer, right click within any directory (i.e. folder) on your computer, and select **Git Bash Here**. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this <a href="https://happygitwithr.com/shell.html" target="_blank">tutorial</a>.
 

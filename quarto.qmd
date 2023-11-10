@@ -1,0 +1,44 @@
+---
+title: Quarto 
+subtitle: Resources for Using Quarto at the Urban Institute 
+---
+
+::: {.callout-tip}
+## Introduction
+We highly recommend checking out the [slides](https://ui-research.github.io/r-users-group-presentations/presentations/2023-06-07_quarto/quarto.html) and [recording](https://urbanorg.app.box.com/s/3dlmlsgv6rq4m4u8tfmylsn7ls7xf6x1) from an R Users Group talk in June 2023 from Aaron Willims called **Quarto: The Life-Changing Magic of Tidying Up (Your Work with Notebooks)**.
+:::
+
+## What is Quarto? 
+
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that lets users create and publish reproducible, production quality articles, presentations, dashboards, websites, blogs, and books. Quarto lets you generate dynamic output using Python, R, Julia, and Observable within reproducible documents that can be regenerated when underlying assumptions or data change. It also [integrates](https://quarto.org/docs/visual-editor/technical.html#citations-from-zotero) with the citation manager [Zotero](https://www.zotero.org/), which can be particularly useful when working on publications. 
+
+We recommend checking out the [official Quarto documentation](https://quarto.org/docs/guide/) to learn what you can do with the tool. In particular, the [gallery](https://quarto.org/docs/gallery/) provides great examples of articles & reports, presentations, interactive documents, websites, books, and more.
+
+## Resources for using Quarto at Urban 
+
+::: {.callout-important}
+The templates in [urbnquarto](https://github.com/UI-Research/urbnquarto) have not been approved by Urban's COMMS team and should not be used for external publications without explicit approval from COMMS. 
+::: 
+ 
+* [**urbnquarto**](https://github.com/UI-Research/urbnquarto): Templates (e.g. for web reports, presentations, and Word documents) for working with Quarto that apply Urban styling. 
+* [**R Users Group presentation**](https://ui-research.github.io/r-users-group-presentations/presentations/2023-06-07_quarto/quarto.html): An intro to Quarto for R users (recording [here](https://urbanorg.app.box.com/s/3dlmlsgv6rq4m4u8tfmylsn7ls7xf6x1)).  
+* [**Python Users Group presentation**](https://github.com/UI-Research/python-at-urban/tree/master/misc-resources/quarto-demo): A demo of using Quarto with Jupyter Notebooks in Python. 
+
+## Examples from Urban projects 
+
+::: {.callout-note}
+## Contribute 
+If you have additional examples of projects at Urban that use Quarto that you would like included here, let us know by opening an issue or pull request in [our GitHub repository](https://github.com/UI-Research/reproducibility-at-urban). 
+::: 
+
+### Quarto Books
+* [**tidysynthesis documentation**](https://ui-research.github.io/tidysynthesis-documentation/): A Quarto book documenting the `tidysynthesis` R package. 
+* [**Boosting Upward Mobility from Poverty data documentation**](https://ui-research.github.io/mobility-from-poverty/02_poverty-exposure_race-ethnicity.html): A Quarto book with documentation on data sets and variables that make up Urban's mobility metrics (repo [here](https://github.com/UI-Research/mobility-from-poverty)). 
+
+### Quarto Websites 
+* [**Mobility Metrics data tables**](https://upward-mobility.urban.org/measuring-upward-mobility-counties-and-cities-across-us): 3,500+ Quarto websites with data tables of metrics measuring the status of and progress toward increasing upward mobility and equity across geographies (repo [here](https://github.com/UI-Research/gates-mobility-metrics-pages)). 
+* [**Education Data Portal FAQ site**](https://urbaninstitute.github.io/education-data-faqs/): A Quarto website with answers and code syntax for questions that users commonly ask about the Education Data Portal API (repo [here](https://github.com/UrbanInstitute/education-data-faqs)). 
+
+### Quarto Presentations  
+* [**Democratizing Access to Education Data**](https://ui-research.github.io/edp-posit-2023-talk): A Quarto presentation using [reveal.js](https://quarto.org/docs/presentations/revealjs/) on the Education Data Portal presented at posit::conf(2023) (repo [here](https://github.com/UI-Research/edp-posit-2023-talk)).
+* [**renv: How to save your collaboRators (and future you) grief**](https://ui-research.github.io/rug-renv-slides/#/title-slide): A Quarto presentation using [reveal.js](https://quarto.org/docs/presentations/revealjs/) on using renv (repo [here](https://github.com/UI-Research/rug-renv-slides)).

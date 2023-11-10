@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-24">
 
-<title>Reproducibility at Urban - Git and Github Workflow</title>
+<title>Reproducibility at Urban - Git and GitHub Workflow</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,6 +120,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-git--github">    
         <li>
+    <a class="dropdown-item" href="./git-overview.html" rel="" target="">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./git-installation.html" rel="" target="">
  <span class="dropdown-text">Access &amp; Installation</span></a>
   </li>  
@@ -141,6 +144,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="./virtual-environments.html" rel="" target="">
  <span class="menu-text">Virtual Environments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto.html" rel="" target="">
+ <span class="menu-text">Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Additional Resources</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -182,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git and Github Workflow</h1>
+<h1 class="title">Git and GitHub Workflow</h1>
 <p class="subtitle lead">How to Use Git and GitHub at the Urban Institute</p>
 </div>
 
@@ -191,12 +202,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -208,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We know that learning these tools can be a challenge, but we’re here for you! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues, and we will be happy to help out.</p>
 <section id="using-the-command-line" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="using-the-command-line"><span class="header-section-number">1</span> Using the command line</h2>
-<p>This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html" target="_blank">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html" target="_blank">Github Desktop</a>, or RStudio’s built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.</p>
+<p>This guide shows how to use Git from the <a href="https://happygitwithr.com/shell.html" target="_blank">command line</a>, which may look scary but we promise will be useful to learn! There are other tools to interact with Git using a visual interface (like <a href="https://joshuadull.github.io/GitHub-Desktop/02-getting-started/index.html" target="_blank">GitHub Desktop</a>, or RStudio’s built in Git integration). These tools may be helpful, but we recommend starting by reading this guide and understanding how Git works. Under the hood, all those visual interfaces just use the command line.</p>
 <p>To run Git commands from the command line on a Windows computer, right click within any directory (i.e.&nbsp;folder) on your computer, and select <strong>Git Bash Here</strong>. Alternatively, if you already use an IDE like RStudio or VS Code, you can use the terminal within these IDEs directly to run commands. You can also read more about the command line in this <a href="https://happygitwithr.com/shell.html" target="_blank">tutorial</a>.</p>
 <p>Throughout this guide, <code>&lt;&gt;</code> indicate blanks that need to be filled in. Replace the <code>&lt;&gt;</code> with the desired text before you run the code:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">print</span><span class="er">(</span><span class="st">"Hello &lt;name&gt;!"</span><span class="kw">)</span> <span class="co"># if the guide says this</span></span>

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-24">
 
-<title>Reproducibility at Urban - Git and GitHub Access and Installation</title>
+<title>Reproducibility at Urban - Git and GitHub FAQs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -121,6 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-git--github">    
         <li>
+    <a class="dropdown-item" href="./git-overview.html" rel="" target="">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./git-installation.html" rel="" target="">
  <span class="dropdown-text">Access &amp; Installation</span></a>
   </li>  
@@ -142,6 +111,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./virtual-environments.html" rel="" target="">
  <span class="menu-text">Virtual Environments</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto.html" rel="" target="">
+ <span class="menu-text">Quarto</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html" rel="" target="">
+ <span class="menu-text">Additional Resources</span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -158,15 +135,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">1</span> Background</a></li>
-  <li><a href="#installation-and-registration" id="toc-installation-and-registration" class="nav-link" data-scroll-target="#installation-and-registration"><span class="header-section-number">2</span> Installation and registration</a>
-  <ul class="collapse">
-  <li><a href="#git-installation-for-windows" id="toc-git-installation-for-windows" class="nav-link" data-scroll-target="#git-installation-for-windows"><span class="header-section-number">2.1</span> git installation for Windows</a></li>
-  <li><a href="#git-installation-for-mac-os" id="toc-git-installation-for-mac-os" class="nav-link" data-scroll-target="#git-installation-for-mac-os"><span class="header-section-number">2.2</span> git installation for Mac OS</a></li>
-  </ul></li>
-  <li><a href="#github-account" id="toc-github-account" class="nav-link" data-scroll-target="#github-account"><span class="header-section-number">3</span> GitHub account</a></li>
-  <li><a href="#configure-git-and-github" id="toc-configure-git-and-github" class="nav-link" data-scroll-target="#configure-git-and-github"><span class="header-section-number">4</span> Configure Git and GitHub</a></li>
-  <li><a href="#authentication-and-tokens" id="toc-authentication-and-tokens" class="nav-link" data-scroll-target="#authentication-and-tokens"><span class="header-section-number">5</span> Authentication and tokens</a></li>
+  <li><a href="#faqs" id="toc-faqs" class="nav-link active" data-scroll-target="#faqs"><span class="header-section-number">1</span> FAQs</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">2</span> Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -175,8 +145,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git and GitHub Access and Installation</h1>
-<p class="subtitle lead">How to Install and Access Git and GitHub at the Urban Institute</p>
+<h1 class="title">Git and GitHub FAQs</h1>
+<p class="subtitle lead">Questions about Git and GitHub at the Urban Institute and Additional Resources</p>
 </div>
 
 
@@ -184,12 +154,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -197,59 +161,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This guide is intended to help Urban Institute employees get started accessing and installing Git and GitHub. You should generally only have to complete the steps in this guide once during your time at Urban.</p>
-<p>We know that learning these tools can be a challenge, but we’re here for you! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="blank">#github Slack channel</a> if you run into issues, and we will be happy to help out.</p>
-<section id="background" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="background"><span class="header-section-number">1</span> Background</h2>
-<p>Version control is a system for managing and recording changes to files over time. Version control can:</p>
+<section id="faqs" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="faqs"><span class="header-section-number">1</span> FAQs</h2>
 <ul>
-<li>Limit the chance of making a mistake</li>
-<li>Maximize the chance of catching a mistake when it happens</li>
-<li>Create a permanent record of changes to code</li>
-<li>Easily undo mistakes by switching between iterations of code</li>
-<li>Allow multiple paths of development while protecting working versions of code</li>
-<li>Encourage communication between collaborators</li>
-<li>Be used for external communication</li>
+<li><p><strong>Git and GitHub seem a little scary. How do I get started?</strong><br>
+Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.</p></li>
+<li><p><strong>Where can I go for help if I get stuck?</strong><br>
+Running into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues.</p></li>
+<li><p><strong>Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?</strong><br>
+Yes! Read <a href="https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html" target="_blank">this guide</a> for tips on how to do so.</p></li>
+<li><p><strong>Should I use Git inside of Box? (i.e.&nbsp;turn a Box folder into a Git repository)</strong><br>
+No – we strongly recommend keeping Box folders and GitHub repositories separate.</p></li>
+<li><p><strong>What kinds of files should I track with Git?</strong><br>
+Generally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should <strong>never</strong> store confidential data on GitHub (even in a private repository). We recommend getting familiar with <code>.gitignore</code> <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/" target="_blank">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template <code>.gitignore</code> files for specific programming languages (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/R.gitignore" target="_blank">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore" target="_blank">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore" target="_blank">Python</a>) or operating systems (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore" target="_blank">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore" target="_blank">MacOS</a>) that can be useful as a starting point.</p></li>
+<li><p><strong>How do I add documentation to my repositories?</strong><br>
+Use <code>README</code> <a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/" target="_blank">files</a> to add context and documentation to your repos. These are <a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> files in the root of your directory named <code>README.md</code> that can help folks understand the structure and contents of your repo. <a href="https://markdownlivepreview.com/" target="_blank">Markdown Live Preview</a> can be a useful tool to help with formatting.</p></li>
+<li><p><strong>What permissions should I give my collaborators?</strong><br>
+In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the <strong>Write</strong> role, but you should refer to GitHub’s <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" target="_blank">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a>.</p></li>
+<li><p><strong>Are there other commands that can be helpful when using Git from the command line?</strong><br>
+Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include <code>pwd</code> (to print your current directory), <code>cd</code> (to change directories), and <code>ls</code> (to list the files in a directory). For an introduction to these commands and others, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html" target="_blank">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html" target="_blank">this guide</a> from Happy Git with R.</p></li>
 </ul>
-<p><strong>Git</strong> is a distributed version-control system for tracking changes in code. Git is free, open-source software and can be used locally without an internet connection. It’s like a turbo-charged version of track changes for code.</p>
-<p><strong>GitHub</strong> is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It’s like a turbo-charged version of Box for sharing repositories created using Git.</p>
-<p>The objective of using Git and GitHub is to create local repositories that track code, and sometimes data, and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push their changes to that repository.</p>
 </section>
-<section id="installation-and-registration" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="installation-and-registration"><span class="header-section-number">2</span> Installation and registration</h2>
-<section id="git-installation-for-windows" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="git-installation-for-windows"><span class="header-section-number">2.1</span> git installation for Windows</h3>
-<p>Install <a href="https://git-scm.com/downloads" target="_blank">Git for Windows</a>. Keep all default selections and <strong>be sure to install Git Bash</strong>. Git Bash is a command line for Windows that is useful for using Git. After installation, you should be able to right click and select <code>Git Bash Here</code>.</p>
-</section>
-<section id="git-installation-for-mac-os" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="git-installation-for-mac-os"><span class="header-section-number">2.2</span> git installation for Mac OS</h3>
-<p>Install <a href="https://git-scm.com/downloads" target="_blank">Git for Mac OS</a>. Mac already has the terminal. Open the terminal and type <code>git</code>. If everything is properly installed, a list of possible command will show up.</p>
-</section>
-</section>
-<section id="github-account" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="github-account"><span class="header-section-number">3</span> GitHub account</h2>
-<p>Create a <a href="https://github.com/" target="_blank">GitHub account</a>. There is no need to associate your account with the Urban Institute or an Urban Institute email address. Many people want to use GitHub for personal projects, too.</p>
-<p>After creating an account, fill out Urban’s <a href="https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5" target="_blank">GitHub intake form</a> to join Urban’s primary GitHub organization, <a href="https://github.com/UI-Research" target="_blank">UI_Research</a>. Note that Urban has another GitHub organization, <a href="https://github.com/UrbanInstitute" target="_blank">UrbanInstitute</a>, that is primarily used for public-facing repositories.</p>
-</section>
-<section id="configure-git-and-github" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="configure-git-and-github"><span class="header-section-number">4</span> Configure Git and GitHub</h2>
-<p>Link your local Git to GitHub by submitting the following with your GitHub username in quotes:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"&lt;your_github_username&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You should also submit the email address linked to your GitHub account:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"&lt;your_email_address&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="authentication-and-tokens" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="authentication-and-tokens"><span class="header-section-number">5</span> Authentication and tokens</h2>
-<p>You will need to create a personal access token (PAT) to replace your password and provide enhanced security. <a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/" target="_blank">Since 2021</a>, GitHub has required PATs to perform Git operations. To create a PAT:</p>
-<ol type="1">
-<li><p>Log into your <a href="https://github.com/" target="_blank">GitHub account</a>. Navigate to the drop-down menu in the top right corner with your profile picture. Select <strong>Settings</strong> near the bottom of this drop-down.</p></li>
-<li><p>From your account settings, navigate to <strong>Developer Settings</strong>, at the bottom of the menu on the left.</p></li>
-<li><p>From the developer settings, navigate to <strong>Personal Access Tokens</strong> in the menu on the left.</p></li>
-<li><p>Click <strong>Generate new token (classic)</strong>. You may be prompted to re-enter your GitHub password.</p></li>
-<li><p>Add a note to label the token. This is useful if you intend to generate multiple tokens for different uses. Then, set a time limit for the token – you can set this to never expire. Finally, select the scope of permissions you would like to give the token - you can select all all options. Then click <strong>Generate token</strong>.</p></li>
-<li><p>The generated token will appear. <strong>Make sure to copy and safely store the token when it appears, as you will not be able to view it again</strong>. Note that if you lose your token, you can always generate a new one. Use this in place of your GitHub password when prompted by Git (or when using the GitHub API).</p></li>
-</ol>
-<p>The first time you attempt to clone (copy to your computer) a repository that is private on GitHub, Git will prompt you for your credentials. Your username is just your GitHub username. Your password should be the PAT that you created.</p>
+<section id="additional-resources" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">2</span> Additional Resources</h2>
+<ul>
+<li><a href="https://docs.github.com/en/get-started/quickstart/hello-world" target="_blank">GitHub’s Quickstart Guide</a></li>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git Cheat Sheet</a></li>
+<li><a href="https://happygitwithr.com/" target="_blank">Happy Git and GitHub for the UserR</a></li>
+<li><a href="https://www.amazon.com/Git-Pocket-Guide-Working-Introduction/dp/1449325866" target="_blank">Git Pocket Guide</a></li>
+<li><a href="https://www.atlassian.com/git" target="_blank">Getting Git Right</a></li>
+<li><a href="https://speakerdeck.com/alicebartlett/git-for-humans" target="_blank">Git for Humans</a></li>
+</ul>
 
 
 </section>
