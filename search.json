@@ -1,68 +1,5 @@
 [
   {
-    "objectID": "git-y-drive.html",
-    "href": "git-y-drive.html",
-    "title": "Git and GitHub with Confidential Data",
-    "section": "",
-    "text": "So you’ve learned about the power of Git and GitHub and now want to use it in your projects. That’s great news! But if your project data is stored on the Y Drive (aka ares) for confidentiality reasons, you’ll have to jump through a few extra hoops. Below are instructions on one way to set up a GitHub repo to play nicely with the Y Drive."
-  },
-  {
-    "objectID": "git-y-drive.html#the-big-picture",
-    "href": "git-y-drive.html#the-big-picture",
-    "title": "Git and GitHub with Confidential Data",
-    "section": "1 The big picture",
-    "text": "1 The big picture\n\nStore all data directly on the Y Drive\nStore all scripts in a Git repo\nCreate and clone the repo on the virtual machine (e.g. Urban Users PGP or Win 10 Secure) local drive\nKeep that repo with the scripts completely separate from the Y Drive folder with the data\nWithin your scripts, always read in data using the direct Y Drive filepaths and write out intermediate/final data files using direct Y Drive filepaths\n\nThis means your scripts will live in a separate place (usually the Documents folder of the virtual desktop) from your data (somewhere in the Y Drive) and only your scripts will be on Git/GitHub. So while changes to your scripts will be tracked with all the power of GitHub, your data will not.\nIf your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same Git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can’t put your data in Git/GitHub for security reasons (and therefore won’t get the power of Git and file tracking for the data).\nNow that’s out of the way, how do you setup Git/GitHub with your confidential data?"
-  },
-  {
-    "objectID": "git-y-drive.html#set-up-the-y-drive-folder-for-data",
-    "href": "git-y-drive.html#set-up-the-y-drive-folder-for-data",
-    "title": "Git and GitHub with Confidential Data",
-    "section": "2 Set up the Y Drive folder (for data)",
-    "text": "2 Set up the Y Drive folder (for data)\n\nUse the intake form to request a new folder for your project and give the appropriate staff access.\nSecurely move the project data files into the assigned Y Drive folder. Inside the folder, we recommend the following folder structure:\n- projectfolder/\n    - data/\n        - raw-data/\n        - intermediate-data/\n        - final-data/\n\nThe data you move to the Y Drive should go into the data/raw-data folder and manipulated data can go into the other folders.\nNote that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script. For this reason, we suggest a) keeping the data files inside raw-data untouched and never programmatically writing to that folder and b) keeping a clear script copy of how you transform the files inside raw-data so that you can easily regenerate intermediate and final data files."
-  },
-  {
-    "objectID": "git-y-drive.html#set-up-the-git-repo-for-scripts",
-    "href": "git-y-drive.html#set-up-the-git-repo-for-scripts",
-    "title": "Git and GitHub with Confidential Data",
-    "section": "3 Set up the Git repo (for scripts)",
-    "text": "3 Set up the Git repo (for scripts)\n\nUse a virtual desktop to open Win10 Secure or PGP. Note that Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code. For additional information, see Urban’s Overview of Computing Resources.\nIf necessary, install GitHub Desktop from this link: https://desktop.github.com/.\nOpen up GitHub Desktop and login to your GitHub account.\nClick Add &gt; Create new repository.\nWe recommend initializing the repo with a README (with background information/instructions for running your code) and a .gitignore file to tell Git not to track certain files. Here is an example of a strict .gitignore file that ignores all files (e.g. data files) except for R, SAS, and Stata scripts.\n# Ignore everything\n*.*\n\n# Include .gitignore and README.md\n!.gitignore\n!README.md\n\n# Include R scripts \n!*.R\n!*.Rproj\n\n# Include SAS scripts \n!*.sas\n\n# Include Stata scripts \n!*.do\n\nVery importantly, when selecting a local path, make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped Y: drive. By default, GitHub Desktop should try to create the repo in \\\\Ares\\CTX_RedirectedFolders$\\username\\My Documents\\GitHub. While that may look weird, that is an acceptable filepath and will put the repo in the My Documents\\GitHub folder of the virtual desktop. Once you’re ready, select Create Repository.\nThis should create the repository in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to GitHub Desktop, select Repository in the top left and then Show in File Explorer.\nClick Publish Repo in the top right of GitHub Desktop to send the repo to GitHub.com\nInside the Git repo (i.e., folder) we suggest the following folder structure:\nREADME.md\nscripts/\n    somescript.R\n    someotherscript.R\nWhere the scripts folder contains all code for the project. Feel free to create subfolders as you see fit.\nMake changes to your project, like updating the README, or adding scripts. Then commit the changes on GitHub Desktop and push the changes.\nEach member of your project team will need to clone the repo into on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the repo into the mapped Y Drive."
-  },
-  {
-    "objectID": "git-y-drive.html#write-scripts-and-commit-to-gitgithub",
-    "href": "git-y-drive.html#write-scripts-and-commit-to-gitgithub",
-    "title": "Git and GitHub with Confidential Data",
-    "section": "4 Write scripts and commit to Git/GitHub",
-    "text": "4 Write scripts and commit to Git/GitHub\nNow you can write scripts as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (i.e., the two virtual machines specified above).\n\nlibrary(tidyverse)\n\n# --- Read in Data ---\n\n## We recommend using the full filepath which starts with\n## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to\n## replace CENTER and projectfolder with your respective values.\nraw_data &lt;- read_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n## Another acceptable filepath uses the \"Y:\" drive mapping built into \n## virtual desktops. This could change in the future.\nraw_data &lt;- read_csv(\"Y:/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n\n# --- Write out Data ---\nraw_data %&gt;%\n  write_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv\")"
-  },
-  {
-    "objectID": "git-overview.html",
-    "href": "git-overview.html",
-    "title": "Git and GitHub Overview",
-    "section": "",
-    "text": "Requesting Access\n\n\n\nTo request access to GitHub at Urban, fill out the GitHub intake form."
-  },
-  {
-    "objectID": "git-overview.html#contents",
-    "href": "git-overview.html#contents",
-    "title": "Git and GitHub Overview",
-    "section": "1 Contents",
-    "text": "1 Contents\nThis site includes several resources to help staff at Urban get started with Git and GitHub:\n\nAccess & Installation: Walks through initial installation, configuration, and authentication steps.\nGeneral Workflow: Walks through a typical workflow for using Git and GitHub across projects.\nConfidential Data Workflow: Extends the general workflow with steps for using confidential data.\nFAQs & Other Resources: Provides answers to FAQs and links to helpful external resources."
-  },
-  {
-    "objectID": "git-overview.html#motivation",
-    "href": "git-overview.html#motivation",
-    "title": "Git and GitHub Overview",
-    "section": "2 Motivation",
-    "text": "2 Motivation\nGit and GitHub are tools that can help promote reproducibility through version control. Version control is a system for managing and recording changes to files over time, which can:\n\nLimit the chance of making a mistake\nMaximize the chance of catching a mistake when it happens\nCreate a permanent record of changes to code\nEasily undo mistakes by switching between iterations of code\nAllow multiple paths of development while protecting working versions of code\nEncourage communication between collaborators\nBe used for external communication\n\nGit is a distributed version-control system for tracking changes in code. It’s like a turbo-charged version of track changes for code. GitHub is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It’s like a turbo-charged version of Box for sharing repositories created using Git.\nThe objective of using Git and GitHub is to create local repositories that track code (and sometimes data) and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push their changes back to that repository."
-  },
-  {
-    "objectID": "git-overview.html#getting-help",
-    "href": "git-overview.html#getting-help",
-    "title": "Git and GitHub Overview",
-    "section": "3 Getting help",
-    "text": "3 Getting help\nWe know that learning these tools can be a challenge, but we’re here for you! Feel free to drop a message in the #github Slack channel with any questions. You can also use the #github Slack channel or TECH intake form to request help setting up a project with GitHub or an onboarding session for new users."
-  },
-  {
     "objectID": "git-workflow.html",
     "href": "git-workflow.html",
     "title": "Git and GitHub Workflow",
@@ -161,48 +98,6 @@
     "text": "7 Obligatory xkcd comic\nI couldn’t pick just one, so here’s three:\n\nDependencyPython EnvironmentWorkflow"
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Additional Resources",
-    "section": "",
-    "text": "Contribute\n\n\n\nAs you come across additional internal or external resources around reproducibility that you would like included here, let us know by opening an issue or pull request in our GitHub repository."
-  },
-  {
-    "objectID": "resources.html#internal-resources",
-    "href": "resources.html#internal-resources",
-    "title": "Additional Resources",
-    "section": "1 Internal Resources",
-    "text": "1 Internal Resources\nThe following are additional resources that are developed and maintained by Urban staff:\n\nCode Reviews: Fill out the intake form to request that an experienced programmer review your code (e.g. to ensure that the results can be replicated, that the code is logical and readable, etc.).\nTECH Intake Form: Fill out the intake form to request support from an experienced programmer to set up a project to enable reproducible workflows (e.g. to onboard project staff to Git/GitHub, set up directories and data storage on Urban’s infrastructure, automate a manual or error-prone task, etc.).\n\nR Users Group: Visit the group’s website to develop your skills in R, an open-source programming language that is widely used at Urban to read and process data, develop data visualizations and maps, build dashboards, conduct analyses, and more.\nPython Users Group: Visit the group’s website to develop your skills in Python, an open-source programming language that is used at Urban to automate tasks, run microsimulation models, and more.\n\nWe also recommend joining the following Slack channels:\n\n#github\n#reproducible-research\n#r-users-group\n#python-users"
-  },
-  {
-    "objectID": "resources.html#external-resources",
-    "href": "resources.html#external-resources",
-    "title": "Additional Resources",
-    "section": "2 External Resources",
-    "text": "2 External Resources\nThe following are external resources that describe challenges and opportunities to promoting reproducibility:\n\nHarvard Data Science Review on Reinforcing Reproducibility and Replicability\nHow to fix your scientific coding errors\nExercises for Lab Groups to Prevent Research Mistakes\nThe Good Research Code Handbook"
-  },
-  {
-    "objectID": "git-faqs.html",
-    "href": "git-faqs.html",
-    "title": "Git and GitHub FAQs",
-    "section": "",
-    "text": "Git and GitHub seem a little scary. How do I get started?\nStart by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.\nWhere can I go for help if I get stuck?\nRunning into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the #github Slack channel if you run into issues.\nCan I use Git and GitHub with projects that have confidential data stored on the Y Drive?\nYes! Read this guide for tips on how to do so.\nShould I use Git inside of Box? (i.e. turn a Box folder into a Git repository)\nNo – we strongly recommend keeping Box folders and GitHub repositories separate.\nWhat kinds of files should I track with Git?\nGenerally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should never store confidential data on GitHub (even in a private repository). We recommend getting familiar with .gitignore files, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template .gitignore files for specific programming languages (e.g. R, Stata, or Python) or operating systems (e.g. Windows or MacOS) that can be useful as a starting point.\nHow do I add documentation to my repositories?\nUse README files to add context and documentation to your repos. These are Markdown files in the root of your directory named README.md that can help folks understand the structure and contents of your repo. Markdown Live Preview can be a useful tool to help with formatting.\nWhat permissions should I give my collaborators?\nIn general, you should follow the principle of least privilege, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the Write role, but you should refer to GitHub’s guide describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the #github Slack channel.\nAre there other commands that can be helpful when using Git from the command line?\nDefinitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include pwd (to print your current directory), cd (to change directories), and ls (to list the files in a directory). For an introduction to these commands and others, we recommend this guide from Friendly Django or this guide from Happy Git with R."
-  },
-  {
-    "objectID": "git-faqs.html#faqs",
-    "href": "git-faqs.html#faqs",
-    "title": "Git and GitHub FAQs",
-    "section": "",
-    "text": "Git and GitHub seem a little scary. How do I get started?\nStart by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.\nWhere can I go for help if I get stuck?\nRunning into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the #github Slack channel if you run into issues.\nCan I use Git and GitHub with projects that have confidential data stored on the Y Drive?\nYes! Read this guide for tips on how to do so.\nShould I use Git inside of Box? (i.e. turn a Box folder into a Git repository)\nNo – we strongly recommend keeping Box folders and GitHub repositories separate.\nWhat kinds of files should I track with Git?\nGenerally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should never store confidential data on GitHub (even in a private repository). We recommend getting familiar with .gitignore files, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template .gitignore files for specific programming languages (e.g. R, Stata, or Python) or operating systems (e.g. Windows or MacOS) that can be useful as a starting point.\nHow do I add documentation to my repositories?\nUse README files to add context and documentation to your repos. These are Markdown files in the root of your directory named README.md that can help folks understand the structure and contents of your repo. Markdown Live Preview can be a useful tool to help with formatting.\nWhat permissions should I give my collaborators?\nIn general, you should follow the principle of least privilege, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the Write role, but you should refer to GitHub’s guide describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the #github Slack channel.\nAre there other commands that can be helpful when using Git from the command line?\nDefinitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include pwd (to print your current directory), cd (to change directories), and ls (to list the files in a directory). For an introduction to these commands and others, we recommend this guide from Friendly Django or this guide from Happy Git with R."
-  },
-  {
-    "objectID": "git-faqs.html#additional-resources",
-    "href": "git-faqs.html#additional-resources",
-    "title": "Git and GitHub FAQs",
-    "section": "2 Additional Resources",
-    "text": "2 Additional Resources\n\nGitHub’s Quickstart Guide\nGit Cheat Sheet\nHappy Git and GitHub for the UserR\nGit Pocket Guide\nGetting Git Right\nGit for Humans"
-  },
-  {
     "objectID": "index.html#why-reproducibility",
     "href": "index.html#why-reproducibility",
     "title": "Reproducibility at Urban",
@@ -245,6 +140,34 @@
     "text": "3 Examples from Urban projects\n\n\n\n\n\n\nContribute\n\n\n\nIf you have additional examples of projects at Urban that use Quarto that you would like included here, let us know by opening an issue or pull request in our GitHub repository.\n\n\n\n3.1 Quarto Books\n\ntidysynthesis documentation: A Quarto book documenting the tidysynthesis R package.\nBoosting Upward Mobility from Poverty data documentation: A Quarto book with documentation on data sets and variables that make up Urban’s mobility metrics (repo here).\n\n\n\n3.2 Quarto Websites\n\nMobility Metrics data tables: 3,500+ Quarto websites with data tables of metrics measuring the status of and progress toward increasing upward mobility and equity across geographies (repo here).\nEducation Data Portal FAQ site: A Quarto website with answers and code syntax for questions that users commonly ask about the Education Data Portal API (repo here).\n\n\n\n3.3 Quarto Presentations\n\nDemocratizing Access to Education Data: A Quarto presentation using reveal.js on the Education Data Portal presented at posit::conf(2023) (repo here).\nrenv: How to save your collaboRators (and future you) grief: A Quarto presentation using reveal.js on using renv (repo here)."
   },
   {
+    "objectID": "git-overview.html",
+    "href": "git-overview.html",
+    "title": "Git and GitHub Overview",
+    "section": "",
+    "text": "Requesting Access\n\n\n\nTo request access to GitHub at Urban, fill out the GitHub intake form."
+  },
+  {
+    "objectID": "git-overview.html#contents",
+    "href": "git-overview.html#contents",
+    "title": "Git and GitHub Overview",
+    "section": "1 Contents",
+    "text": "1 Contents\nThis site includes several resources to help staff at Urban get started with Git and GitHub:\n\nAccess & Installation: Walks through initial installation, configuration, and authentication steps.\nGeneral Workflow: Walks through a typical workflow for using Git and GitHub across projects.\nConfidential Data Workflow: Extends the general workflow with steps for using confidential data.\nFAQs & Other Resources: Provides answers to FAQs and links to helpful external resources."
+  },
+  {
+    "objectID": "git-overview.html#motivation",
+    "href": "git-overview.html#motivation",
+    "title": "Git and GitHub Overview",
+    "section": "2 Motivation",
+    "text": "2 Motivation\nGit and GitHub are tools that can help promote reproducibility through version control. Version control is a system for managing and recording changes to files over time, which can:\n\nLimit the chance of making a mistake\nMaximize the chance of catching a mistake when it happens\nCreate a permanent record of changes to code\nEasily undo mistakes by switching between iterations of code\nAllow multiple paths of development while protecting working versions of code\nEncourage communication between collaborators\nBe used for external communication\n\nGit is a distributed version-control system for tracking changes in code. It’s like a turbo-charged version of track changes for code. GitHub is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It’s like a turbo-charged version of Box for sharing repositories created using Git.\nThe objective of using Git and GitHub is to create local repositories that track code (and sometimes data) and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push their changes back to that repository."
+  },
+  {
+    "objectID": "git-overview.html#getting-help",
+    "href": "git-overview.html#getting-help",
+    "title": "Git and GitHub Overview",
+    "section": "3 Getting help",
+    "text": "3 Getting help\nWe know that learning these tools can be a challenge, but we’re here for you! Feel free to drop a message in the #github Slack channel with any questions. You can also use the #github Slack channel or TECH intake form to request help setting up a project with GitHub or an onboarding session for new users."
+  },
+  {
     "objectID": "git-installation.html",
     "href": "git-installation.html",
     "title": "Git and GitHub Access and Installation",
@@ -278,5 +201,82 @@
     "title": "Git and GitHub Access and Installation",
     "section": "4 Authentication and tokens",
     "text": "4 Authentication and tokens\nYou will need to create a personal access token (PAT) to replace your password and provide enhanced security. Since 2021, GitHub has required PATs to perform Git operations. To create a PAT:\n\nLog into your GitHub account. Navigate to the drop-down menu in the top right corner with your profile picture. Select Settings near the bottom of this drop-down.\nFrom your account settings, navigate to Developer Settings, at the bottom of the menu on the left.\nFrom the developer settings, navigate to Personal Access Tokens in the menu on the left.\nClick Generate new token (classic). You may be prompted to re-enter your GitHub password.\nAdd a note to label the token. This is useful if you intend to generate multiple tokens for different uses. Then, set a time limit for the token – you can set this to never expire. Finally, select the scope of permissions you would like to give the token - you can select all options. Then click Generate token.\nThe generated token will appear. Make sure to copy and safely store the token when it appears, as you will not be able to view it again. Note that if you lose your token, you can always generate a new one. Use this in place of your GitHub password when prompted by Git (or when using the GitHub API).\n\nThe first time you attempt to clone (copy to your computer) a repository that is private on GitHub, Git will prompt you for your credentials. Your username is just your GitHub username. Your password should be the PAT that you created."
+  },
+  {
+    "objectID": "git-faqs.html",
+    "href": "git-faqs.html",
+    "title": "Git and GitHub FAQs",
+    "section": "",
+    "text": "Git and GitHub seem a little scary. How do I get started?\nStart by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.\nWhere can I go for help if I get stuck?\nRunning into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the #github Slack channel if you run into issues.\nCan I use Git and GitHub with projects that have confidential data stored on the Y Drive?\nYes! Read this guide for tips on how to do so.\nShould I use Git inside of Box? (i.e. turn a Box folder into a Git repository)\nNo – we strongly recommend keeping Box folders and GitHub repositories separate.\nWhat kinds of files should I track with Git?\nGenerally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should never store confidential data on GitHub (even in a private repository). We recommend getting familiar with .gitignore files, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template .gitignore files for specific programming languages (e.g. R, Stata, or Python) or operating systems (e.g. Windows or MacOS) that can be useful as a starting point.\nHow do I add documentation to my repositories?\nUse README files to add context and documentation to your repos. These are Markdown files in the root of your directory named README.md that can help folks understand the structure and contents of your repo. Markdown Live Preview can be a useful tool to help with formatting.\nWhat permissions should I give my collaborators?\nIn general, you should follow the principle of least privilege, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the Write role, but you should refer to GitHub’s guide describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the #github Slack channel.\nAre there other commands that can be helpful when using Git from the command line?\nDefinitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include pwd (to print your current directory), cd (to change directories), and ls (to list the files in a directory). For an introduction to these commands and others, we recommend this guide from Friendly Django or this guide from Happy Git with R."
+  },
+  {
+    "objectID": "git-faqs.html#faqs",
+    "href": "git-faqs.html#faqs",
+    "title": "Git and GitHub FAQs",
+    "section": "",
+    "text": "Git and GitHub seem a little scary. How do I get started?\nStart by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.\nWhere can I go for help if I get stuck?\nRunning into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the #github Slack channel if you run into issues.\nCan I use Git and GitHub with projects that have confidential data stored on the Y Drive?\nYes! Read this guide for tips on how to do so.\nShould I use Git inside of Box? (i.e. turn a Box folder into a Git repository)\nNo – we strongly recommend keeping Box folders and GitHub repositories separate.\nWhat kinds of files should I track with Git?\nGenerally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should never store confidential data on GitHub (even in a private repository). We recommend getting familiar with .gitignore files, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template .gitignore files for specific programming languages (e.g. R, Stata, or Python) or operating systems (e.g. Windows or MacOS) that can be useful as a starting point.\nHow do I add documentation to my repositories?\nUse README files to add context and documentation to your repos. These are Markdown files in the root of your directory named README.md that can help folks understand the structure and contents of your repo. Markdown Live Preview can be a useful tool to help with formatting.\nWhat permissions should I give my collaborators?\nIn general, you should follow the principle of least privilege, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the Write role, but you should refer to GitHub’s guide describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the #github Slack channel.\nAre there other commands that can be helpful when using Git from the command line?\nDefinitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include pwd (to print your current directory), cd (to change directories), and ls (to list the files in a directory). For an introduction to these commands and others, we recommend this guide from Friendly Django or this guide from Happy Git with R."
+  },
+  {
+    "objectID": "git-faqs.html#additional-resources",
+    "href": "git-faqs.html#additional-resources",
+    "title": "Git and GitHub FAQs",
+    "section": "2 Additional Resources",
+    "text": "2 Additional Resources\n\nGitHub’s Quickstart Guide\nGit Cheat Sheet\nHappy Git and GitHub for the UserR\nGit Pocket Guide\nGetting Git Right\nGit for Humans"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Additional Resources",
+    "section": "",
+    "text": "Contribute\n\n\n\nAs you come across additional internal or external resources around reproducibility that you would like included here, let us know by opening an issue or pull request in our GitHub repository."
+  },
+  {
+    "objectID": "resources.html#internal-resources",
+    "href": "resources.html#internal-resources",
+    "title": "Additional Resources",
+    "section": "1 Internal Resources",
+    "text": "1 Internal Resources\nThe following are additional resources that are developed and maintained by Urban staff:\n\nCode Reviews: Fill out the intake form to request that an experienced programmer review your code (e.g. to ensure that the results can be replicated, that the code is logical and readable, etc.).\nTECH Intake Form: Fill out the intake form to request support from an experienced programmer to set up a project to enable reproducible workflows (e.g. to onboard project staff to Git/GitHub, set up directories and data storage on Urban’s infrastructure, automate a manual or error-prone task, etc.).\n\nR Users Group: Visit the group’s website to develop your skills in R, an open-source programming language that is widely used at Urban to read and process data, develop data visualizations and maps, build dashboards, conduct analyses, and more.\nPython Users Group: Visit the group’s website to develop your skills in Python, an open-source programming language that is used at Urban to automate tasks, run microsimulation models, and more.\n\nWe also recommend joining the following Slack channels:\n\n#github\n#reproducible-research\n#r-users-group\n#python-users"
+  },
+  {
+    "objectID": "resources.html#external-resources",
+    "href": "resources.html#external-resources",
+    "title": "Additional Resources",
+    "section": "2 External Resources",
+    "text": "2 External Resources\nThe following are external resources that describe challenges and opportunities to promoting reproducibility:\n\nHarvard Data Science Review on Reinforcing Reproducibility and Replicability\nHow to fix your scientific coding errors\nExercises for Lab Groups to Prevent Research Mistakes\nThe Good Research Code Handbook"
+  },
+  {
+    "objectID": "git-y-drive.html",
+    "href": "git-y-drive.html",
+    "title": "Git and GitHub with Confidential Data",
+    "section": "",
+    "text": "So you’ve learned about the power of Git and GitHub and now want to use it in your projects. That’s great news! But if your project data is stored on the Y Drive (aka ares) for confidentiality reasons, you’ll have to jump through a few extra hoops. Below are instructions on one way to set up a GitHub repo to play nicely with the Y Drive."
+  },
+  {
+    "objectID": "git-y-drive.html#the-big-picture",
+    "href": "git-y-drive.html#the-big-picture",
+    "title": "Git and GitHub with Confidential Data",
+    "section": "1 The big picture",
+    "text": "1 The big picture\n\nStore all data directly on the Y Drive\nStore all scripts in a Git repo\nCreate and clone the repo on the virtual machine (e.g. Urban Users PGP or Win 10 Secure) local drive\nKeep that repo with the scripts completely separate from the Y Drive folder with the data\nWithin your scripts, always read in data using the direct Y Drive filepaths and write out intermediate/final data files using direct Y Drive filepaths\n\nThis means your scripts will live in a separate place (usually the Documents folder of the virtual desktop) from your data (somewhere in the Y Drive) and only your scripts will be on Git/GitHub. So while changes to your scripts will be tracked with all the power of GitHub, your data will not.\nIf your project only has non-sensitive data files, it is best practice to put the data and scripts directly in the same Git repo as that makes it easier to work with collaborators and quickly understand project structures. But if you work with confidential data, you can’t put your data in Git/GitHub for security reasons (and therefore won’t get the power of Git and file tracking for the data).\nNow that’s out of the way, how do you setup Git/GitHub with your confidential data?"
+  },
+  {
+    "objectID": "git-y-drive.html#set-up-the-y-drive-folder-for-data",
+    "href": "git-y-drive.html#set-up-the-y-drive-folder-for-data",
+    "title": "Git and GitHub with Confidential Data",
+    "section": "2 Set up the Y Drive folder (for data)",
+    "text": "2 Set up the Y Drive folder (for data)\n\nUse the intake form to request a new folder for your project and give the appropriate staff access.\nSecurely move the project data files into the assigned Y Drive folder. Inside the folder, we recommend the following folder structure:\n- projectfolder/\n    - data/\n        - raw-data/\n        - intermediate-data/\n        - final-data/\n\nThe data you move to the Y Drive should go into the data/raw-data folder and manipulated data can go into the other folders.\nNote that because the data files aren’t in the Git repo, it will be possible for members of your team to accidentally overwrite the intermediate/final data files in the Y Drive if multiple people run the same script. For this reason, we suggest a) keeping the data files inside raw-data untouched and never programmatically writing to that folder and b) keeping a clear script copy of how you transform the files inside raw-data so that you can easily regenerate intermediate and final data files."
+  },
+  {
+    "objectID": "git-y-drive.html#set-up-the-git-repo-for-scripts",
+    "href": "git-y-drive.html#set-up-the-git-repo-for-scripts",
+    "title": "Git and GitHub with Confidential Data",
+    "section": "3 Set up the Git repo (for scripts)",
+    "text": "3 Set up the Git repo (for scripts)\n\nUse a virtual desktop to open Win10 Secure or PGP. Note that Win10 Secure has SAS installed while PGP does not. PGP might be more powerful/have more memory if you have computationally expensive code. For additional information, see Urban’s Overview of Computing Resources.\nIf necessary, install GitHub Desktop from this link: https://desktop.github.com/.\nOpen up GitHub Desktop and login to your GitHub account.\nClick Add &gt; Create new repository.\nWe recommend initializing the repo with a README (with background information/instructions for running your code) and a .gitignore file to tell Git not to track certain files. Here is an example of a strict .gitignore file that ignores all files (e.g. data files) except for R, SAS, and Stata scripts.\n# Ignore everything\n*.*\n\n# Include .gitignore and README.md\n!.gitignore\n!README.md\n\n# Include R scripts \n!*.R\n!*.Rproj\n\n# Include SAS scripts \n!*.sas\n\n# Include Stata scripts \n!*.do\n\nVery importantly, when selecting a local path, make sure that the repo is created within the local drive of the virtual machine you are on, and NOT the mapped Y: drive. By default, GitHub Desktop should try to create the repo in \\\\Ares\\CTX_RedirectedFolders$\\username\\My Documents\\GitHub. While that may look weird, that is an acceptable filepath and will put the repo in the My Documents\\GitHub folder of the virtual desktop. Once you’re ready, select Create Repository.\nThis should create the repository in your selected location on the Windows Explorer. If you need help finding the exact location on your computer, go to GitHub Desktop, select Repository in the top left and then Show in File Explorer.\nClick Publish Repo in the top right of GitHub Desktop to send the repo to GitHub.com\nInside the Git repo (i.e., folder) we suggest the following folder structure:\nREADME.md\nscripts/\n    somescript.R\n    someotherscript.R\nWhere the scripts folder contains all code for the project. Feel free to create subfolders as you see fit.\nMake changes to your project, like updating the README, or adding scripts. Then commit the changes on GitHub Desktop and push the changes.\nEach member of your project team will need to clone the repo into on their respective virtual machines (Urban Users PGP or Win 10 Secure). Again, do NOT clone the repo into the mapped Y Drive."
+  },
+  {
+    "objectID": "git-y-drive.html#write-scripts-and-commit-to-gitgithub",
+    "href": "git-y-drive.html#write-scripts-and-commit-to-gitgithub",
+    "title": "Git and GitHub with Confidential Data",
+    "section": "4 Write scripts and commit to Git/GitHub",
+    "text": "4 Write scripts and commit to Git/GitHub\nNow you can write scripts as you normally would. The only caveat is that all data you read in/write out will have to be to the mapped Y Drive path. Below is an example R script that shows how to do this. Note that these filepaths will only work when the scripts are run from a virtual machine that has Urban network access to the Y Drive (i.e., the two virtual machines specified above).\n\nlibrary(tidyverse)\n\n# --- Read in Data ---\n\n## We recommend using the full filepath which starts with\n## `//ares/UI_Projects2/CENTER` as this will never change. Note you will need to\n## replace CENTER and projectfolder with your respective values.\nraw_data &lt;- read_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n## Another acceptable filepath uses the \"Y:\" drive mapping built into \n## virtual desktops. This could change in the future.\nraw_data &lt;- read_csv(\"Y:/CENTER/projectfolder/data/raw-data/ex.csv\")\n\n\n# --- Write out Data ---\nraw_data %&gt;%\n  write_csv(\"//ares/UI_Projects2/CENTER/projectfolder/data/intermediate-data/ex-cleaned.csv\")"
   }
 ]
