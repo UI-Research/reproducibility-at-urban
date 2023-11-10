@@ -5,7 +5,7 @@ subtitle: Introduction to Virtual Environments with R and Python at the Urban In
 
 ::: {.callout-tip}
 ## Introduction
-We highly recommend checking out the [slides](renv: How to save your collaboRators (and future you) grief) from an R Users Group talk in October 2023 from Erika Tyagi and Will Curran-Groome called **renv: How to save your collaboRators (and future you) grief**. 
+We highly recommend checking out the [slides](https://ui-research.github.io/rug-renv-slides) from an R Users Group talk in October 2023 from Erika Tyagi and Will Curran-Groome called **renv: How to save your collaboRators (and future you) grief**. 
 :::
 
 This guide is intended to help R and Python users at the Urban Institute start using virtual environments. This guide assumes familiarity with Git and GitHub (see <a href="https://ui-research.github.io/reproducibility-at-urban/git-workflow.html" target="_blank">this guide</a> if you are not familiar with these tools) and is focused on helping folks start using virtual environments without having to meaningfully modify their existing workflows.
