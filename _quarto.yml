@@ -1,6 +1,5 @@
 project:
   type: website
-  output-dir: docs
 
 website:
   title: "Reproducibility at Urban"
@@ -8,6 +7,8 @@ website:
     left:
       - text: "Git & GitHub"
         menu:
+        - href: git-overview.qmd
+          text: Overview 
         - href: git-installation.qmd
           text: Access & Installation
         - href: git-workflow.qmd
@@ -18,9 +19,16 @@ website:
           text: FAQs & Other Resources 
       - href: virtual-environments.qmd
         text: Virtual Environments
+      - href: quarto.qmd
+        text: Quarto 
+      - href: resources.qmd
+        text: Additional Resources 
 
 format:
   html:
     css: styles.css
     toc: true
     number-sections: true
+
+execute:
+  freeze: auto

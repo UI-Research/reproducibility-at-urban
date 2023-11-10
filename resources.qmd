@@ -1,0 +1,34 @@
+---
+title: Additional Resources  
+subtitle: Internal and External Resources for Reproducibility at the Urban Institute
+---
+
+::: {.callout-note}
+## Contribute 
+As you come across additional internal or external resources around reproducibility that you would like included here, let us know by opening an issue or pull request in [our GitHub repository](https://github.com/UI-Research/reproducibility-at-urban). 
+::: 
+
+## Internal Resources
+
+The following are additional resources that are developed and maintained by Urban staff: 
+
+* [**Code Reviews**](https://tech-tools.urban.org/code-review-form/): Fill out the [intake form](https://tech-tools.urban.org/code-review-form/) to request that an experienced programmer review your code (e.g. to ensure that the results can be replicated, that the code is logical and readable, etc.). 
+* [**TECH Intake Form**](https://app.smartsheet.com/b/form?EQBCT=5b8bcb21f39c4f19b96c448e4a6622a0): Fill out the [intake form](https://app.smartsheet.com/b/form?EQBCT=5b8bcb21f39c4f19b96c448e4a6622a0) to request support from an experienced programmer to set up a project to enable reproducible workflows (e.g. to onboard project staff to Git/GitHub, set up directories and data storage on Urban's infrastructure, automate a manual or error-prone task, etc.).  
+* [**R Users Group**](https://urbaninstitute.github.io/r-at-urban/): Visit the group's [website](https://urbaninstitute.github.io/r-at-urban/) to develop your skills in R, an open-source programming language that is widely used at Urban to read and process data, develop data visualizations and maps, build dashboards, conduct analyses, and more. 
+* [**Python Users Group**](https://ui-research.github.io/python-at-urban/content/index.html): Visit the group's [website](https://ui-research.github.io/python-at-urban/content/index.html) to develop your skills in Python, an open-source programming language that is used at Urban to automate tasks, run microsimulation models, and more. 
+
+We also recommend joining the following Slack channels: 
+
+* [#github](https://theurbaninstitute.slack.com/archives/C6J9AALDR)
+* [#reproducible-research](https://theurbaninstitute.slack.com/archives/CMLR2HY2Z)
+* [#r-users-group](https://theurbaninstitute.slack.com/archives/CF56VD6CX)
+* [#python-users](https://theurbaninstitute.slack.com/archives/C832MAS5N)
+
+## External Resources 
+
+The following are external resources that describe challenges and opportunities to promoting reproducibility: 
+
+* [Harvard Data Science Review on Reinforcing Reproducibility and Replicability](https://hdsr.mitpress.mit.edu/reinforcing-rr)
+* [How to fix your scientific coding errors](https://www.nature.com/articles/d41586-022-00217-0)
+* [Exercises for Lab Groups to Prevent Research Mistakes](https://osf.io/preprints/psyarxiv/rsn5y)
+* [The Good Research Code Handbook](https://goodresearch.dev/) 

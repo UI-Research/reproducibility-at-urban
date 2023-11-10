@@ -1,4 +1,7 @@
-/.quarto/
 .Rproj.user
 .Rhistory 
+
+/.quarto/
+_site/
+
 .DS_Store

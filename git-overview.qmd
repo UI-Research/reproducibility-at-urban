@@ -1,0 +1,36 @@
+---
+title: Git and GitHub Overview  
+subtitle: Overview of Git and GitHub Resources at the Urban Institute 
+---
+
+::: {.callout-note}
+## Requesting Access 
+To request access to GitHub at Urban, fill out the [GitHub intake form](https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5).
+:::
+
+## Contents  
+This site includes several resources to help staff at Urban get started with Git and GitHub: 
+
+* [**Access & Installation**](https://ui-research.github.io/reproducibility-at-urban/git-installation.html): Walks through initial installation, configuration, and authentication steps. 
+* [**General Workflow**](https://ui-research.github.io/reproducibility-at-urban/git-workflow.html): Walks through a typical workflow for using Git and GitHub across projects.
+* [**Confidential Data Workflow**](https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html): Extends the general workflow with steps for using confidential data. 
+* [**FAQs & Other Resources**](https://ui-research.github.io/reproducibility-at-urban/git-faqs.html): Provides answers to FAQs and links to helpful external resources.
+
+## Motivation
+
+**Git and GitHub are tools that can help promote reproducibility through version control.** Version control is a system for managing and recording changes to files over time, which can: 
+
+* Limit the chance of making a mistake 
+* Maximize the chance of catching a mistake when it happens
+* Create a permanent record of changes to code
+* Easily undo mistakes by switching between iterations of code
+* Allow multiple paths of development while protecting working versions of code
+* Encourage communication between collaborators
+* Be used for external communication
+
+**Git** is a distributed version-control system for tracking changes in code. It's like a turbo-charged version of track changes for code. **GitHub** is an online hosting service for version control using Git. It also contains useful tools for collaboration and project management. It's like a turbo-charged version of Box for sharing repositories created using Git.
+
+The objective of using Git and GitHub is to create local repositories that track code (and sometimes data) and then push those repositories to GitHub for back-up and collaboration. When someone else edits the code, they can push their changes back to that repository.
+
+## Getting help  
+We know that learning these tools can be a challenge, but we’re here for you! Feel free to drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> with any questions. You can also use the #github Slack channel or [TECH intake form](https://app.smartsheet.com/b/form?EQBCT=5b8bcb21f39c4f19b96c448e4a6622a0) to request help setting up a project with GitHub or an onboarding session for new users. 

@@ -1,7 +1,6 @@
 ---
-title: Git and Github FAQs 
+title: Git and GitHub FAQs 
 subtitle: Questions about Git and GitHub at the Urban Institute and Additional Resources 
-date: today
 ---
 
 ## FAQs 
@@ -9,7 +8,7 @@ date: today
 Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.
 
 * **Where can I go for help if I get stuck?**  
-Running into errors is an inevitable part of working with Git and GitHub, but we're here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> when you have issues, or email Aaron Williams ([awilliams@urban.org](mailto:awilliams@urban.org)) or Erika Tyagi ([etyagi@urban.org](mailto:etyagi@urban.org)).  
+Running into errors is an inevitable part of working with Git and GitHub, but we're here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues.
 
 * **Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?**  
 Yes! Read <a href="https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html" target="_blank">this guide</a> for tips on how to do so. 
@@ -31,6 +30,7 @@ Definitely! Learning a few simple Bash commands can be helpful for navigating th
 
 ## Additional Resources 
 
+- <a href="https://docs.github.com/en/get-started/quickstart/hello-world" target="_blank">GitHub's Quickstart Guide</a>
 - <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git Cheat Sheet</a>
 - <a href="https://happygitwithr.com/" target="_blank">Happy Git and GitHub for the UserR</a>
 - <a href="https://www.amazon.com/Git-Pocket-Guide-Working-Introduction/dp/1449325866" target="_blank">Git Pocket Guide</a>

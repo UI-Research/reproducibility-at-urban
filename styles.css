@@ -32,7 +32,12 @@ a {
 	border-left: 1px solid #1696d2 !important
 }
 
+.navbar-expand-lg .navbar-nav .nav-link {
+	padding-right: 1.5rem;
+}
+
 /* Tabsets */ 
 .nav-tabs .nav-link {
 	color: #1696d2 
 }
+

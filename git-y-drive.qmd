@@ -1,7 +1,6 @@
 ---
-title: Git and Github with Confidential Data 
+title: Git and GitHub with Confidential Data 
 subtitle: How to Use Git and GitHub with Confidential Data on the Y Drive (Ares Drive) 
-date: today
 ---
 
 So you've learned about the power of Git and GitHub and now want to use it in your projects. That's great news! But if your project data is stored on the Y Drive (aka `ares`) for confidentiality reasons, you'll have to jump through a few extra hoops. Below are instructions on one way to set up a GitHub repo to play nicely with the Y Drive.
