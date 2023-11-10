@@ -35,4 +35,4 @@ This repository uses GitHub Actions to build and deploy the site to GitHub Pages
 **Note:** This uses Quarto's [freeze](https://quarto.org/docs/projects/code-execution.html#freeze) feature to only execute code locally. From the [Quarto docs](https://quarto.org/docs/publishing/github-pages.html#freezing-computations): 
 > If you have executable code in your project you’ll notice that a `_freeze` directory has been created at the top level of your project. This directory stores the results of computations and should be checked in to version control. Whenever you change a `.qmd` file with executable code, it will automatically be re-run during your next render and the updated computations will be stored in `_freeze`.
 
-If this causes issues down the line, we can also execute the code through the GitHub Action (but this will make the builds take longer and add complexity). 
+If this causes issues down the line, we can also execute the code [through the GitHub Action](https://quarto.org/docs/publishing/github-pages.html#executing-code) (but this will make the builds take longer and add complexity). 
