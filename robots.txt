@@ -1,1 +1,1 @@
-Sitemap: https://github.com/UI-Research/reproducibility-at-urban/sitemap.xml
+Sitemap: https://ui-research.github.io/reproducibility-at-urban/sitemap.xml
