@@ -5,7 +5,7 @@ subtitle: Resources for Using Quarto at the Urban Institute
 
 ::: {.callout-tip}
 ## Introduction
-We highly recommend checking out the [slides](https://ui-research.github.io/r-users-group-presentations/presentations/2023-06-07_quarto/quarto.html) and [recording](https://urbanorg.app.box.com/s/3dlmlsgv6rq4m4u8tfmylsn7ls7xf6x1) from an R Users Group talk in June 2023 from Aaron Willims called **Quarto: The Life-Changing Magic of Tidying Up (Your Work with Notebooks)**.
+We highly recommend checking out the [slides](https://ui-research.github.io/r-users-group-presentations/presentations/2023-06-07_quarto/quarto.html) and [recording](https://urbanorg.app.box.com/s/3dlmlsgv6rq4m4u8tfmylsn7ls7xf6x1) from an R Users Group talk in June 2023 from Aaron Williams called **Quarto: The Life-Changing Magic of Tidying Up (Your Work with Notebooks)**.
 :::
 
 ## What is Quarto? 
@@ -34,6 +34,7 @@ If you have additional examples of projects at Urban that use Quarto that you wo
 ### Quarto Books
 * [**tidysynthesis documentation**](https://ui-research.github.io/tidysynthesis-documentation/): A Quarto book documenting the `tidysynthesis` R package. 
 * [**Boosting Upward Mobility from Poverty data documentation**](https://ui-research.github.io/mobility-from-poverty/02_poverty-exposure_race-ethnicity.html): A Quarto book with documentation on data sets and variables that make up Urban's mobility metrics (repo [here](https://github.com/UI-Research/mobility-from-poverty)). 
+* [**Spatial Equity Data Tool (SEDT) documentation**](https://ui-research.github.io/sedt_documentation/): A Quarto book with documentation on Urban's SEDT. 
 
 ### Quarto Websites 
 * [**Mobility Metrics data tables**](https://upward-mobility.urban.org/measuring-upward-mobility-counties-and-cities-across-us): 3,500+ Quarto websites with data tables of metrics measuring the status of and progress toward increasing upward mobility and equity across geographies (repo [here](https://github.com/UI-Research/gates-mobility-metrics-pages)). 
