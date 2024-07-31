@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ui-research.github.io/reproducibility-at-urban/git-faqs.html</loc>
-    <lastmod>2024-03-26T11:51:36.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ui-research.github.io/reproducibility-at-urban/git-overview.html</loc>
-    <lastmod>2024-03-26T11:51:36.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ui-research.github.io/reproducibility-at-urban/git-installation.html</loc>
-    <lastmod>2024-03-26T11:51:36.462Z</lastmod>
+    <lastmod>2024-07-31T10:30:44.371Z</lastmod>
   </url>
   <url>
     <loc>https://ui-research.github.io/reproducibility-at-urban/resources.html</loc>
-    <lastmod>2024-03-26T11:51:36.474Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ui-research.github.io/reproducibility-at-urban/virtual-environments.html</loc>
-    <lastmod>2024-03-26T11:51:36.474Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ui-research.github.io/reproducibility-at-urban/git-workflow.html</loc>
-    <lastmod>2024-03-26T11:51:36.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ui-research.github.io/reproducibility-at-urban/quarto.html</loc>
-    <lastmod>2024-03-26T11:51:36.474Z</lastmod>
+    <lastmod>2024-07-31T10:30:44.379Z</lastmod>
   </url>
   <url>
     <loc>https://ui-research.github.io/reproducibility-at-urban/index.html</loc>
-    <lastmod>2024-03-26T11:51:36.474Z</lastmod>
+    <lastmod>2024-07-31T10:30:44.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ui-research.github.io/reproducibility-at-urban/quarto.html</loc>
+    <lastmod>2024-07-31T10:30:44.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ui-research.github.io/reproducibility-at-urban/git-workflow.html</loc>
+    <lastmod>2024-07-31T10:30:44.371Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ui-research.github.io/reproducibility-at-urban/git-installation.html</loc>
+    <lastmod>2024-07-31T10:30:44.371Z</lastmod>
   </url>
   <url>
     <loc>https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html</loc>
-    <lastmod>2024-03-26T11:51:36.462Z</lastmod>
+    <lastmod>2024-07-31T10:30:44.371Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ui-research.github.io/reproducibility-at-urban/virtual-environments.html</loc>
+    <lastmod>2024-07-31T10:30:44.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ui-research.github.io/reproducibility-at-urban/git-overview.html</loc>
+    <lastmod>2024-07-31T10:30:44.371Z</lastmod>
   </url>
 </urlset>

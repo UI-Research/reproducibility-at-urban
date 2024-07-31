@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducibility at Urban - Git and GitHub FAQs</title>
+<title>Git and GitHub FAQs – Reproducibility at Urban</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,13 +83,13 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-git--github" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-git--github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Git &amp; GitHub</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-git--github">    
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -180,24 +180,44 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="faqs" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="faqs"><span class="header-section-number">1</span> FAQs</h2>
-<ul>
-<li><p><strong>Git and GitHub seem a little scary. How do I get started?</strong><br>
-Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.</p></li>
-<li><p><strong>Where can I go for help if I get stuck?</strong><br>
-Running into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues.</p></li>
-<li><p><strong>Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?</strong><br>
-Yes! Read <a href="https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html" target="_blank">this guide</a> for tips on how to do so.</p></li>
-<li><p><strong>Should I use Git inside of Box? (i.e.&nbsp;turn a Box folder into a Git repository)</strong><br>
-No – we strongly recommend keeping Box folders and GitHub repositories separate.</p></li>
-<li><p><strong>What kinds of files should I track with Git?</strong><br>
-Generally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should <strong>never</strong> store confidential data on GitHub (even in a private repository). We recommend getting familiar with <code>.gitignore</code> <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/" target="_blank">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template <code>.gitignore</code> files for specific programming languages (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/R.gitignore" target="_blank">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore" target="_blank">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore" target="_blank">Python</a>) or operating systems (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore" target="_blank">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore" target="_blank">MacOS</a>) that can be useful as a starting point.</p></li>
-<li><p><strong>How do I add documentation to my repositories?</strong><br>
-Use <code>README</code> <a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/" target="_blank">files</a> to add context and documentation to your repos. These are <a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> files in the root of your directory named <code>README.md</code> that can help folks understand the structure and contents of your repo. <a href="https://markdownlivepreview.com/" target="_blank">Markdown Live Preview</a> can be a useful tool to help with formatting.</p></li>
-<li><p><strong>What permissions should I give my collaborators?</strong><br>
-In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the <strong>Write</strong> role, but you should refer to GitHub’s <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" target="_blank">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a>.</p></li>
-<li><p><strong>Are there other commands that can be helpful when using Git from the command line?</strong><br>
-Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include <code>pwd</code> (to print your current directory), <code>cd</code> (to change directories), and <code>ls</code> (to list the files in a directory). For an introduction to these commands and others, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html" target="_blank">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html" target="_blank">this guide</a> from Happy Git with R.</p></li>
-</ul>
+<section id="git-and-github-seem-a-little-scary.-how-do-i-get-started" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="git-and-github-seem-a-little-scary.-how-do-i-get-started">Git and GitHub seem a little scary. How do I get started?</h4>
+<p>Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.</p>
+</section>
+<section id="where-can-i-go-for-help-if-i-get-stuck" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="where-can-i-go-for-help-if-i-get-stuck">Where can I go for help if I get stuck?</h4>
+<p>Running into errors is an inevitable part of working with Git and GitHub, but we’re here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues.</p>
+</section>
+<section id="when-should-i-use-urbaninstitute-vs.-ui-research" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="when-should-i-use-urbaninstitute-vs.-ui-research">When should I use UrbanInstitute vs.&nbsp;UI-Research?</h4>
+<p>UI-Research is considered and should be treated as the default organization for all Urban GitHub repositories. UI-Research uses the “Team” plan, while UrbanInstitute is on the Free tier. See the GitHub <a href="https://github.com/pricing#compare-features">documentation</a> for more details on features.</p>
+<p>The most common use-case for UrbanInstitute is for sharing source code of data tools on Urban’s website. For example in this <a href="https://apps.urban.org/features/medical-debt-over-time/">tool</a>, you can find a link to the GitHub repository for the project at the bottom of the page.</p>
+<p>If you are sharing code publicly and have questions about review prior to release, use the <a href="https://tech-tools.urban.org/code-review-form/">Code Review form</a>.</p>
+</section>
+<section id="can-i-use-git-and-github-with-projects-that-have-confidential-data-stored-on-the-y-drive" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="can-i-use-git-and-github-with-projects-that-have-confidential-data-stored-on-the-y-drive">Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?</h4>
+<p>Yes! Read <a href="https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html" target="_blank">this guide</a> for tips on how to do so.</p>
+</section>
+<section id="should-i-use-git-inside-of-box-i.e.-turn-a-box-folder-into-a-git-repository" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="should-i-use-git-inside-of-box-i.e.-turn-a-box-folder-into-a-git-repository">Should I use Git inside of Box? (i.e.&nbsp;turn a Box folder into a Git repository)</h4>
+<p>No – we strongly recommend keeping Box folders and GitHub repositories separate.</p>
+</section>
+<section id="what-kinds-of-files-should-i-track-with-git" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="what-kinds-of-files-should-i-track-with-git">What kinds of files should I track with Git?</h4>
+<p>Generally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should <strong>never</strong> store confidential data on GitHub (even in a private repository). We recommend getting familiar with <code>.gitignore</code> <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/" target="_blank">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template <code>.gitignore</code> files for specific programming languages (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/R.gitignore" target="_blank">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore" target="_blank">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore" target="_blank">Python</a>) or operating systems (e.g.&nbsp;<a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore" target="_blank">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore" target="_blank">MacOS</a>) that can be useful as a starting point.</p>
+</section>
+<section id="how-do-i-add-documentation-to-my-repositories" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="how-do-i-add-documentation-to-my-repositories">How do I add documentation to my repositories?</h4>
+<p>Use <code>README</code> <a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/" target="_blank">files</a> to add context and documentation to your repos. These are <a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> files in the root of your directory named <code>README.md</code> that can help folks understand the structure and contents of your repo. <a href="https://markdownlivepreview.com/" target="_blank">Markdown Live Preview</a> can be a useful tool to help with formatting.</p>
+</section>
+<section id="what-permissions-should-i-give-my-collaborators" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="what-permissions-should-i-give-my-collaborators">What permissions should I give my collaborators?</h4>
+<p>In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the <strong>Write</strong> role, but you should refer to GitHub’s <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" target="_blank">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a>.</p>
+</section>
+<section id="are-there-other-commands-that-can-be-helpful-when-using-git-from-the-command-line" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="are-there-other-commands-that-can-be-helpful-when-using-git-from-the-command-line">Are there other commands that can be helpful when using Git from the command line?</h4>
+<p>Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include <code>pwd</code> (to print your current directory), <code>cd</code> (to change directories), and <code>ls</code> (to list the files in a directory). For an introduction to these commands and others, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html" target="_blank">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html" target="_blank">this guide</a> from Happy Git with R.</p>
+</section>
 </section>
 <section id="additional-resources" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">2</span> Additional Resources</h2>
@@ -249,18 +269,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -292,7 +301,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/ui-research\.github\.io\/reproducibility-at-urban\/");
@@ -300,7 +331,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
