@@ -4,9 +4,12 @@ subtitle: Overview of Git and GitHub Resources at the Urban Institute
 ---
 
 ::: {.callout-note}
-## Requesting Access 
+## GitHub at Urban 
 To request access to GitHub at Urban, fill out the [GitHub intake form](https://app.smartsheet.com/b/form/9f0c5ba330dd4b73980fe5a6e17216b5).
+
+The primary GitHub organization at Urban is **UI-Research**. We also maintain the organization **UrbanInstitute**. UI-Research provides more features, and the default repository visibility is private. UrbanInstitute is intended to house public-facing repositories.
 :::
+
 
 ## Contents  
 This site includes several resources to help staff at Urban get started with Git and GitHub: 
