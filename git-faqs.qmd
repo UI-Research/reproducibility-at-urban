@@ -4,28 +4,36 @@ subtitle: Questions about Git and GitHub at the Urban Institute and Additional R
 ---
 
 ## FAQs 
-* **Git and GitHub seem a little scary. How do I get started?**  
+
+#### Git and GitHub seem a little scary. How do I get started? {.unnumbered}
 Start by using these tools for solo work. It is the lowest stakes way to develop skills that will be valuable for collaboration.
 
-* **Where can I go for help if I get stuck?**  
+#### Where can I go for help if I get stuck? {.unnumbered}
 Running into errors is an inevitable part of working with Git and GitHub, but we're here to help! Drop a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a> if you run into issues.
 
-* **Can I use Git and GitHub with projects that have confidential data stored on the Y Drive?**  
+#### When should I use UrbanInstitute vs. UI-Research? {.unnumbered}
+UI-Research is considered and should be treated as the default organization for all Urban GitHub repositories. UI-Research uses the “Team” plan, while UrbanInstitute is on the Free tier. See the GitHub [documentation](https://github.com/pricing#compare-features) for more details on features. 
+
+The most common use-case for UrbanInstitute is for sharing source code of data tools on Urban’s website. For example in this [tool](https://apps.urban.org/features/medical-debt-over-time/), you can find a link to the GitHub repository for the project at the bottom of the page.  
+
+If you are sharing code publicly and have questions about review prior to release, use the [Code Review form](https://tech-tools.urban.org/code-review-form/). 
+
+#### Can I use Git and GitHub with projects that have confidential data stored on the Y Drive? {.unnumbered}
 Yes! Read <a href="https://ui-research.github.io/reproducibility-at-urban/git-y-drive.html" target="_blank">this guide</a> for tips on how to do so. 
 
-* **Should I use Git inside of Box? (i.e. turn a Box folder into a Git repository)**  
+#### Should I use Git inside of Box? (i.e. turn a Box folder into a Git repository) {.unnumbered}
 No – we strongly recommend keeping Box folders and GitHub repositories separate. 
 
-* **What kinds of files should I track with Git?**  
+#### What kinds of files should I track with Git? {.unnumbered}
 Generally, you should only track code (i.e., scripts written in R, Stata, SAS, Python, etc.) with Git. You should not track large data files or binary files (i.e., Word, Excel files). There are occasions when tracking small data files with Git might make sense, but you should **never** store confidential data on GitHub (even in a private repository). We recommend getting familiar with `.gitignore` <a href="https://www.freecodecamp.org/news/gitignore-what-is-it-and-how-to-add-to-repo/" target="_blank">files</a>, which can prevent you and your collaborators from accidentally pushing files to GitHub. GitHub provides hundreds of template `.gitignore` files for specific programming languages (e.g. <a href="https://github.com/github/gitignore/blob/main/R.gitignore" target="_blank">R</a>, <a href="https://github.com/github/gitignore/blob/main/Global/Stata.gitignore" target="_blank">Stata</a>, or <a href="https://github.com/github/gitignore/blob/main/Python.gitignore" target="_blank">Python</a>) or operating systems (e.g. <a href="https://github.com/github/gitignore/blob/main/Global/Windows.gitignore" target="_blank">Windows</a> or <a href="https://github.com/github/gitignore/blob/main/Global/macOS.gitignore" target="_blank">MacOS</a>) that can be useful as a starting point. 
 
-* **How do I add documentation to my repositories?**  
+#### How do I add documentation to my repositories? {.unnumbered}
 Use `README` <a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/" target="_blank">files</a> to add context and documentation to your repos. These are <a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> files in the root of your directory named `README.md` that can help folks understand the structure and contents of your repo. <a href="https://markdownlivepreview.com/" target="_blank">Markdown Live Preview</a> can be a useful tool to help with formatting. 
 
-* **What permissions should I give my collaborators?**  
+#### What permissions should I give my collaborators? {.unnumbered}
 In general, you should follow the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank">principle of least privilege</a>, which means that you should give folks the minimum level of access they need, but no more than that. In most cases, this will be the **Write** role, but you should refer to GitHub's <a href="https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" target="_blank">guide</a> describing the different roles and what they allow. If you need elevated permissions for a repository, post a message in the <a href="https://theurbaninstitute.slack.com/archives/C6J9AALDR" target="_blank">#github Slack channel</a>.  
 
-* **Are there other commands that can be helpful when using Git from the command line?**  
+#### Are there other commands that can be helpful when using Git from the command line? {.unnumbered}
 Definitely! Learning a few simple Bash commands can be helpful for navigating the command line. A few common commands include `pwd` (to print your current directory), `cd` (to change directories), and `ls` (to list the files in a directory). For an introduction to these commands and others, we recommend <a href="https://friendly-101.readthedocs.io/en/latest/commandline.html" target="_blank">this guide</a> from Friendly Django or <a href="https://happygitwithr.com/shell.html" target="_blank">this guide</a> from Happy Git with R.
 
 ## Additional Resources 
