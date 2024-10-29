@@ -33,7 +33,7 @@ While the best time to set up a virtual environment for a project is at the very
 
 ## Which environment manager should I use?
 
-For R projects, we recommend using `renv`. For Python projects, we recommend using `virtualenv`. These are by no means the only environment managers for R and Python, but we've found these to be the most reliable and user-friendly for the majority of use cases at Urban.
+For R projects, we recommend using `renv`. For Python projects, we recommend using `venv`. These are by no means the only environment managers for R and Python, but we've found these to be the most reliable and user-friendly for the majority of use cases at Urban.
 
 ::: {.callout-tip collapse="true" appearance="simple"}
 ### Alternatives for R
@@ -49,7 +49,7 @@ Within the R community, `renv`, developed and <a href="https://github.com/rstudi
 
 There is a plethora of virtual environment managers in Python, with a few of the most common being `virtualenv`, `pipenv`, `poetry`, and `conda`.
 
-Due to changes in the Anaconda terms of services, we are recommending against using conda for virtual environments. `virtualenv` is a great alternative for the following reasons: it works with older versions of Python, has compatibility with `pip`, has been around for awhile, and is lightweight. `pipenv` and `poetry` are also popular options, but they are more complex and have more features than `virtualenv`. If you're using R and Python, `renv` is a good option given its emphasis on interoperability. Documentation for using Python with `renv` is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.
+Due to changes in the Anaconda terms of services, we are recommending against using conda for virtual environments. `venv` is a great alternative built into base Python that is straightforward to use and has compatibility with `pip`. `virtualenv`, `pipenv` and `poetry` are also popular options worth consideration that may have additional functionality for specific needs. If you're using R and Python, `renv` is a good option given its emphasis on interoperability. Documentation for using Python with `renv` is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.
 
 
 :::
