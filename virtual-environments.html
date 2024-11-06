@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -256,7 +256,7 @@ Introduction
 </section>
 <section id="which-environment-manager-should-i-use" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="which-environment-manager-should-i-use"><span class="header-section-number">3</span> Which environment manager should I use?</h2>
-<p>For R projects, we recommend using <code>renv</code>. For Python projects, we recommend using <code>conda</code>. These are by no means the only environment managers for R and Python, but we’ve found these to be the most reliable and user-friendly for the majority of use cases at Urban.</p>
+<p>For R projects, we recommend using <code>renv</code>. For Python projects, we recommend using <code>venv</code>. These are by no means the only environment managers for R and Python, but we’ve found these to be the most reliable and user-friendly for the majority of use cases at Urban.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -289,8 +289,7 @@ Alternatives for Python
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There is a plethora of virtual environment managers in Python, with a few of the most common being <code>virtualenv</code>, <code>pipenv</code>, <code>poetry</code>, and <code>conda</code>.</p>
-<p>For data science and research use cases, <code>conda</code> is a popular option for several reasons. First, <code>conda</code> is both an environment manager and a package manager. As a result, <code>conda</code> helps install packages and manage dependencies, whereas other tools rely on <code>pip</code> for package management. Unlike other managers, <code>conda</code> also has native support for programming languages beyond Python (including R). Lastly, <code>conda</code> is extensible, letting you install packages from <code>pip</code>, for example, and offering <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a> as a lighter-weight alternative or <a href="https://mamba.readthedocs.io/en/latest/index.html" target="_blank">Mamba</a> as an even faster “drop-in replacement” for <code>conda</code>.</p>
-<p>If you’re using R and Python, <code>conda</code> or <code>renv</code> are good options given their emphasis on interoperability. Documentation for using R with <code>conda</code> is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/" target="_blank">here</a>, and documentation for using Python with <code>renv</code> is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.</p>
+<p>Due to Anaconda’s terms of services, we are recommending against using <code>conda</code> for virtual environments. <code>venv</code> is a great alternative built into base Python that is straightforward to use and has compatibility with <code>pip</code>. <code>virtualenv</code>, <code>pipenv</code> and <code>poetry</code> are also popular options worth consideration that may have additional functionality for specific needs. If you’re using R and Python, <code>renv</code> is a good option given its emphasis on interoperability. Documentation for using Python with <code>renv</code> is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.</p>
 </div>
 </div>
 </div>
@@ -353,7 +352,7 @@ Where do I run these commands?
 </ol>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>To set up a virtual environment for a Python project, we recommend using <code>conda</code>, which is built into the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda distribution</a> through Anaconda or <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a>. If you haven’t already installed Anaconda, see <a href="https://github.com/UI-Research/python-resources/blob/main/notebooks/anaconda-installation.ipynb" target="_blank">this guide</a> from a previous Python Users Group session. You can verify that <code>conda</code> is installed and running on your computer with <code>conda --version</code>. If you get an error, see the Anaconda <a href="https://conda.io/projects/conda/en/latest/user-guide/troubleshooting.html" target="_blank">troubleshooting guide</a>.</p>
+<p>To set up a virtual environment for a Python project, we recommend using <code>venv</code>, which is built into base Python. Note that this may not work with older versions of Python (pre-3.3), in which case you should use <a href="https://virtualenv.pypa.io/en/latest/"><code>virtualenv</code></a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -364,48 +363,46 @@ Where do I run these commands?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>All commands below should be run from the Anaconda Prompt or a terminal window (e.g.&nbsp;within RStudio or VS Code) from the root of your project’s directory.</p>
+<p>All commands below should be run from the Command Prompt or a terminal window (e.g.&nbsp;within RStudio or VS Code) from the root of your project’s directory.</p>
 </div>
 </div>
 <ol type="1">
 <li><p><strong>Initialize</strong> a new environment (optionally specifying a version of Python and/or a list of packages) using one of the options below. You should replace <code>my_env</code> with a descriptive name specific to your project.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name my_env                           <span class="co"># create empty environment  </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name my_env python<span class="op">==</span><span class="fl">3.7</span>               <span class="co"># create environment with specific Python version </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>conda create <span class="op">--</span>name my_env python<span class="op">==</span><span class="fl">3.7</span> pandas numpy  <span class="co"># create environment with packages installed </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It’s best practice to specify packages when initializing the environment to let <code>conda</code> help manage dependencies most effectively.</p></li>
-<li><p><strong>Activate</strong> the environment, again replacing <code>my_env</code> with the name of your environment:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>conda activate my_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Install packages</strong> using your usual workflow (optionally specifying the package version) for any packages that you did not include when initializing the environment in the first step:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>conda install pandas         <span class="co"># install default version of pandas </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conda install pandas<span class="op">=</span><span class="fl">0.24.1</span>  <span class="co"># install specific version of pandas </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It’s best practice to specify the version number associated with a package to ensure that changes in packages over time don’t affect the reproducibility of your code.</p></li>
-<li><p><strong>Save</strong> a snapshot of the environment to a file called <code>environment.yml</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conda env export <span class="op">--</span><span class="im">from</span><span class="op">-</span>history <span class="op">&gt;</span> environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>from-history</code> flag is necessary to make your environment file work across platforms.</p>
-<p>Alternatively, you can manually create the <code>environment.yml</code> file in the root of your project directory, where it would follow this structure:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>name: my_env</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dependencies:</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> python<span class="op">=</span><span class="fl">3.7</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pandas<span class="op">=</span><span class="fl">0.24</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> numpy<span class="op">=</span><span class="fl">1.21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you installed packages using <code>pip</code>, the <code>environment.yml</code> file would follow this structure:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>name: my_env</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dependencies:</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> python<span class="op">=</span><span class="fl">3.7</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pandas<span class="op">=</span><span class="fl">0.24</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> numpy<span class="op">=</span><span class="fl">1.21</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pip<span class="op">=</span><span class="fl">19.1</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span> pip:</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> awscli<span class="op">==</span><span class="fl">1.16</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> kaggle<span class="op">==</span><span class="fl">1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that packages installed using <code>pip</code> use <code>==</code> to specify the version number, while packages installed from <code>conda</code> use <code>=</code>.</p></li>
-<li><p><strong>Share</strong> the snapshot by sending the <code>environment.yml</code> file to GitHub.</p></li>
-<li><p><strong>Restore</strong> and activate the snapshot of the environment on another computer:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>conda env create      </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>conda activate my_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>conda env create</code> syntax assumes you have a file called <code>environment.yml</code> in your working directory. While you could give this file a different name, we recommend sticking with the convention of naming the file <code>environment.yml</code> and placing it in the root of your project’s directory.</p></li>
-<li><p><strong>Repeat</strong> the process. As you and your collaborators install, update, and remove packages, repeat steps 4-6 to save and load the state of your project to the <code>environment.yml</code> file across computers.</p></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m venv my_env                                <span class="co"># create empty environment  </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>python3<span class="fl">.12</span> <span class="op">-</span>m venv my_env                            <span class="co"># create environment with specific Python version </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
+<p>This will install a directory with your environment’s name at the root of your project folder. Unlike <code>renv</code>, we don’t want to push this folder to GitHub for reproducibility, so make sure to add it to your <code>.gitignore</code> if not already there.</p>
+<ol start="2" type="1">
+<li><p><strong>Activate</strong> the environment, again replacing <code>my_env</code> with the name of your environment:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_env\Scripts\activate</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># On Mac or Unix</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>source my_env<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Install packages</strong> (optionally specifying the package version)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m pip install package_name         <span class="co"># install default version of package </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m pip install package_name<span class="op">==</span><span class="fl">1.0.1</span>  <span class="co"># install specific version of package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It’s best practice to specify the version number associated with a package to ensure that changes in packages over time don’t affect the reproducibility of your code.</p></li>
+<li><p><strong>Save</strong> a snapshot of the environment to a file called <code>requirements.txt</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m pip freeze <span class="op">&gt;</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Share</strong> the snapshot by sending the <code>requirements.txt</code> file to GitHub.</p></li>
+<li><p><strong>Restore</strong> and activate the snapshot of the environment on another computer:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m pip install <span class="op">-</span>r requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This last command assumes you already have a virtual environment set up (following steps 1 and 2) before trying to add the same set of packages.</p></li>
+<li><p><strong>Repeat</strong> the process. As you and your collaborators install, update, and remove packages, repeat steps 3-6 to save and load the state of your project to the <code>requirements.txt</code> file across computers.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Installing specific Python versions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In order to install a specific version of Python in the <code>venv</code>, you need to have that version of Python installed on your computer. For instance, whatever version you see returned when you run <code>python3 --version</code> in the command line would be the Python that is installed if you run <code>python3 -m venv my_env</code> as seen in step 1.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -420,15 +417,14 @@ Where do I run these commands?
 <p>The 10-minute talk from rstudio::conf(2022) called <a href="https://www.rstudio.com/conference/2022/talks/you-should-use-renv/" target="_blank">You should be using renv</a> from E. David Aja is a great overview of the motivation for using the tool. We also recommend the official <a href="https://rstudio.github.io/renv/articles/renv.html#package-sources" target="_blank">Introduction to renv</a> and <a href="https://rstudio.github.io/renv/articles/collaborating.html" target="_blank">Collaborating with renv</a> vignettes.</p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>We recommend keeping the official <code>conda</code> <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf" target="_blank">cheat sheet</a> handy.</p>
+<p>We recommend the official <code>venv</code> documentation <a href="https://docs.python.org/3/tutorial/venv.html">here</a>.</p>
 <p>In addition to the commands included above, a few other commonly used <code>conda</code> commands include:</p>
 <ul>
-<li><code>conda deactivate</code> deactivates the current environment</li>
-<li><code>conda list</code> lists all packages in the current environment</li>
-<li><code>conda env list</code> lists all environments (with the current active environment asterisked)</li>
-<li><code>conda env remove -n my_env</code> deletes the <code>my_env</code> environment</li>
+<li><code>deactivate</code> deactivates the current environment</li>
+<li><code>python -m pip list</code> lists all packages in the current environment</li>
+<li><code>python -m pip show package-name</code> gives specific information about an installed package</li>
+<li>Deleting the directory containing the virtual environment will remove the environment from your computer See this <a href="https://carpentries-incubator.github.io/python-intermediate-development/12-virtual-environments/index.html">Carpentries guide</a> for an additional helpful resource!</li>
 </ul>
-<p>The <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html" target="_blank">official documentation</a> and <a href="https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html" target="_blank">this guide</a> from the Carpentries are also helpful resources.</p>
 </div>
 </div>
 </div>
