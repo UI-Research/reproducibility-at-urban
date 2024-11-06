@@ -49,7 +49,7 @@ Within the R community, `renv`, developed and <a href="https://github.com/rstudi
 
 There is a plethora of virtual environment managers in Python, with a few of the most common being `virtualenv`, `pipenv`, `poetry`, and `conda`.
 
-Due to changes in the Anaconda terms of services, we are recommending against using conda for virtual environments. `venv` is a great alternative built into base Python that is straightforward to use and has compatibility with `pip`. `virtualenv`, `pipenv` and `poetry` are also popular options worth consideration that may have additional functionality for specific needs. If you're using R and Python, `renv` is a good option given its emphasis on interoperability. Documentation for using Python with `renv` is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.
+Due to Anaconda's terms of services, we are recommending against using `conda` for virtual environments. `venv` is a great alternative built into base Python that is straightforward to use and has compatibility with `pip`. `virtualenv`, `pipenv` and `poetry` are also popular options worth consideration that may have additional functionality for specific needs. If you're using R and Python, `renv` is a good option given its emphasis on interoperability. Documentation for using Python with `renv` is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.
 
 
 :::
