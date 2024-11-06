@@ -33,7 +33,7 @@ While the best time to set up a virtual environment for a project is at the very
 
 ## Which environment manager should I use?
 
-For R projects, we recommend using `renv`. For Python projects, we recommend using `conda`. These are by no means the only environment managers for R and Python, but we've found these to be the most reliable and user-friendly for the majority of use cases at Urban.
+For R projects, we recommend using `renv`. For Python projects, we recommend using `venv`. These are by no means the only environment managers for R and Python, but we've found these to be the most reliable and user-friendly for the majority of use cases at Urban.
 
 ::: {.callout-tip collapse="true" appearance="simple"}
 ### Alternatives for R
@@ -49,9 +49,9 @@ Within the R community, `renv`, developed and <a href="https://github.com/rstudi
 
 There is a plethora of virtual environment managers in Python, with a few of the most common being `virtualenv`, `pipenv`, `poetry`, and `conda`.
 
-For data science and research use cases, `conda` is a popular option for several reasons. First, `conda` is both an environment manager and a package manager. As a result, `conda` helps install packages and manage dependencies, whereas other tools rely on `pip` for package management. Unlike other managers, `conda` also has native support for programming languages beyond Python (including R). Lastly, `conda` is extensible, letting you install packages from `pip`, for example, and offering <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a> as a lighter-weight alternative or <a href="https://mamba.readthedocs.io/en/latest/index.html" target="_blank">Mamba</a> as an even faster "drop-in replacement" for `conda`.
+Due to Anaconda's terms of services, we are recommending against using `conda` for virtual environments. `venv` is a great alternative built into base Python that is straightforward to use and has compatibility with `pip`. `virtualenv`, `pipenv` and `poetry` are also popular options worth consideration that may have additional functionality for specific needs. If you're using R and Python, `renv` is a good option given its emphasis on interoperability. Documentation for using Python with `renv` is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.
 
-If you're using R and Python, `conda` or `renv` are good options given their emphasis on interoperability. Documentation for using R with `conda` is available <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/" target="_blank">here</a>, and documentation for using Python with `renv` is available <a href="https://rstudio.github.io/renv/articles/python.html" target="_blank">here</a>.
+
 :::
 
 ## How do I set up a virtual environment?
@@ -124,85 +124,66 @@ All commands below should be run in the RStudio console within your project's di
 
 ### Python
 
-To set up a virtual environment for a Python project, we recommend using `conda`, which is built into the <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda distribution</a> through Anaconda or <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">Miniconda</a>. If you haven't already installed Anaconda, see <a href="https://github.com/UI-Research/python-resources/blob/main/notebooks/anaconda-installation.ipynb" target="_blank">this guide</a> from a previous Python Users Group session. You can verify that `conda` is installed and running on your computer with `conda --version`. If you get an error, see the Anaconda <a href="https://conda.io/projects/conda/en/latest/user-guide/troubleshooting.html" target="_blank">troubleshooting guide</a>.
+To set up a virtual environment for a Python project, we recommend using `venv`, which is built into base Python. Note that this may not work with older versions of Python (pre-3.3), in which case you should use [`virtualenv`](https://virtualenv.pypa.io/en/latest/).
 
 ::: callout-note
 ## Where do I run these commands?
 
-All commands below should be run from the Anaconda Prompt or a terminal window (e.g. within RStudio or VS Code) from the root of your project's directory.
+All commands below should be run from the Command Prompt or a terminal window (e.g. within RStudio or VS Code) from the root of your project's directory.
 :::
 
-1.  **Initialize** a new environment (optionally specifying a version of Python and/or a list of packages) using one of the options below. You should replace `my_env` with a descriptive name specific to your project.
+1.  **Initialize** a new environment (optionally specifying a version of Python and/or a list of packages) using one of the options below. You should replace `my_env` with a descriptive name specific to your project. 
+
+
 
     ``` python
-    conda create --name my_env                           # create empty environment  
-    conda create --name my_env python==3.7               # create environment with specific Python version 
-    conda create --name my_env python==3.7 pandas numpy  # create environment with packages installed 
+    python -m venv my_env                                # create empty environment  
+    python3.12 -m venv my_env                            # create environment with specific Python version 
     ```
 
-    It's best practice to specify packages when initializing the environment to let `conda` help manage dependencies most effectively.
+This will install a directory with your environment's name at the root of your project folder. Unlike `renv`, we don't want to push this folder to GitHub for reproducibility, so make sure to add it to your `.gitignore` if not already there.
 
 2.  **Activate** the environment, again replacing `my_env` with the name of your environment:
 
     ``` python
-    conda activate my_env
+    # On Windows
+    my_env\Scripts\activate
+    # On Mac or Unix
+    source my_env/bin/activate
     ```
 
-3.  **Install packages** using your usual workflow (optionally specifying the package version) for any packages that you did not include when initializing the environment in the first step:
+3.  **Install packages** (optionally specifying the package version)
 
     ``` python
-    conda install pandas         # install default version of pandas 
-    conda install pandas=0.24.1  # install specific version of pandas 
+    python -m pip install package_name         # install default version of package 
+    python -m pip install package_name==1.0.1  # install specific version of package
     ```
 
     It's best practice to specify the version number associated with a package to ensure that changes in packages over time don't affect the reproducibility of your code.
 
-4.  **Save** a snapshot of the environment to a file called `environment.yml`.
+4.  **Save** a snapshot of the environment to a file called `requirements.txt`.
 
     ``` python
-    conda env export --from-history > environment.yml
+    python -m pip freeze > requirements.txt
     ```
-
-    The `from-history` flag is necessary to make your environment file work across platforms.
-
-    Alternatively, you can manually create the `environment.yml` file in the root of your project directory, where it would follow this structure:
-
-    ``` python
-    name: my_env
-    dependencies:
-      - python=3.7
-      - pandas=0.24
-      - numpy=1.21
-    ```
-
-    If you installed packages using `pip`, the `environment.yml` file would follow this structure:
-
-    ``` python
-    name: my_env
-    dependencies:
-      - python=3.7
-      - pandas=0.24
-      - numpy=1.21
-      - pip=19.1
-      - pip:
-        - awscli==1.16
-        - kaggle==1.5
-    ```
-
-    Note that packages installed using `pip` use `==` to specify the version number, while packages installed from `conda` use `=`.
-
-5.  **Share** the snapshot by sending the `environment.yml` file to GitHub.
+    
+5.  **Share** the snapshot by sending the `requirements.txt` file to GitHub.
 
 6.  **Restore** and activate the snapshot of the environment on another computer:
 
     ``` python
-    conda env create      
-    conda activate my_env
+    python -m pip install -r requirements.txt
     ```
 
-    The `conda env create` syntax assumes you have a file called `environment.yml` in your working directory. While you could give this file a different name, we recommend sticking with the convention of naming the file `environment.yml` and placing it in the root of your project's directory.
+    This last command assumes you already have a virtual environment set up (following steps 1 and 2) before trying to add the same set of packages.
 
-7.  **Repeat** the process. As you and your collaborators install, update, and remove packages, repeat steps 4-6 to save and load the state of your project to the `environment.yml` file across computers.
+7.  **Repeat** the process. As you and your collaborators install, update, and remove packages, repeat steps 3-6 to save and load the state of your project to the `requirements.txt` file across computers.
+
+::: callout-note
+## Installing specific Python versions
+In order to install a specific version of Python in the `venv`, you need to have that version of Python installed on your computer. For instance, whatever version you see returned when you run `python3 --version` in the command line would be the Python that is installed if you run `python3 -m venv my_env` as seen in step 1.
+:::
+
 :::
 
 ## Additional resources
@@ -214,16 +195,15 @@ The 10-minute talk from rstudio::conf(2022) called <a href="https://www.rstudio.
 
 ### Python
 
-We recommend keeping the official `conda` <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf" target="_blank">cheat sheet</a> handy.
+We recommend the official `venv` documentation [here](https://docs.python.org/3/tutorial/venv.html).
 
 In addition to the commands included above, a few other commonly used `conda` commands include:
 
--   `conda deactivate` deactivates the current environment
--   `conda list` lists all packages in the current environment
--   `conda env list` lists all environments (with the current active environment asterisked)
--   `conda env remove -n my_env` deletes the `my_env` environment
-
-The <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html" target="_blank">official documentation</a> and <a href="https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html" target="_blank">this guide</a> from the Carpentries are also helpful resources.
+-   `deactivate` deactivates the current environment
+-   `python -m pip list` lists all packages in the current environment
+-   `python -m pip show package-name` gives specific information about an installed package
+-   Deleting the directory containing the virtual environment will remove the environment from your computer
+See this [Carpentries guide](https://carpentries-incubator.github.io/python-intermediate-development/12-virtual-environments/index.html) for an additional helpful resource!
 :::
 
 ## Getting help
