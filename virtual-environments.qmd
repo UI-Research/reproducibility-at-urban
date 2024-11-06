@@ -141,7 +141,7 @@ All commands below should be run from the Command Prompt or a terminal window (e
     python3.12 -m venv my_env                            # create environment with specific Python version 
     ```
 
-This will install a directory with your environment's name at the root of your project folder. Unlike `renv`, we don't want to push this folder to GitHub for reproducibility, so make sure to add it to your .gitignore if not already there.
+This will install a directory with your environment's name at the root of your project folder. Unlike `renv`, we don't want to push this folder to GitHub for reproducibility, so make sure to add it to your `.gitignore` if not already there.
 
 2.  **Activate** the environment, again replacing `my_env` with the name of your environment:
 
