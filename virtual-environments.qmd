@@ -203,7 +203,7 @@ In addition to the commands included above, a few other commonly used `conda` co
 -   `python -m pip list` lists all packages in the current environment
 -   `python -m pip show package-name` gives specific information about an installed package
 -   Deleting the directory containing the virtual environment will remove the environment from your computer
-
+See this [Carpentries guide](https://carpentries-incubator.github.io/python-intermediate-development/12-virtual-environments/index.html) for an additional helpful resource!
 :::
 
 ## Getting help
